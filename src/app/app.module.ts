@@ -14,6 +14,7 @@ import { CaroselComponent } from './shared/carosel/carosel.component';
 import { SubsriberPosterComponent } from './shared/subsriber-poster/subsriber-poster.component';
 import { FooterComponent } from './compoent/footer/footer.component';
 import { HeaderComponent } from './compoent/header/header.component';
+import { LoginModule } from './module/login/login.module';
 
 @NgModule({
   declarations: [
@@ -33,8 +34,8 @@ import { HeaderComponent } from './compoent/header/header.component';
     BrowserModule,
     AppRoutingModule,
     HomeModule,
-    ReservationModule
-
+    ReservationModule,
+    LoginModule
   ],
   providers: [
     provideClientHydration()
