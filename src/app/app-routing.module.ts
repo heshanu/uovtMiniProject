@@ -6,7 +6,8 @@ import { HomepageComponent } from './compoent/homepage/homepage.component';
 const routes: Routes = [
   {path: '',component:HomepageComponent},
   {path: 'reservation',loadChildren: () => import('./module/reservation/reservation.module').then(m => m.ReservationModule)},
-  {path: 'login',loadChildren:()=>import("./module/login/login-routing.module").then(m=>m.LoginRoutingModule)}
+  {path: 'login',loadChildren:()=>import("./module/login/login-routing.module").then(m=>m.LoginRoutingModule)},
+  {path:'register',loadChildren:()=>import("./module/register/register-routing.module").then(m=>m.RegisterRoutingModule)}
 ];
 
 @NgModule({

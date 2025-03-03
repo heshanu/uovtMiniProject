@@ -15,6 +15,8 @@ import { SubsriberPosterComponent } from './shared/subsriber-poster/subsriber-po
 import { FooterComponent } from './compoent/footer/footer.component';
 import { HeaderComponent } from './compoent/header/header.component';
 import { LoginModule } from './module/login/login.module';
+import { RegisterModule } from './module/register/register.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { LoginModule } from './module/login/login.module';
     AppRoutingModule,
     HomeModule,
     ReservationModule,
-    LoginModule
+    LoginModule,
+    RegisterModule,ReactiveFormsModule,
+    FormsModule
   ],
   providers: [
     provideClientHydration()
