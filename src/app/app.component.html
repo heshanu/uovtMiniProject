@@ -1,3 +1,16 @@
-
-
-<router-outlet></router-outlet>
+<div class="min-h-screen flex flex-col">
+    <!-- Header -->
+    <app-header class="bg-white-600 text-white shadow-lg">
+      <!-- Header content goes here -->
+    </app-header>
+  
+    <!-- Main Content -->
+    <main class="flex-grow p-6 bg-gray-50">
+      <router-outlet></router-outlet>
+    </main>
+  
+    <!-- Footer -->
+    <app-footer class="bg-gray-800 text-white py-6">
+      <!-- Footer content goes here -->
+    </app-footer>
+  </div>

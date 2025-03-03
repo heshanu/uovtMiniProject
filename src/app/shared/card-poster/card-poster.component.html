@@ -1,0 +1,20 @@
+<div class="bg-gray-100 py-12 px-6 text-center">
+    <h2 class="text-2xl font-bold text-gray-900">We always try to give you the best service</h2>
+    <p class="text-gray-600 mt-2">We always try to make our customers happy. We provide all kinds of facilities. Your satisfaction is our main priority.</p>
+    
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mt-8">
+      <div *ngFor="let card of listofCards" class="bg-white p-6 rounded-lg shadow-md">
+        <div class="text-green-600 text-3xl">📅</div>
+        <img [src]="card.link"/>
+        <h3 class="text-xl font-semibold mt-2">{{card.description}}</h3>
+        <span class="text-2xl font-bold">{{card.price}}</span>
+        <p class="text-gray-600">Enjoy the Shrimes and blossoms here in 
+            this beautiful country</p>
+        <h5>{{card.country}}</h5>
+    </div>
+      
+    </div>
+  </div>
+
+
+  
