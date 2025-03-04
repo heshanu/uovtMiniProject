@@ -16,7 +16,6 @@ import { HeaderComponent } from './compoent/header/header.component';
 import { LoginModule } from './module/login/login.module';
 import { RegisterModule } from './module/register/register.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CaroselComponent } from './shared/carosel/carosel.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +26,6 @@ import { CaroselComponent } from './shared/carosel/carosel.component';
     MapSriLankaComponent,
     CardPosterComponent,
     BookatripPosterComponent,
-    CaroselComponent,
     SubsriberPosterComponent,
     FooterComponent,
     HeaderComponent,
@@ -38,8 +36,12 @@ import { CaroselComponent } from './shared/carosel/carosel.component';
     HomeModule,
     ReservationModule,
     LoginModule,
-    RegisterModule,ReactiveFormsModule,
+    RegisterModule,
+    ReactiveFormsModule,
     FormsModule
+  ],
+  exports:[
+    
   ],
   providers: [
     provideClientHydration()
