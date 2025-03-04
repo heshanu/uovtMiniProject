@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomepageComponent } from './compoent/homepage/homepage.component';
 import { HomeComponent } from './module/home/home.component';
+import { CustomerdetailComponent } from './compoent/customerdetail/customerdetail.component';
 
 //lazy loading to home module
 const routes: Routes = [
@@ -9,7 +10,8 @@ const routes: Routes = [
   {path: 'reservation',loadChildren: () => import('./module/reservation/reservation.module').then(m => m.ReservationModule)},
   {path: 'login',loadChildren:()=>import("./module/login/login-routing.module").then(m=>m.LoginRoutingModule)},
   {path: 'register',loadChildren:()=>import("./module/register/register-routing.module").then(m=>m.RegisterRoutingModule)},
-  {path: 'home',component:HomeComponent}
+  {path: 'home',component:HomeComponent},
+  {path:'customerDetails',component:CustomerdetailComponent}
 ];
 
 @NgModule({
