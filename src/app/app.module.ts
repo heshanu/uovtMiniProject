@@ -17,6 +17,7 @@ import { LoginModule } from './module/login/login.module';
 import { RegisterModule } from './module/register/register.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CustomerdetailComponent } from './compoent/customerdetail/customerdetail.component';
+import { CalenderComponent } from './shared/calender/calender.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { CustomerdetailComponent } from './compoent/customerdetail/customerdetai
     FooterComponent,
     HeaderComponent,
     CustomerdetailComponent,
+    CalenderComponent,
   ],
   imports: [
     BrowserModule,
