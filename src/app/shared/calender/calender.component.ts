@@ -7,12 +7,15 @@ import { CalenderService } from '../../service/calender.service';
   templateUrl: './calender.component.html',
   styleUrl: './calender.component.css'
 })
-export class CalenderComponent{
+export class CalenderComponent implements OnInit{
 
   days: Date[] = [];
   currentDate = new Date();
   selectedStartDate: Date | null = null;
   selectedEndDate: Date | null = null;
+
+  startDateValues:any;
+  endDateValues:any;
 
   calendarForm = new FormGroup({
     startDate: new FormControl<Date | null>(null),
@@ -22,8 +25,14 @@ export class CalenderComponent{
   constructor() {
     this.generateCalendar();
   }
+
+  ngOnInit(): void {
+
+  }
+
   
   generateCalendar(date: Date = new Date()) {
+    console.log(this.calendarForm.value.startDate+"this from calender compoent");
     this.days = [];
     const year = date.getFullYear();
     const month = date.getMonth();
@@ -69,6 +78,12 @@ export class CalenderComponent{
         endDate: this.selectedEndDate
       });
     }
+
+    this.startDateValues= this.calendarForm.value.startDate;
+    this.endDateValues=this.calendarForm.value.endDate; 
+
+    //console.log(this.startDateValues);
+   // console.log(this.endDateValues);
   }
 
   prevMonth() {
@@ -89,7 +104,6 @@ getDayClasses(date: Date): string {
   const selectedClass = this.isSelected(date) ? 'bg-blue-500 text-white' : '';
   const startEndClass = this.isStartDate(date) || this.isEndDate(date) ? 
     'bg-blue-600 text-white font-bold' : '';
-  
   return `${baseClasses} ${todayClass} ${selectedClass} ${startEndClass} hover:bg-blue-200`;
 }
 

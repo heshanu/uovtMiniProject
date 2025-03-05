@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CalenderService } from '../../service/calender.service';
+import { CalenderComponent } from '../../shared/calender/calender.component';
 
 @Component({
   selector: 'app-customerdetail',
@@ -8,6 +9,8 @@ import { CalenderService } from '../../service/calender.service';
   styleUrl: './customerdetail.component.css'
 })
 export class CustomerdetailComponent {
+
+  @ViewChild(CalenderComponent) calenderChild!: CalenderComponent;
   
   registrationForm!:FormGroup;
 
@@ -17,7 +20,23 @@ export class CustomerdetailComponent {
   photoError: string | null = null;
   days!:any;
 
+  endDates!:any;
+  startDates!:any;
+
+ // this.dates=this.child.startDateValue;
+  parseDataToParent():void{
+    this.startDates=this.calenderChild.startDateValues;
+    //this.endDates= this.child.endDateValues;
+    console.log(this.startDates);
+    //console.log(this.endDates);
+    
+  }
+
   ngOnInit(): void {
+    // calendarForm.value.startDate | date:'shortDate' }} - 
+   // {{ calendarForm.value.endDate | date:'shortDate'
+    //clerconsole.log(this.child.calendarForm.value.startDate);
+    
     this.registrationForm = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(3)]],
       age: ['', [Validators.required]],
@@ -31,7 +50,6 @@ export class CustomerdetailComponent {
 
     this.days=this.calenderService.getDayClasses;
   }
-
 
   onSubmit(): void {
     console.log(this.registrationForm.value);
