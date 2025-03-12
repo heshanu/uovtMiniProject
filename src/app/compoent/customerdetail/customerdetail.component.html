@@ -141,10 +141,10 @@
         </mat-date-range-input>
           <mat-datepicker-toggle matIconSuffix [for]="picker" class="m-8"></mat-datepicker-toggle>
           <mat-date-range-picker #picker></mat-date-range-picker>
-          <mat-error *ngIf="range.controls.start.hasError('matStartDateInvalid')">
+          <mat-error *ngIf="range.controls.startDate.hasError('matStartDateInvalid')">
             Invalid start date
           </mat-error>
-          <mat-error *ngIf="range.controls.end.hasError('matEndDateInvalid')">
+          <mat-error *ngIf="range.controls.endDate.hasError('matEndDateInvalid')">
             Invalid end date
           </mat-error>
       </div>
@@ -153,3 +153,4 @@
     </form>
   </div>
 </div>
+
