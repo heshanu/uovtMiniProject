@@ -2,12 +2,15 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 const app = express();
 const PORT = 3000;
 
 
 // Middleware
 app.use(bodyParser.json());
+app.use(cors());
+
 
 // Connect to MongoDB
 
@@ -23,7 +26,20 @@ const userSchema = new mongoose.Schema({
   password: { type: String, required: true },
 });
 
+const customerSchema=new mongoose.Schema({
+  name:{type:String,required:true,unique:true},
+  age:{type:Number,required:true},
+  address:{type:String,required:true},
+  travelMode:{type:String},
+  foodList:{type:String},
+  foodListOption:{type:String},
+  beverageList:{type:String},
+  startDate:{type:String},
+  endDate:{type:String}
+})
+
 const User = mongoose.model('User', userSchema);
+const Customer=mongoose.model('Customer',customerSchema);
 
 // Registration Route
 app.post('/register', async (req, res) => {
@@ -59,6 +75,28 @@ app.get('/all', async (req, res) => {
       res.status(200).json(users); // Send the users as a JSON response
     } catch (error) {
       res.status(500).send('Error retrieving users');
+    }
+  });
+
+
+  app.post('/createCustomer', async (req, res) => {
+    try {
+      const { name,age,address,travelMode,foodList,foodListOption,beverageList,beverageListOption,startDate,endDate } = req.body;
+     // const hashedPassword = await bcrypt.hash(password, 10);
+      const newCustomer = new Customer({ name,age,address,travelMode,foodList,foodListOption,beverageList,beverageListOption,startDate,endDate});
+      await newCustomer.save();
+      res.status(201).send('Customer registered successfully');
+    } catch (error) {
+      res.status(500).send('Error registering user');
+    }
+  });
+
+  app.get('/allCustomers', async (req, res) => {
+    try {
+      const users = await Customer.find(); // Fetch all users from the database
+      res.status(200).json(users); // Send the users as a JSON response
+    } catch (error) {
+      res.status(500).send('Error retrieving customers');
     }
   });
 
