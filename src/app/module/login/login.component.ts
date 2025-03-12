@@ -1,7 +1,9 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { log } from 'node:console';
+import { AuthService } from '../../service/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -13,13 +15,16 @@ export class LoginComponent implements OnInit{
   loginForm!:FormGroup;
 
   constructor(private fb: FormBuilder,
-    private route: ActivatedRoute,private router: Router){}
+    private route: ActivatedRoute,private router: Router,
+    private http: HttpClient,private authService:AuthService
+  ){}
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
       name: ['', Validators.required],
       password: ['', [Validators.required, Validators.minLength(3)]]
     });
+
   }
 
   get name():any{

@@ -20,6 +20,7 @@ import { CustomerdetailComponent } from './compoent/customerdetail/customerdetai
 import { CalenderComponent } from './shared/calender/calender.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './shared/materialModule';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -46,8 +47,9 @@ import { MaterialModule } from './shared/materialModule';
     ReactiveFormsModule,
     FormsModule,
     ReactiveFormsModule,
-    MaterialModule
-    
+    MaterialModule,
+    HttpClientModule 
+
   ],
   exports:[
     
