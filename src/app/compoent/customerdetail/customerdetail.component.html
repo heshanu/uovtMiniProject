@@ -6,7 +6,7 @@
       <div>
         <label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
         <input
-        required.
+          required
           type="text"
           id="name"
           formControlName="name"
@@ -86,30 +86,29 @@
       </div>
 
       <div>
-        <label for="foodListOption" class="block text-sm font-medium text-gray-700">Food List</label>
-          <input
-            type="file"
-            id="photo"
-            formControlName="foodListOption"
-            (change)="onFileChange($event)"
-            class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-          <div *ngIf="photoError" class="text-red-500 text-sm">
-            {{ photoError }}
-          </div>
+        <label for="foodListOption" class="block text-sm font-medium text-gray-700">Food List Option</label>
+        <input
+          type="file"
+          id="foodListOption"
+          formControlName="foodListOption"
+          (change)="onFileChange($event)"
+          class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        <div *ngIf="photoError" class="text-red-500 text-sm">
+          {{ photoError }}
+        </div>
         <div *ngIf="registrationForm.get('foodListOption')?.invalid && registrationForm.get('foodListOption')?.touched" class="text-red-500 text-sm">
-          <div *ngIf="registrationForm.get('foodListOption')?.errors?.['required']">Food list is required.</div>
-          <div *ngIf="registrationForm.get('foodListOption')?.errors?.['minlength']">Food list must be at least 3 characters.</div>
+          <div *ngIf="registrationForm.get('foodListOption')?.errors?.['required']">Food list option is required.</div>
         </div>
       </div>
 
       <div>
         <label for="beverageList" class="block text-sm font-medium text-gray-700">Beverage List</label>
         <textarea
-          id="beverageListOption"
-          formControlName="beverageListOption"
+          id="beverageList"
+          formControlName="beverageList"
           class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-          placeholder="Enter your food list"
+          placeholder="Enter your beverage list"
         ></textarea>
         <div *ngIf="registrationForm.get('beverageList')?.invalid && registrationForm.get('beverageList')?.touched" class="text-red-500 text-sm">
           <div *ngIf="registrationForm.get('beverageList')?.errors?.['required']">Beverage list is required.</div>
@@ -118,28 +117,37 @@
       </div>
 
       <div>
-        <label for="beverageListOption" class="block text-sm font-medium text-gray-700">BeverageOption List</label>
-          <input
-            type="file"
-            id="photo"
-            formControlName="beverageListOption"
-            (change)="onFileChange($event)"
-            class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-          <div *ngIf="photoError" class="text-red-500 text-sm">
-            {{ photoError }}
-          </div>
+        <label for="beverageListOption" class="block text-sm font-medium text-gray-700">Beverage List Option</label>
+        <input
+          type="file"
+          id="beverageListOption"
+          formControlName="beverageListOption"
+          (change)="onFileChange($event)"
+          class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        <div *ngIf="photoError" class="text-red-500 text-sm">
+          {{ photoError }}
+        </div>
         <div *ngIf="registrationForm.get('beverageListOption')?.invalid && registrationForm.get('beverageListOption')?.touched" class="text-red-500 text-sm">
-          <div *ngIf="registrationForm.get('beverageListOption')?.errors?.['required']">Food list is required.</div>
-          <div *ngIf="registrationForm.get('beverageListOption')?.errors?.['minlength']">Food list must be at least 3 characters.</div>
+          <div *ngIf="registrationForm.get('beverageListOption')?.errors?.['required']">Beverage list option is required.</div>
         </div>
       </div>
 
       <div>
-        <label for="address" class="block text-sm font-medium text-gray-700">Book your date</label>
-       <app-calender/> 
+        <label for="dateRange" class="block text-sm font-medium text-gray-700">Book your date</label>
+        <mat-date-range-input [rangePicker]="picker">
+          <input matStartDate formControlName="startDate" placeholder="Start date">
+          <input matEndDate formControlName="endDate" placeholder="End date">
+        </mat-date-range-input>
+          <mat-datepicker-toggle matIconSuffix [for]="picker" class="m-8"></mat-datepicker-toggle>
+          <mat-date-range-picker #picker></mat-date-range-picker>
+          <mat-error *ngIf="range.controls.start.hasError('matStartDateInvalid')">
+            Invalid start date
+          </mat-error>
+          <mat-error *ngIf="range.controls.end.hasError('matEndDateInvalid')">
+            Invalid end date
+          </mat-error>
       </div>
-
 
       <button type="submit" [hidden]="!registrationForm.valid" class="px-4 py-2 bg-blue-500 text-white rounded-lg">Submit</button>
     </form>

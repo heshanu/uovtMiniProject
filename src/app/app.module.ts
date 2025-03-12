@@ -18,6 +18,8 @@ import { RegisterModule } from './module/register/register.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CustomerdetailComponent } from './compoent/customerdetail/customerdetail.component';
 import { CalenderComponent } from './shared/calender/calender.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './shared/materialModule';
 
 @NgModule({
   declarations: [
@@ -34,15 +36,18 @@ import { CalenderComponent } from './shared/calender/calender.component';
     CustomerdetailComponent,
     CalenderComponent,
   ],
-  imports: [
-    BrowserModule,
+  imports: [BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     HomeModule,
     ReservationModule,
     LoginModule,
     RegisterModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    MaterialModule
+    
   ],
   exports:[
     
