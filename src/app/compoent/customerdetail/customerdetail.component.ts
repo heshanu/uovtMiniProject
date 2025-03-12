@@ -1,7 +1,6 @@
-import { Component, ViewChild } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component, inject, ViewChild } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { CalenderService } from '../../service/calender.service';
-import { CalenderComponent } from '../../shared/calender/calender.component';
 
 @Component({
   selector: 'app-customerdetail',
@@ -9,8 +8,6 @@ import { CalenderComponent } from '../../shared/calender/calender.component';
   styleUrl: './customerdetail.component.css'
 })
 export class CustomerdetailComponent {
-
-  @ViewChild(CalenderComponent) calenderChild!: CalenderComponent;
   
   registrationForm!:FormGroup;
 
@@ -22,15 +19,6 @@ export class CustomerdetailComponent {
 
   endDates!:any;
   startDates!:any;
-
- // this.dates=this.child.startDateValue;
-  parseDataToParent():void{
-    this.startDates=this.calenderChild.startDateValues;
-    //this.endDates= this.child.endDateValues;
-    console.log(this.startDates);
-    //console.log(this.endDates);
-    
-  }
 
   ngOnInit(): void {
     // calendarForm.value.startDate | date:'shortDate' }} - 
@@ -46,16 +34,16 @@ export class CustomerdetailComponent {
       foodListOption:[],
       beverageList:['',Validators.required],
       beverageListOption:[],
+      startDate:['',Validators.required],
+      endDate:['',Validators.required]
     });
 
     this.days=this.calenderService.getDayClasses;
   }
 
   onSubmit(): void {
-    console.log(this.registrationForm.value);
     if (this.registrationForm.valid) {
       console.log('Form Submitted:', this.registrationForm.value);
-      console.log(this.days);
       
       // Add your registration logic here (e.g., call a service)
     } else {
@@ -75,5 +63,10 @@ export class CustomerdetailComponent {
       }
     }
   }
+
+  readonly range = new FormGroup({
+    start: new FormControl<Date | null>(null),
+    end: new FormControl<Date | null>(null),
+  });
 
 }
