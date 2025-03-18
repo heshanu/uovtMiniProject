@@ -4,9 +4,9 @@ export interface CustomerdetailsInterface{
     address:string,
     travelMode:string,
     foodList:string,
-    foodListOption:string,
+    foodListOption?:string,
     beverageList:string,
-    beverageListOption: string,
+    beverageListOption?: string,
     startDate: string,
     endDate:string   
 }

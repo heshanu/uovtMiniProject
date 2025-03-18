@@ -1,18 +1,18 @@
 <div>
-<section class="hero">
-    <div class="overlay">
-        <h1>GuideBuddy</h1>
-        <div>
-        <input type="text" placeholder="Search here">
-        <i class="fa fa-search"></i>
-        </div>        
-        <h2>Your Imagination is Your Only Limit</h2>
-          
-        <p>One place for all your travels and campaign experiences.</p>
-        <button class="discover-btn">Discover more</button>
-        <button class="plan-btn">Plan a trip now</button>
-    </div>
-</section>
+    <section class="hero" *ngIf="!imageData">
+        <div class="overlay">
+            <h1>GuideBuddy</h1>
+            <div class="search-container">
+                <input type="text" class="text-black" [(ngModel)]="image" placeholder="Search here" aria-label="Search input">
+                <button class="bg-red-500" (click)="searchImageByName(image)">Search Now</button>
+            </div>
+            <h2>Your Imagination is Your Only Limit</h2>
+            <p>One place for all your travels and campaign experiences.</p>
+            <button class="discover-btn">Discover more</button>
+            <button class="plan-btn">Plan a trip now</button>
+        </div>
+    </section>
+    
 
 <section class="services">
     <h2 class="text-white-200 text-xl">Our Service</h2>

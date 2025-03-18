@@ -21,6 +21,7 @@ import { CalenderComponent } from './shared/calender/calender.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './shared/materialModule';
 import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { HttpClientModule } from '@angular/common/http';
     CustomerdetailComponent,
     CalenderComponent,
   ],
-  imports: [BrowserModule,
+  imports: [
+    BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     HomeModule,
@@ -48,7 +50,8 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     ReactiveFormsModule,
     MaterialModule,
-    HttpClientModule 
+    HttpClientModule,
+    CommonModule
 
   ],
   exports:[
