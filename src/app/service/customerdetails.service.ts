@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { CustomerdetailsInterface } from '../model/customerDetailsInterface';
@@ -8,17 +8,18 @@ import { CustomerdetailsInterface } from '../model/customerDetailsInterface';
 })
 export class CustomerdetailsService {
 
-   private apiUrl = 'http://localhost:3000'; // URL of your Node.js server
-  
-    registerCustomer(customer:CustomerdetailsInterface): Observable<any> {
-      return this.http.post(`${this.apiUrl}/createCustomer`, customer);
-    }
 
-    getAllCustomers():Observable<any>{
-      return this.http.get(`${this.apiUrl}/allCustomers`);
-    }
+  private apiUrl = 'http://localhost:3000'; // URL of your Node.js server
   
-    constructor(private http:HttpClient) {
-  
-     }
+  private headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+
+  constructor(private http: HttpClient) {}
+
+  registerCustomer(customer: CustomerdetailsInterface): Observable<CustomerdetailsInterface> {
+    return this.http.post<CustomerdetailsInterface>(`${this.apiUrl}/createCustomer`, customer, { headers: this.headers });
+  }
+
+  getAllCustomers(): Observable<CustomerdetailsInterface[]> {
+    return this.http.get<CustomerdetailsInterface[]>(`${this.apiUrl}/allCustomers`);
+  }
 }

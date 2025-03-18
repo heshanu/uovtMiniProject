@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomepageComponent } from './compoent/homepage/homepage.component';
 import { HomeComponent } from './module/home/home.component';
 import { CustomerdetailComponent } from './compoent/customerdetail/customerdetail.component';
+import { CustomersDashBoardComponent } from './compoent/customers-dash-board/customers-dash-board.component';
+import { CustomerDashBoardComponent } from './compoent/customer-dash-board/customer-dash-board.component';
 
 //lazy loading to home module
 const routes: Routes = [
@@ -11,7 +13,10 @@ const routes: Routes = [
   {path: 'login',loadChildren:()=>import("./module/login/login-routing.module").then(m=>m.LoginRoutingModule)},
   {path: 'register',loadChildren:()=>import("./module/register/register-routing.module").then(m=>m.RegisterRoutingModule)},
   {path: 'home',component:HomeComponent},
-  {path:'customerDetails',component:CustomerdetailComponent}
+  {path:'customersDashboard',component:CustomersDashBoardComponent},
+  {path:'customerDashboard/:id', component: CustomerDashBoardComponent },
+  {path:'customersDetails',component:CustomerdetailComponent},
+ 
 ];
 
 @NgModule({

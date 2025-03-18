@@ -23,6 +23,8 @@ import { MaterialModule } from './shared/materialModule';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { SearchImagePosterComponent } from './compoent/search-image-poster/search-image-poster.component';
+import { CustomersDashBoardComponent } from './compoent/customers-dash-board/customers-dash-board.component';
+import { CustomerDashBoardComponent } from './compoent/customer-dash-board/customer-dash-board.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,8 @@ import { SearchImagePosterComponent } from './compoent/search-image-poster/searc
     CustomerdetailComponent,
     CalenderComponent,
     SearchImagePosterComponent,
+    CustomersDashBoardComponent,
+    CustomerDashBoardComponent,
   ],
   imports: [
     BrowserModule,
