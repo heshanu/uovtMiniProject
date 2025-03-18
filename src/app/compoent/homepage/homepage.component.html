@@ -1,10 +1,14 @@
+<!-- {{imageData|json}} -->
 <div>
-    <section class="hero" *ngIf="!imageData">
+      
+    <section class="hero">
         <div class="overlay">
             <h1>GuideBuddy</h1>
             <div class="search-container">
                 <input type="text" class="text-black" [(ngModel)]="image" placeholder="Search here" aria-label="Search input">
-                <button class="bg-red-500" (click)="searchImageByName(image)">Search Now</button>
+                <button class="bg-red-500 rounded-lg text-white p-4  hover:bg-red-600 m-4 " (click)="searchImageByName(image)">
+                    Search Now
+                  </button>
             </div>
             <h2>Your Imagination is Your Only Limit</h2>
             <p>One place for all your travels and campaign experiences.</p>
@@ -12,7 +16,11 @@
             <button class="plan-btn">Plan a trip now</button>
         </div>
     </section>
-    
+
+    <div>
+        <app-search-image-poster [imagePosterList]="imageData"/>
+        <button class="text-red-500 m-4 bg-yellow-400" *ngIf="imageData" (click)="resetList()">Back</button>
+    </div>
 
 <section class="services">
     <h2 class="text-white-200 text-xl">Our Service</h2>

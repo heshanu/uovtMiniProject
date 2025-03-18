@@ -1,0 +1,11 @@
+{
+    "/api": {
+      "target": "https://api.pexels.com",
+      "secure": false,
+      "changeOrigin": true,
+      "pathRewrite": {
+        "^/api": ""
+      }
+    }
+  }
+  
