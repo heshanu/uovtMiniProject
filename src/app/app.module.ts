@@ -22,6 +22,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './shared/materialModule';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { SearchImagePosterComponent } from './compoent/search-image-poster/search-image-poster.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { CommonModule } from '@angular/common';
     HeaderComponent,
     CustomerdetailComponent,
     CalenderComponent,
+    SearchImagePosterComponent,
   ],
   imports: [
     BrowserModule,

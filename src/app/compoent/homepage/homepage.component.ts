@@ -9,17 +9,17 @@ import { NotificationService } from '../../notification.service';
 })
 export class HomepageComponent {
 
-imageData!: any;
+imageData!: any[];
 image!: string;
 constructor(private imageService:PhotoServiceService){}  
-notificationService=inject(NotificationService);
+
 inputValue:string = '';
 searchImageByName(imageName: any) {
    
   if (imageName) {
     this.imageService.findImageByName(imageName).subscribe(
       (data) => {
-        this.imageData = data;
+        this.imageData = data.photos;
       },
       error => {
         console.error('Error fetching image', error);
@@ -28,6 +28,10 @@ searchImageByName(imageName: any) {
   } else {
     console.log('Image name is empty');
   }
+}
+
+resetList(){
+  this.imageData=[];
 }
 
 
