@@ -2,7 +2,7 @@
   <h2 class="text-3xl font-bold text-gray-800 text-center mb-8">Customer List</h2>
 
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-    <div *ngFor="let customer of customersList" 
+    <div *ngFor="let customer of customersList; let i = index" 
          class="bg-white p-6 rounded-2xl shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl">
 
       <h3 class="text-xl font-semibold text-gray-900 mb-2">
@@ -36,9 +36,9 @@
         <h5 class="text-red-500">{{ customer.startDate | date: 'yyyy-MM-dd' }}</h5>
        -
        <h5 class="text-red-500">{{ customer.endDate | date: 'yyyy-MM-dd' }}</h5>
-
+CustomerId-{{i+1}}
       </div>
-      <button class="bg-green-500 m-4 p-4" (click)="planNow()">Plan Now</button>
+      <button class="bg-green-500 m-4 p-4" (click)="planNow(i)">Plan Now</button>
     </div>
   </div>
 

@@ -24,9 +24,10 @@ export class CustomersDashBoardComponent {
     });
   }
 
-  planNow(){
-    if (this.customerId) {
-      this.route.navigate(['customerDashboards/', this.customerId]);
+  planNow(id: any) {
+    if (id != null) {
+      this.route.navigate(['customerDashboard/', id+1]);
     }
   }
+  
 }
