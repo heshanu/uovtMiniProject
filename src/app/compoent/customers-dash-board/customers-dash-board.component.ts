@@ -29,9 +29,9 @@ export class CustomersDashBoardComponent {
     });
   }
 
-  planNow(customer:CustomerdetailsInterface,id:any) {
-    if (id != null) {
-      this.route.navigate(['customerDashboard/', id+1]);
+  planNow(customer:CustomerdetailsInterface,_id:any) {
+    if (_id != null) {
+      this.route.navigate(['customerDashboard/', _id]);
       this.customerObjectService.setData(customer);
     }
   }

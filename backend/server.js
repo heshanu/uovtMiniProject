@@ -100,6 +100,23 @@ app.get('/all', async (req, res) => {
     }
   });
 
+  app.get('/getCustomerById/:id', async (req, res) => {
+    try {
+      const customerId = req.params.id; // Get the ID from the URL parameter
+  
+      const customer = await Customer.findById(customerId); // Fetch the customer by ID
+  
+      if (!customer) {
+        return res.status(404).send('Customer not found');
+      }
+  
+      res.status(200).json(customer); // Send the customer data as a JSON response
+    } catch (error) {
+      console.error('Error retrieving customer:', error);
+      res.status(500).send('Error retrieving customer');
+    }
+  });
+
 // Start the Server
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

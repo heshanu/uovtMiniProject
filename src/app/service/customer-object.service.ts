@@ -16,5 +16,6 @@ export class CustomerObjectService {
   // Method to set data
   setData(data: any) {
     this.dataSubject.next(data);
+    console.log("Updated to:",data);   
   }
 }

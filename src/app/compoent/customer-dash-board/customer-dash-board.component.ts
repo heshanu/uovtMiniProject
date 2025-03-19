@@ -1,31 +1,45 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CustomerObjectService } from '../../service/customer-object.service';
 import { CustomerdetailsInterface } from '../../model/customerDetailsInterface';
+import { Subscription } from 'rxjs';
+import { CustomerdetailsService } from '../../service/customerdetails.service';
 
 @Component({
   selector: 'app-customer-dash-board',
   templateUrl: './customer-dash-board.component.html',
   styleUrl: './customer-dash-board.component.css'
 })
-export class CustomerDashBoardComponent {
+export class CustomerDashBoardComponent implements OnInit{
   customerId: string | null = null;
 
   customerRecivedObj!:CustomerdetailsInterface;
 
   constructor(private route: ActivatedRoute,
-    private customerObjectService:CustomerObjectService 
+    private customerdetailsService:CustomerdetailsService 
   ) { }
+ 
 
   ngOnInit(): void {
-    // Get the 'id' from the route parameters
-    this.customerId = this.route.snapshot.paramMap.get('id');
-    this.customerObjectService.data$.subscribe((data:any)=>{ 
-      this.customerRecivedObj=data;
-    })
-    
+       // Get the 'id' from the route parameters
+       this.customerId = this.route.snapshot.paramMap.get('id');
+       console.log("Customer ID:", this.customerId);
+   
+       if (this.customerId) {
+         this.customerdetailsService.getDetailsByCustomerId(this.customerId).subscribe({
+           next: (data) => {
+             this.customerRecivedObj = data;
+             console.log("Customer Data:", this.customerRecivedObj);
+           },
+           error: (err) => {
+             console.error('Error fetching customer details:', err);
+             // Optionally, handle the error in the UI, e.g., show a message to the user
+           },
+         });
+       } else {
+         console.error('No customer ID found in route parameters.');
+         // Optionally, handle the absence of an ID in the UI, e.g., show a message to the user
+       }
+     }
   }
-
-  
-
-}
+   
