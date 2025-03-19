@@ -38,7 +38,7 @@
        <h5 class="text-red-500">{{ customer.endDate | date: 'yyyy-MM-dd' }}</h5>
 CustomerId-{{i+1}}
       </div>
-      <button class="bg-green-500 m-4 p-4" (click)="planNow(i)">Plan Now</button>
+      <button class="bg-green-500 m-4 p-4" (click)="planNow(customer,i)">Plan Now</button>
     </div>
   </div>
 
