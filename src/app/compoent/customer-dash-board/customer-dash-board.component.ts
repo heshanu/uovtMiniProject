@@ -29,16 +29,15 @@ export class CustomerDashBoardComponent implements OnInit{
          this.customerdetailsService.getDetailsByCustomerId(this.customerId).subscribe({
            next: (data) => {
              this.customerRecivedObj = data;
-             console.log("Customer Data:", this.customerRecivedObj);
            },
            error: (err) => {
              console.error('Error fetching customer details:', err);
-             // Optionally, handle the error in the UI, e.g., show a message to the user
+
            },
          });
        } else {
          console.error('No customer ID found in route parameters.');
-         // Optionally, handle the absence of an ID in the UI, e.g., show a message to the user
+         
        }
      }
   }
