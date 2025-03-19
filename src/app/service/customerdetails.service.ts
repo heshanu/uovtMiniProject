@@ -22,4 +22,8 @@ export class CustomerdetailsService {
   getAllCustomers(): Observable<CustomerdetailsInterface[]> {
     return this.http.get<CustomerdetailsInterface[]>(`${this.apiUrl}/allCustomers`);
   }
+
+  getDetailsByCustomerId(id: any): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/getCustomerById/${id}`);
+  }
 }
