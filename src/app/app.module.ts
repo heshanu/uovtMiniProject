@@ -41,8 +41,8 @@ import { CustomerDashBoardComponent } from './compoent/customer-dash-board/custo
     CustomerdetailComponent,
     CalenderComponent,
     SearchImagePosterComponent,
-    CustomersDashBoardComponent,
     CustomerDashBoardComponent,
+    CustomersDashBoardComponent
   ],
   imports: [
     BrowserModule,

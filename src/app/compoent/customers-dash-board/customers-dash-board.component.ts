@@ -3,6 +3,7 @@ import { CustomerdetailsService } from '../../service/customerdetails.service';
 import { BehaviorSubject, Observable, Subscription } from 'rxjs';
 import { CustomerdetailsInterface } from '../../model/customerDetailsInterface';
 import { ActivatedRoute, Router } from '@angular/router';
+import { CustomerObjectService } from '../../service/customer-object.service';
 
 @Component({
   selector: 'app-customers-dash-board',
@@ -15,7 +16,11 @@ export class CustomersDashBoardComponent {
   customersList: CustomerdetailsInterface[] = [];
   customerId:any;
 
-  constructor(private route:Router,private activeRouter:ActivatedRoute){}
+  constructor(private route:Router,private activeRouter:ActivatedRoute,
+    private customerObjectService:CustomerObjectService 
+  ){}
+
+  customerObj!:CustomerdetailsInterface;
 
   ngOnInit() {
     this.customerService.getAllCustomers().subscribe({
@@ -24,9 +29,11 @@ export class CustomersDashBoardComponent {
     });
   }
 
-  planNow(){
-    if (this.customerId) {
-      this.route.navigate(['customerDashboards/', this.customerId]);
+  planNow(customer:CustomerdetailsInterface,id:any) {
+    if (id != null) {
+      this.route.navigate(['customerDashboard/', id+1]);
+      this.customerObjectService.setData(customer);
     }
   }
+  
 }

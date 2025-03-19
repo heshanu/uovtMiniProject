@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { CustomerObjectService } from '../../service/customer-object.service';
+import { CustomerdetailsInterface } from '../../model/customerDetailsInterface';
 
 @Component({
   selector: 'app-customer-dash-board',
@@ -9,11 +11,19 @@ import { ActivatedRoute } from '@angular/router';
 export class CustomerDashBoardComponent {
   customerId: string | null = null;
 
-  constructor(private route: ActivatedRoute) { }
+  customerRecivedObj!:CustomerdetailsInterface;
+
+  constructor(private route: ActivatedRoute,
+    private customerObjectService:CustomerObjectService 
+  ) { }
 
   ngOnInit(): void {
     // Get the 'id' from the route parameters
     this.customerId = this.route.snapshot.paramMap.get('id');
+    this.customerObjectService.data$.subscribe((data:any)=>{ 
+      this.customerRecivedObj=data;
+    })
+    
   }
 
   
