@@ -31,6 +31,7 @@ const customerSchema=new mongoose.Schema({
   age:{type:Number,required:true},
   address:{type:String,required:true},
   travelMode:{type:String},
+  accomadation:{type:String,required:true},
   foodList:{type:String},
   foodListOption:{type:String},
   beverageList:{type:String},
@@ -81,9 +82,9 @@ app.get('/all', async (req, res) => {
 
   app.post('/createCustomer', async (req, res) => {
     try {
-      const { name,age,address,travelMode,foodList,foodListOption,beverageList,beverageListOption,startDate,endDate } = req.body;
+      const { name,age,address,travelMode,accomadation,foodList,foodListOption,beverageList,beverageListOption,startDate,endDate } = req.body;
      // const hashedPassword = await bcrypt.hash(password, 10);
-      const newCustomer = new Customer({ name,age,address,travelMode,foodList,foodListOption,beverageList,beverageListOption,startDate,endDate});
+      const newCustomer = new Customer({ name,age,address,travelMode,accomadation,foodList,foodListOption,beverageList,beverageListOption,startDate,endDate});
       await newCustomer.save();
       res.status(201).send('Customer registered successfully');
     } catch (error) {

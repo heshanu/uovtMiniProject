@@ -52,6 +52,23 @@
         </div>
       </div>
 
+      <!-- Accomadation Field -->
+      <div>
+        <label for="address" class="block text-sm font-medium text-gray-700">Accomadation</label>
+        <input
+          type="text"
+          id="address"
+          formControlName="accomadation"
+          class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+          placeholder="Enter your wish to accomadation place"
+        />
+        <div *ngIf="registrationForm.get('accomadation')?.invalid 
+        && registrationForm.get('accomadation')?.touched" class="text-red-500 text-sm">
+          <div *ngIf="registrationForm.get('accomadation')?.errors?.['required']">Accomadation is required.</div>
+          <div *ngIf="registrationForm.get('accomadation')?.errors?.['minlength']">accomadation must be at least 3 characters.</div>
+        </div>
+      </div>
+
       <!-- Travel Mode Field -->
       <div>
         <label for="travelMode" class="block text-sm font-medium text-gray-700">Travel Mode</label>

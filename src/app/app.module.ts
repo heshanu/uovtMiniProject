@@ -25,6 +25,9 @@ import { CommonModule } from '@angular/common';
 import { SearchImagePosterComponent } from './compoent/search-image-poster/search-image-poster.component';
 import { CustomersDashBoardComponent } from './compoent/customers-dash-board/customers-dash-board.component';
 import { CustomerDashBoardComponent } from './compoent/customer-dash-board/customer-dash-board.component';
+import { NotfoundComponent } from './compoent/notfound/notfound.component';
+import { HotellistComponent } from './module/hotel/hotellist/hotellist.component';
+import { HotelModule } from './module/hotel/hotel.module';
 
 @NgModule({
   declarations: [
@@ -42,7 +45,9 @@ import { CustomerDashBoardComponent } from './compoent/customer-dash-board/custo
     CalenderComponent,
     SearchImagePosterComponent,
     CustomerDashBoardComponent,
-    CustomersDashBoardComponent
+    CustomersDashBoardComponent,
+    NotfoundComponent
+  
   ],
   imports: [
     BrowserModule,
@@ -57,6 +62,7 @@ import { CustomerDashBoardComponent } from './compoent/customer-dash-board/custo
     ReactiveFormsModule,
     MaterialModule,
     HttpClientModule,
+    HotelModule,
     CommonModule
 
   ],
