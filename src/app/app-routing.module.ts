@@ -14,7 +14,7 @@ const routes: Routes = [
   {path: 'login',loadChildren:()=>import("./module/login/login-routing.module").then(m=>m.LoginRoutingModule)},
   {path: 'register',loadChildren:()=>import("./module/register/register-routing.module").then(m=>m.RegisterRoutingModule)},
   {path: 'home',component:HomeComponent},
-  {path:'customersDetails',component:CustomerdetailComponent},
+  {path:'customersForm',component:CustomerdetailComponent},
   {path:'customersDashboard',component:CustomersDashBoardComponent},
   {path:'customerDashboard/:id', component: CustomerDashBoardComponent}
 
