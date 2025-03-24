@@ -3,6 +3,7 @@ export interface CustomerdetailsInterface{
     name: string,
     age: number,
     address:string,
+    accomadation:string,
     travelMode:string,
     foodList:string,
     foodListOption?:string,

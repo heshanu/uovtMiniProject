@@ -36,6 +36,7 @@ export class CustomerdetailComponent implements OnInit{
       name: ['', [Validators.required, Validators.minLength(3)]],
       age: ['', [Validators.required]],
       address: ['', [Validators.required]],
+      accomadation:['',Validators.required],
       travelMode:['',Validators.required],
       foodList:['',Validators.required],
       foodListOption:[],

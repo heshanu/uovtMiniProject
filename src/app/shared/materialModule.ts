@@ -5,6 +5,8 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
 import {MatCardModule} from '@angular/material/card';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {CdkAccordionModule} from '@angular/cdk/accordion';
 
 @NgModule({
   imports: [
@@ -13,14 +15,19 @@ import {MatCardModule} from '@angular/material/card';
     MatDatepickerModule,
     MatNativeDateModule,
     MatIconModule,
-    MatCardModule
+    MatCardModule,
+    MatExpansionModule,
+    CdkAccordionModule
    ],
   exports: [
     MatFormFieldModule,
     MatInputModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatIconModule,MatCardModule
+    MatIconModule,
+    MatCardModule,
+    MatExpansionModule,
+    CdkAccordionModule
   ]
 })
 export class MaterialModule { }
