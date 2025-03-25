@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HotellistComponent } from './hotellist/hotellist.component';
+import { TravelModeComponent } from './travel-mode/travel-mode.component';
 
 const routes: Routes = [
-  {path:'',component:HotellistComponent}
+  {path:'',component:HotellistComponent},
+  {path:'travelMode',component:TravelModeComponent}
 ];
 
 @NgModule({

@@ -28,6 +28,7 @@ import { CustomerDashBoardComponent } from './compoent/customer-dash-board/custo
 import { NotfoundComponent } from './compoent/notfound/notfound.component';
 import { HotellistComponent } from './module/hotel/hotellist/hotellist.component';
 import { HotelModule } from './module/hotel/hotel.module';
+import { RecommendationComponent } from './shared/recommendation/recommendation.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { HotelModule } from './module/hotel/hotel.module';
     SearchImagePosterComponent,
     CustomerDashBoardComponent,
     CustomersDashBoardComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    RecommendationComponent
   
   ],
   imports: [
