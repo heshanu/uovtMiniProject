@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -8,14 +8,10 @@ export class CustomerObjectService {
 
   constructor() { }
 
-  private dataSubject = new Subject<any>();
-
-  // Observable that components can subscribe to
+  private dataSubject = new BehaviorSubject<any>(null);
   data$ = this.dataSubject.asObservable();
 
-  // Method to set data
   setData(data: any) {
     this.dataSubject.next(data);
-    console.log("Updated to:",data);   
   }
 }

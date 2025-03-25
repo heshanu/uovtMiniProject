@@ -1,5 +1,9 @@
-import { ChangeDetectionStrategy, Component, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
+import { ChangeDetectionStrategy, Component, OnInit, ViewChild } from '@angular/core';
+import { ActivatedRoute, Params, Router } from '@angular/router';
+import { log } from 'console';
+import { CustomerObjectService } from '../../../service/customer-object.service';
+import { CustomerdetailsInterface } from '../../../model/customerDetailsInterface';
+import { Subscription } from 'rxjs';
 
 interface ItemAccodianInterface{
   itemName:string,
@@ -16,12 +20,26 @@ interface ItemAccodianInterface{
 })
 
 
-export class HotellistComponent {
+export class HotellistComponent implements OnInit{
 
-  constructor(private route:Router){}
+  sharedData!: CustomerdetailsInterface;
+  
+  private dataSubscription!: Subscription;
+
+  constructor(private router:Router,private activatedRoute: ActivatedRoute,
+    private customerServiceObj:CustomerObjectService
+  ){}
+
+  ngOnInit(): void {
+    this.dataSubscription = this.customerServiceObj.data$.subscribe(data => {
+      this.sharedData = data;
+      console.log('Shared Data:', this.sharedData);
+    });
+    
+  }
 
   items:ItemAccodianInterface[]= [
-    {"itemName":"Mode of travel","description":"This may be train,bike or footbike,safari jeep","link":"/modeoftravel"},
+    {"itemName":"Mode of travel","description":"This may be train,bike or footbike,safari jeep","link":"travelMode"},
     {"itemName":"Hotel accomadtion","description":"This may be train,bike or footbike,safari jeep","link":"/modeoftravel"},
     {"itemName":"Food cusine","description":"This may be train,bike or footbike,safari jeep","link":"/modeoftravel"},
     {"itemName":"Beverage","description":"This may be train,bike or footbike,safari jeep","link":"/modeoftravel"},
@@ -39,9 +57,19 @@ export class HotellistComponent {
 
   expandedIndex = 0;
 
-  navigateTo(link: string) {
-    //this.route.navigate(['customerDashboard/',link]);
-
+  navigateTo(link: string){
+    //this.router.navigate(['customerDashboard/'+this.sharedData+"/"+link]);
+    this.router.navigate(['customerDashboard/'+this.sharedData._id,link])
+    .then((nav:any) => {
+      console.log(nav); // true if navigation is successful
+    }, (err:Error) => {
+      console.log(err) // when there's an error
+    });
   }
 
+  ngOnDestroy() {
+    if (this.dataSubscription) {
+      this.dataSubscription.unsubscribe();
+    }
+  }
 }

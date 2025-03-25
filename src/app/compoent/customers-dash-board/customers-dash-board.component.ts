@@ -33,9 +33,6 @@ export class CustomersDashBoardComponent {
   planNow(customer:CustomerdetailsInterface,_id:any) {
     if (_id != null) {
       this.route.navigate(['customerDashboard/', _id,'hotellist']);
-
-      // "['/customerDashboard', customerId, 'hotelist']"
-
       this.customerObjectService.setData(customer);
     }
   }

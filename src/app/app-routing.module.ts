@@ -7,6 +7,7 @@ import { CustomersDashBoardComponent } from './compoent/customers-dash-board/cus
 import { CustomerDashBoardComponent } from './compoent/customer-dash-board/customer-dash-board.component';
 import { AllowloadcustomerDashboardcomponentGuard } from './guard/allowloadcustomer-dashboardcomponent.guard';
 import { NotfoundComponent } from './compoent/notfound/notfound.component';
+import { TravelModeComponent } from './module/hotel/travel-mode/travel-mode.component';
 
 //lazy loading to home module
 const routes: Routes = [
@@ -17,7 +18,6 @@ const routes: Routes = [
   {path: 'home',component:HomeComponent},
   {path:'customerform',component:CustomerdetailComponent},
   {path:'customersDashboard',component:CustomersDashBoardComponent},
- // {path:'customerDashboard/:id', component: CustomerDashBoardComponent},
   {
     path: 'customerDashboard/:id',
     component: CustomerDashBoardComponent,
@@ -25,10 +25,14 @@ const routes: Routes = [
       {
         path: 'hotellist',
         loadChildren: () => import('./module/hotel/hotel.module').then(m => m.HotelModule)
+      },
+      {
+        path:'travelMode',
+        component:TravelModeComponent
       }
     ]
   },
-  //{path:'customerDashboard/hotelList',loadChildren:()=>import("./module/hotel/hotel-routing.module").then(m=>m.HotelRoutingModule)},
+  
   {path:'**',component:NotfoundComponent}
 
 ];
