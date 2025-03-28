@@ -34,6 +34,13 @@ hikkaBikeList:BikeInterface[]=[
   
 ];
 
+nuwaraBikeList:BikeInterface[]=[
+
+  {bikeId:'b1',bikeName:'lumala',color:'red',condition:'good',quantity:10,img:'',rating:4,ratePerDay:200},
+  {bikeId:'b2',bikeName:'dunlop',color:'green',condition:'mint condition',quantity:2,img:'',rating:5,ratePerDay:500}  
+  
+];
+
   constructor() { }
 
   getGalleBikeList():BikeInterface[]{
@@ -50,6 +57,10 @@ hikkaBikeList:BikeInterface[]=[
 
   getHikkaBikeList():BikeInterface[]{
     return this.hikkaBikeList;
+  }
+
+  getNuwaraBikeList():BikeInterface[]{
+    return this.nuwaraBikeList;
   }
 }
 
