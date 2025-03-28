@@ -10,6 +10,7 @@ import { TravelModeComponent } from './module/hotel/travel-mode/travel-mode.comp
 import { MotorbikeComponent } from './compoent/travelMode/motorbike/motorbike.component';
 import { GallerentbikesComponent } from './compoent/travelMode/motorbike/gallerentbikes/gallerentbikes.component';
 import { HikkarentbikesComponent } from './compoent/travelMode/motorbike/hikkarentbikes/hikkarentbikes.component';
+import { MatararentbikesComponent } from './compoent/travelMode/motorbike/matararentbikes/matararentbikes.component';
 
 //lazy loading to home module
 const routes: Routes = [
@@ -44,6 +45,10 @@ const routes: Routes = [
       {
         path:'travelMode/motorbike/hikkabike',
         component:HikkarentbikesComponent
+      },
+      {
+        path:'travelMode/motorbike/matarabike',
+        component:MatararentbikesComponent
       }
     ]
   },

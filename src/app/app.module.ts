@@ -35,6 +35,7 @@ import { reducers } from './store';
 import { MotorbikeComponent } from './compoent/travelMode/motorbike/motorbike.component';
 import { GallerentbikesComponent } from './compoent/travelMode/motorbike/gallerentbikes/gallerentbikes.component';
 import { HikkarentbikesComponent } from './compoent/travelMode/motorbike/hikkarentbikes/hikkarentbikes.component';
+import { MatararentbikesComponent } from './compoent/travelMode/motorbike/matararentbikes/matararentbikes.component';
 
 
 @NgModule({
@@ -58,7 +59,8 @@ import { HikkarentbikesComponent } from './compoent/travelMode/motorbike/hikkare
     RecommendationComponent,
     MotorbikeComponent,
     GallerentbikesComponent,
-    HikkarentbikesComponent
+    HikkarentbikesComponent,
+    MatararentbikesComponent
   
   ],
   imports: [
