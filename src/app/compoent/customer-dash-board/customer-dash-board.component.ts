@@ -1,8 +1,6 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { CustomerObjectService } from '../../service/customer-object.service';
 import { CustomerdetailsInterface } from '../../model/customerDetailsInterface';
-import { Subscription } from 'rxjs';
 import { CustomerdetailsService } from '../../service/customerdetails.service';
 
 @Component({

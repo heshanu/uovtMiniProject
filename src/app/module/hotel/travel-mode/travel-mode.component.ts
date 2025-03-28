@@ -8,7 +8,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class TravelModeComponent implements OnInit{
 constructor(private router:Router,private activatedRoute:ActivatedRoute){}
-  ngOnInit(): void {
+  
+ngOnInit(): void {
  
     throw new Error('Method not implemented.');
   }

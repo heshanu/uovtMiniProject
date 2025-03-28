@@ -29,6 +29,10 @@ import { NotfoundComponent } from './compoent/notfound/notfound.component';
 import { HotellistComponent } from './module/hotel/hotellist/hotellist.component';
 import { HotelModule } from './module/hotel/hotel.module';
 import { RecommendationComponent } from './shared/recommendation/recommendation.component';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { reducers } from './store';
+
 
 @NgModule({
   declarations: [
@@ -65,7 +69,12 @@ import { RecommendationComponent } from './shared/recommendation/recommendation.
     MaterialModule,
     HttpClientModule,
     HotelModule,
-    CommonModule
+    CommonModule,
+    StoreModule.forRoot(reducers),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25
+    }),
+
 
   ],
   exports:[
