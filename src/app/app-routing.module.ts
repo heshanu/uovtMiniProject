@@ -12,6 +12,7 @@ import { GallerentbikesComponent } from './compoent/travelMode/motorbike/gallere
 import { HikkarentbikesComponent } from './compoent/travelMode/motorbike/hikkarentbikes/hikkarentbikes.component';
 import { MatararentbikesComponent } from './compoent/travelMode/motorbike/matararentbikes/matararentbikes.component';
 import { NuwararentbikesComponent } from './compoent/travelMode/motorbike/nuwararentbikes/nuwararentbikes.component';
+import { SouthenrnprovinceComponent } from './compoent/hotelsList/southenrnprovince/southenrnprovince.component';
 
 //lazy loading to home module
 const routes: Routes = [
@@ -54,10 +55,18 @@ const routes: Routes = [
       {
         path:'travelMode/motorbike/nuwarabike',
         component:NuwararentbikesComponent
-      }
+      },
+      {
+        path: 'hotelslist',
+        loadChildren: () => import('./module/hotelsbooking/hotelsbooking.module').then(m => m.HotelsbookingModule)
+      },
+      {
+        path: 'hotelslist/southern',
+        component:SouthenrnprovinceComponent
+      },
     ]
-  },
-  
+  }
+  ,
   {path:'**',component:NotfoundComponent}
 
 ];

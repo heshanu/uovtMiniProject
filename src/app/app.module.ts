@@ -38,6 +38,12 @@ import { HikkarentbikesComponent } from './compoent/travelMode/motorbike/hikkare
 import { MatararentbikesComponent } from './compoent/travelMode/motorbike/matararentbikes/matararentbikes.component';
 import { NuwararentbikesComponent } from './compoent/travelMode/motorbike/nuwararentbikes/nuwararentbikes.component';
 import { VehicletemplateComponent } from './shared/vehicletemplate/vehicletemplate.component';
+import { HotelsbookingModule } from './module/hotelsbooking/hotelsbooking.module';
+import { HotelistComponent } from './module/hotelsbooking/hotelist/hotelist.component';
+import { HoteltemplateComponent } from './shared/hoteltemplate/hoteltemplate.component';
+import { AccordintemplateComponent } from './shared/accordintemplate/accordintemplate.component';
+import { ProvinceComponent } from './compoent/hotelsList/province/province.component';
+import { SouthenrnprovinceComponent } from './compoent/hotelsList/southenrnprovince/southenrnprovince.component';
 
 @NgModule({
   declarations: [
@@ -64,6 +70,12 @@ import { VehicletemplateComponent } from './shared/vehicletemplate/vehicletempla
     MatararentbikesComponent,
     NuwararentbikesComponent,
     VehicletemplateComponent,
+    HotelistComponent,
+    HoteltemplateComponent,
+    AccordintemplateComponent,
+    ProvinceComponent,
+    SouthenrnprovinceComponent,
+
  
   ],
   imports: [
@@ -85,6 +97,7 @@ import { VehicletemplateComponent } from './shared/vehicletemplate/vehicletempla
     StoreDevtoolsModule.instrument({
       maxAge: 25
     }),
+    HotelsbookingModule
 
 
   ],

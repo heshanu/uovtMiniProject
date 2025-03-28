@@ -7,6 +7,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatCardModule} from '@angular/material/card';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {CdkAccordionModule} from '@angular/cdk/accordion';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import {CdkAccordionModule} from '@angular/cdk/accordion';
     MatIconModule,
     MatCardModule,
     MatExpansionModule,
-    CdkAccordionModule
+    CdkAccordionModule,
+    MatDialogModule
    ],
   exports: [
     MatFormFieldModule,
@@ -27,7 +29,8 @@ import {CdkAccordionModule} from '@angular/cdk/accordion';
     MatIconModule,
     MatCardModule,
     MatExpansionModule,
-    CdkAccordionModule
+    CdkAccordionModule,
+    MatDialogModule
   ]
 })
 export class MaterialModule { }
