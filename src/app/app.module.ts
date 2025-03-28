@@ -54,6 +54,7 @@ import { SabaragamuwaprovinceComponent } from './compoent/hotelsList/sabaragamuw
 import { NorthprovinceComponent } from './compoent/hotelsList/northprovince/northprovince.component';
 import { EasternprovinceComponent } from './compoent/hotelsList/easternprovince/easternprovince.component';
 import { UvaprovinceComponent } from './compoent/hotelsList/uvaprovince/uvaprovince.component';
+import { NorthCentralprovinceComponent } from './compoent/hotelsList/north-centralprovince/north-centralprovince.component';
 
 @NgModule({
   declarations: [
@@ -95,6 +96,7 @@ import { UvaprovinceComponent } from './compoent/hotelsList/uvaprovince/uvaprovi
     NorthprovinceComponent,
     EasternprovinceComponent,
     UvaprovinceComponent,
+    NorthCentralprovinceComponent,
 
  
   ],
