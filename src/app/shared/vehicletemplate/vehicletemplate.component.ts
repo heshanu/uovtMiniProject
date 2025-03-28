@@ -1,14 +1,14 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { BikeInterface } from '../../model/bike_interface';
 import { BikeService } from '../../service/bike.service';
+import { BikeInterface } from '../../model/bike_interface';
 
 @Component({
-  selector: 'app-bikerenttemplate',
-  templateUrl: './bikerenttemplate.component.html',
-  styleUrl: './bikerenttemplate.component.css'
+  selector: 'app-vehicletemplate',
+  templateUrl: './vehicletemplate.component.html',
+  styleUrl: './vehicletemplate.component.css'
 })
-export class BikerenttemplateComponent implements OnInit{
-  constructor(private bikeService:BikeService ){}    
+export class VehicletemplateComponent implements OnInit{
+ constructor(private bikeService:BikeService ){}    
     
       ngOnInit(): void {
         this.getBikeList()
@@ -25,4 +25,4 @@ export class BikerenttemplateComponent implements OnInit{
       console.log(bike);
       
     }
-}
+  }
