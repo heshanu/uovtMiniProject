@@ -21,9 +21,9 @@ export class MotorbikeComponent {
 
     items= [
       {"itemName":"Galle Rent bikes","description":"This may be motor bike","link":"gallebike"},
-      {"itemName":"Hikkaduwa Rent bikes","description":"This may be bicycle","link":"hikkabike"},
-      {"itemName":"Matara Rent bikes","description":"This may be car","link":"matarabike"},
-      {"itemName":"Jaffana Rent bikes","description":"This may be van","link":"Nuwara"},
+      {"itemName":"Hikkaduwa Rent bikes","description":"This may be motor bike","link":"hikkabike"},
+      {"itemName":"Matara Rent bikes","description":"This may be motor bike","link":"matarabike"},
+      {"itemName":"Nuwara Rent bikes","description":"This may be motor bike","link":"nuwarabike"},
   
      
     ]

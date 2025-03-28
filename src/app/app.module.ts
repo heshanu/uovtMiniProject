@@ -36,6 +36,7 @@ import { MotorbikeComponent } from './compoent/travelMode/motorbike/motorbike.co
 import { GallerentbikesComponent } from './compoent/travelMode/motorbike/gallerentbikes/gallerentbikes.component';
 import { HikkarentbikesComponent } from './compoent/travelMode/motorbike/hikkarentbikes/hikkarentbikes.component';
 import { MatararentbikesComponent } from './compoent/travelMode/motorbike/matararentbikes/matararentbikes.component';
+import { NuwararentbikesComponent } from './compoent/travelMode/motorbike/nuwararentbikes/nuwararentbikes.component';
 
 
 @NgModule({
@@ -60,7 +61,8 @@ import { MatararentbikesComponent } from './compoent/travelMode/motorbike/matara
     MotorbikeComponent,
     GallerentbikesComponent,
     HikkarentbikesComponent,
-    MatararentbikesComponent
+    MatararentbikesComponent,
+    NuwararentbikesComponent
   
   ],
   imports: [
