@@ -8,22 +8,13 @@ import { BikeInterface } from '../../../../model/bike_interface';
   styleUrl: './matararentbikes.component.css'
 })
 export class MatararentbikesComponent {
-    constructor(private bikeService:BikeService ){}
-    
-      ngOnInit(): void {
-        this.getBikeList()
-      }
-      
-      bikeList:BikeInterface[]=[];
-    
-      getBikeList(){
-        this.bikeList=this.bikeService.getMataraBikeList();
-      }
-    
-    
-    selectBike(bike:BikeInterface) {
-      console.log(bike);
-      
-    }
+   
+  constructor(private bikeService:BikeService ){}
 
+  ngOnInit(): void {
+    this.bikeList=this.bikeService.getHikkaBikeList()
+  }
+  
+
+    bikeList:BikeInterface[]=[];
 }
