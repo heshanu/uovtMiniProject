@@ -20,7 +20,7 @@ export class GallerentbikesComponent implements OnInit{
   bikeList:BikeInterface[]=[];
 
   getBikeList(){
-    this.bikeList=this.bikeService.getBikeList()
+    this.bikeList=this.bikeService.getGalleBikeList()
   }
 
 
