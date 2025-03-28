@@ -37,7 +37,7 @@ import { GallerentbikesComponent } from './compoent/travelMode/motorbike/gallere
 import { HikkarentbikesComponent } from './compoent/travelMode/motorbike/hikkarentbikes/hikkarentbikes.component';
 import { MatararentbikesComponent } from './compoent/travelMode/motorbike/matararentbikes/matararentbikes.component';
 import { NuwararentbikesComponent } from './compoent/travelMode/motorbike/nuwararentbikes/nuwararentbikes.component';
-
+import { BikerenttemplateComponent } from './shared/bikerenttemplate/bikerenttemplate.component';
 
 @NgModule({
   declarations: [
@@ -62,8 +62,9 @@ import { NuwararentbikesComponent } from './compoent/travelMode/motorbike/nuwara
     GallerentbikesComponent,
     HikkarentbikesComponent,
     MatararentbikesComponent,
-    NuwararentbikesComponent
-  
+    NuwararentbikesComponent,
+    BikerenttemplateComponent,
+ 
   ],
   imports: [
     BrowserModule,
