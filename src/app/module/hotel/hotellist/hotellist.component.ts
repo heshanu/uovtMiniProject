@@ -33,7 +33,7 @@ export class HotellistComponent{
 
   items:ItemAccodianInterface[]= [
     {"itemName":"Mode of travel","description":"This may be train,bike or footbike,safari jeep","link":"travelMode"},
-    {"itemName":"Hotel accomadtion","description":"This may be train,bike or footbike,safari jeep","link":"/modeoftravel"},
+    {"itemName":"Hotel accomadtion","description":"This may be train,bike or footbike,safari jeep","link":"hotelslist"},
     {"itemName":"Food cusine","description":"This may be train,bike or footbike,safari jeep","link":"/modeoftravel"},
     {"itemName":"Beverage","description":"This may be train,bike or footbike,safari jeep","link":"/modeoftravel"},
     {"itemName":"Find a host areas in SriLanka","description":"This may be train,bike or footbike,safari jeep","link":"/modeoftravel"},
