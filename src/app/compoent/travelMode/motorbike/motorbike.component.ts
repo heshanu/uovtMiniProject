@@ -28,8 +28,8 @@ export class MotorbikeComponent {
      
     ]
   
-      navigateTo(link: string) {
-        console.log(link);
+    navigateTo(link: string) {
+        console.log("insdie the motorbike com",link);
         // Subscribe to the customerId$ observable
         this.customerId$.pipe(
           take(1) // Take only the current value and auto-unsubscribe
