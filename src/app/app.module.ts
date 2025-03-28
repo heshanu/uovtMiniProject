@@ -32,6 +32,7 @@ import { RecommendationComponent } from './shared/recommendation/recommendation.
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { reducers } from './store';
+import { MotorbikeComponent } from './compoent/travelMode/motorbike/motorbike.component';
 
 
 @NgModule({
@@ -52,7 +53,8 @@ import { reducers } from './store';
     CustomerDashBoardComponent,
     CustomersDashBoardComponent,
     NotfoundComponent,
-    RecommendationComponent
+    RecommendationComponent,
+    MotorbikeComponent
   
   ],
   imports: [
