@@ -6,12 +6,17 @@ import { BehaviorSubject, Subject } from 'rxjs';
 })
 export class CustomerObjectService {
 
-  constructor() { }
+  private customerId$ = new BehaviorSubject<string | null>(null);
 
-  private dataSubject = new BehaviorSubject<any>(null);
-  data$ = this.dataSubject.asObservable();
+  setCustomerId(id: string) {
+    this.customerId$.next(id);
+  }
 
-  setData(data: any) {
-    this.dataSubject.next(data);
+  getCustomerId() {
+    return this.customerId$.asObservable();
+  }
+
+  clearCustomerId() {
+    this.customerId$.next(null);
   }
 }

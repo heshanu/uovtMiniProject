@@ -5,7 +5,6 @@ import { HomeComponent } from './module/home/home.component';
 import { CustomerdetailComponent } from './compoent/customerdetail/customerdetail.component';
 import { CustomersDashBoardComponent } from './compoent/customers-dash-board/customers-dash-board.component';
 import { CustomerDashBoardComponent } from './compoent/customer-dash-board/customer-dash-board.component';
-import { AllowloadcustomerDashboardcomponentGuard } from './guard/allowloadcustomer-dashboardcomponent.guard';
 import { NotfoundComponent } from './compoent/notfound/notfound.component';
 import { TravelModeComponent } from './module/hotel/travel-mode/travel-mode.component';
 

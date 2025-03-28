@@ -1,9 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { log } from 'console';
-import { CustomerObjectService } from '../../../service/customer-object.service';
-import { CustomerdetailsInterface } from '../../../model/customerDetailsInterface';
-import { Subscription } from 'rxjs';
+import { Observable, take } from 'rxjs';
+import { Store } from '@ngrx/store';
 
 interface ItemAccodianInterface{
   itemName:string,
@@ -20,23 +18,18 @@ interface ItemAccodianInterface{
 })
 
 
-export class HotellistComponent implements OnInit{
+export class HotellistComponent{
 
-  sharedData!: CustomerdetailsInterface;
-  
-  private dataSubscription!: Subscription;
+  customerId$!: Observable<string>;
+
+  id:any;
 
   constructor(private router:Router,private activatedRoute: ActivatedRoute,
-    private customerServiceObj:CustomerObjectService
-  ){}
-
-  ngOnInit(): void {
-    this.dataSubscription = this.customerServiceObj.data$.subscribe(data => {
-      this.sharedData = data;
-      console.log('Shared Data:', this.sharedData);
-    });
-    
+    private store: Store<{ customerId: string }>
+  ){
+    this.customerId$ = this.store.select('customerId');
   }
+
 
   items:ItemAccodianInterface[]= [
     {"itemName":"Mode of travel","description":"This may be train,bike or footbike,safari jeep","link":"travelMode"},
@@ -56,20 +49,40 @@ export class HotellistComponent implements OnInit{
   ]
 
   expandedIndex = 0;
-
+/*
   navigateTo(link: string){
-    //this.router.navigate(['customerDashboard/'+this.sharedData+"/"+link]);
-    this.router.navigate(['customerDashboard/'+this.sharedData._id,link])
+  
+    
+    this.router.navigate(["customerDashboard/",this.customerId$,link])
     .then((nav:any) => {
       console.log(nav); // true if navigation is successful
     }, (err:Error) => {
       console.log(err) // when there's an error
     });
   }
+*/
 
-  ngOnDestroy() {
-    if (this.dataSubscription) {
-      this.dataSubscription.unsubscribe();
-    }
+  navigateTo(link: string) {
+    console.log(link);
+    // Subscribe to the customerId$ observable
+    this.customerId$.pipe(
+      take(1) // Take only the current value and auto-unsubscribe
+    ).subscribe(customerId => {
+      if (!customerId) {
+        console.error('No customer ID available');
+        return;
+      }
+      this.id=customerId
+
+  
+      this.router.navigate(["customerDashboard/", this.id,link])
+        .then((nav: boolean) => {
+          console.log('Navigation successful:', nav);
+        })
+        .catch((err: Error) => {
+          console.error('Navigation error:', err);
+        });
+    });
   }
+ 
 }
