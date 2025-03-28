@@ -34,6 +34,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { reducers } from './store';
 import { MotorbikeComponent } from './compoent/travelMode/motorbike/motorbike.component';
 import { GallerentbikesComponent } from './compoent/travelMode/motorbike/gallerentbikes/gallerentbikes.component';
+import { HikkarentbikesComponent } from './compoent/travelMode/motorbike/hikkarentbikes/hikkarentbikes.component';
 
 
 @NgModule({
@@ -56,7 +57,8 @@ import { GallerentbikesComponent } from './compoent/travelMode/motorbike/gallere
     NotfoundComponent,
     RecommendationComponent,
     MotorbikeComponent,
-    GallerentbikesComponent
+    GallerentbikesComponent,
+    HikkarentbikesComponent
   
   ],
   imports: [

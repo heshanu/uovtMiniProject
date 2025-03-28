@@ -21,11 +21,10 @@ export class MotorbikeComponent {
 
     items= [
       {"itemName":"Galle Rent bikes","description":"This may be motor bike","link":"gallebike"},
-      {"itemName":"Hikkaduwa Rent bikes","description":"This may be bicycle","link":"/bicycle"},
-      {"itemName":"Galle Rent bikes","description":"This may be car","link":"/car"},
-      {"itemName":"Jaffana Rent bikes","description":"This may be van","link":"/van"},
-      {"itemName":"Gamploa Rent bikes","description":"This may be tuktuk","link":"/tuktuk"},
-      {"itemName":"NMuwara Rent bikes","description":"This may be train","link":"/train"},
+      {"itemName":"Hikkaduwa Rent bikes","description":"This may be bicycle","link":"hikkabike"},
+      {"itemName":"Galle Rent bikes","description":"This may be car","link":"jaffnabike"},
+      {"itemName":"Jaffana Rent bikes","description":"This may be van","link":"Nuwara"},
+  
      
     ]
   
