@@ -20,11 +20,13 @@ customerId$!: Observable<string>;
     this.customerId$ = this.store.select('customerId');
   }
   
-ngOnInit(): void {}
+ngOnInit(): void {
+
+}
 
   items= [
     {"itemName":"Motor bike","description":"This may be motor bike","link":"motorbike"},
-    {"itemName":"Bicycle","description":"This may be bicycle","link":"/bicycle"},
+    {"itemName":"Bicycle","description":"This may be bicycle","link":"bicycle"},
     {"itemName":"Car","description":"This may be car","link":"/car"},
     {"itemName":"Van","description":"This may be van","link":"/van"},
     {"itemName":"tuktuk","description":"This may be tuktuk","link":"/tuktuk"},
@@ -33,7 +35,7 @@ ngOnInit(): void {}
   ]
 
     navigateTo(link: string) {
-      console.log(link);
+      console.log("ggg",link);
       // Subscribe to the customerId$ observable
       this.customerId$.pipe(
         take(1) // Take only the current value and auto-unsubscribe
@@ -43,8 +45,9 @@ ngOnInit(): void {}
           return;
         }
         this.id=customerId
-  
     
+        console.log(link);
+        
         this.router.navigate(['customerDashboard', this.id, 'travelMode', link])
           .then((nav: boolean) => {
             console.log('Navigation successful:', nav);
@@ -52,6 +55,7 @@ ngOnInit(): void {}
           .catch((err: Error) => {
             console.error('Navigation error:', err);
           });
+          console.log("ggg123");
       });
     }
 
