@@ -15,6 +15,7 @@ import { NuwararentbikesComponent } from './compoent/travelMode/motorbike/nuwara
 import { SouthenrnprovinceComponent } from './compoent/hotelsList/southenrnprovince/southenrnprovince.component';
 import { WesternproinceComponent } from './compoent/hotelsList/westernproince/westernproince.component';
 import { CentralprovinceComponent } from './compoent/hotelsList/centralprovince/centralprovince.component';
+import { NorthWesternprovinceComponent } from './compoent/hotelsList/north-westernprovince/north-westernprovince.component';
 
 //lazy loading to home module
 const routes: Routes = [
@@ -73,6 +74,10 @@ const routes: Routes = [
       {
         path: 'hotelslist/centeral',
         component:CentralprovinceComponent
+      },
+      {
+        path: 'hotelslist/northwest',
+        component:NorthWesternprovinceComponent
       }
     ]
   }
