@@ -88,6 +88,10 @@ const routes: Routes = [
       {
         path: 'hotelslist/north',
         component:NorthprovinceComponent
+      },
+      {
+        path: 'hotelslist/eastern',
+        component:NorthprovinceComponent
       }
     ]
   }
