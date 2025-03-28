@@ -8,22 +8,12 @@ import { BikeService } from '../../../../service/bike.service';
   styleUrl: './nuwararentbikes.component.css'
 })
 export class NuwararentbikesComponent {
-   constructor(private bikeService:BikeService ){}
-      
-        ngOnInit(): void {
-          this.getBikeList()
-        }
-        
-        bikeList:BikeInterface[]=[];
-      
-        getBikeList(){
-          this.bikeList=this.bikeService.nuwaraBikeList;
-        }
-      
-      
-      selectBike(bike:BikeInterface) {
-        console.log(bike);
-        
-      }
+  constructor(private bikeService:BikeService ){}
+
+  ngOnInit(): void {
+    this.bikeList=this.bikeService.getHikkaBikeList()
+  }
   
+
+    bikeList:BikeInterface[]=[];
 }
