@@ -6,6 +6,8 @@ import { HotelsListInterface } from '../model/hotel_interface';
 })
 export class HotelserviceService {
 
+
+  //province path
 allHotelListLocation:any[]=[
     {"itemName":"Southenn Province","description":" hotels in Southern Province","link":"southern"},
 
@@ -19,7 +21,7 @@ allHotelListLocation:any[]=[
     
     {"itemName":"Northern Province","description":"North Province","link":"north","img":""},
     {"itemName":"Eastern Province","description":"Eastern Province","link":"eastern","img":""},
-    {"itemName":"Uva Province","description":"Uva province hotels","link":"/uva","img":""},
+    {"itemName":"Uva Province","description":"Uva province hotels","link":"uva","img":""},
      
     {"itemName":"North-Central","description":"Northcentral","link":"northcentral","img":""},
   
@@ -208,6 +210,44 @@ northwestHotelList:HotelsListInterface[]=[
     }
 ];
 
+sabaragamuwaHotelList:HotelsListInterface[]=[
+
+  {hotelId:"hotel1",hotelName:"Shangrila hotel",address:"Sbaragamuwa",
+    avaliableRooms:30,
+    img:'https://media.istockphoto.com/id/183886840/photo/a-woman-in-a-oil-overlooking-phuket-thailand.jpg?s=612x612&w=is&k=20&c=UD8E969E_w4RZP7f_8wzF3wwW3eQfS84jC7-TL2AvaY=',numOfStars:4,
+    package:[
+      "Basic - LKR 1500/day",
+      "Standard - LKR 2500/day",
+      "Premium - LKR 4000/day",
+      "Luxury - LKR 6000/day",
+      "Weekly Deal - LKR 12000/week",
+      "Monthly Special - LKR 35000/month"
+    ]},
+    {
+      hotelId:"hotel2",hotelName:"Seabeach hotel",address:"NorthWest",
+      avaliableRooms:10,img:'https://media.istockphoto.com/id/183886840/photo/a-woman-in-a-oil-overlooking-phuket-thailand.jpg?s=612x612&w=is&k=20&c=UD8E969E_w4RZP7f_8wzF3wwW3eQfS84jC7-TL2AvaY=',numOfStars:4,
+    package:[
+      "Basic - LKR 500/day",
+      "Standard - LKR 1500/day",
+      "Premium - LKR 2000/day",
+      "Luxury - LKR 4000/day",
+      "Weekly Deal - LKR 2000/week",
+      "Monthly Special - LKR 15000/month"
+    ]},
+    {
+      hotelId:"hotel3",hotelName:"SeaView hotel",address:"Northwest",
+      avaliableRooms:5,img:'https://media.istockphoto.com/id/183886840/photo/a-woman-in-a-oil-overlooking-phuket-thailand.jpg?s=612x612&w=is&k=20&c=UD8E969E_w4RZP7f_8wzF3wwW3eQfS84jC7-TL2AvaY=',numOfStars:4,
+      package:[
+        "Basic - LKR 500/day",
+        "Standard - LKR 1500/day",
+        "Premium - LKR 2000/day",
+        "Luxury - LKR 4000/day",
+        "Weekly Deal - LKR 2000/week",
+        "Monthly Special - LKR 15000/month"
+      ]
+    }
+];
+
 // mataraBikeList:BikeInterface[]=[
 
 //   {bikeId:'b1',bikeName:'lumala',color:'red',condition:'good',quantity:10,img:'',rating:4,ratePerDay:200},
@@ -263,5 +303,9 @@ northwestHotelList:HotelsListInterface[]=[
 
   getNorthWest():HotelsListInterface[]{
     return this.northwestHotelList;
+  }
+
+  getSabaragamuwaHotelList():HotelsListInterface[]{
+    return this.sabaragamuwaHotelList;
   }
 }
