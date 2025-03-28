@@ -50,6 +50,7 @@ import { DialogHotelconfirmComponent } from './shared/dialog-hotelconfirm/dialog
 import { WesternproinceComponent } from './compoent/hotelsList/westernproince/westernproince.component';
 import { CentralprovinceComponent } from './compoent/hotelsList/centralprovince/centralprovince.component';
 import { NorthWesternprovinceComponent } from './compoent/hotelsList/north-westernprovince/north-westernprovince.component';
+import { SabaragamuwaprovinceComponent } from './compoent/hotelsList/sabaragamuwaprovince/sabaragamuwaprovince.component';
 
 @NgModule({
   declarations: [
@@ -87,6 +88,7 @@ import { NorthWesternprovinceComponent } from './compoent/hotelsList/north-weste
     WesternproinceComponent,
     CentralprovinceComponent,
     NorthWesternprovinceComponent,
+    SabaragamuwaprovinceComponent,
 
  
   ],

@@ -16,6 +16,7 @@ import { SouthenrnprovinceComponent } from './compoent/hotelsList/southenrnprovi
 import { WesternproinceComponent } from './compoent/hotelsList/westernproince/westernproince.component';
 import { CentralprovinceComponent } from './compoent/hotelsList/centralprovince/centralprovince.component';
 import { NorthWesternprovinceComponent } from './compoent/hotelsList/north-westernprovince/north-westernprovince.component';
+import { SabaragamuwaprovinceComponent } from './compoent/hotelsList/sabaragamuwaprovince/sabaragamuwaprovince.component';
 
 //lazy loading to home module
 const routes: Routes = [
@@ -78,6 +79,10 @@ const routes: Routes = [
       {
         path: 'hotelslist/northwest',
         component:NorthWesternprovinceComponent
+      },
+      {
+        path: 'hotelslist/sabara',
+        component:SabaragamuwaprovinceComponent
       }
     ]
   }
