@@ -27,7 +27,7 @@ allHotelListLocation:any[]=[
 
 hikkaduwaHotelList:HotelsListInterface[]=[
 
-  {hotelId:"hotel1",hotelName:"Chaaya trans hotel",address:"hikkaduwa",avaliableRooms:30,img:'',numOfStars:4,
+  {hotelId:"hotel1",hotelName:"Chaaya trans hotel",address:"hikkaduwa",avaliableRooms:30,img:'https://www.bestoflanka.com/images/slider/stay-in-the-beach-sri-lanka/hotel-chaaya-tranz/01.jpg',numOfStars:4,
     package:[
       "Basic - LKR 1500/day",
       "Standard - LKR 2500/day",
@@ -37,7 +37,7 @@ hikkaduwaHotelList:HotelsListInterface[]=[
       "Monthly Special - LKR 35000/month"
     ]},
     {
-      hotelId:"hotel2",hotelName:"citrus hotel",address:"hikkaduwa",avaliableRooms:10,img:'',numOfStars:4,
+      hotelId:"hotel2",hotelName:"citrus hotel",address:"hikkaduwa",avaliableRooms:10,img:'https://q-xx.bstatic.com/xdata/images/hotel/max500/172420812.jpg?k=869d633a82cd179e3a472d298aa3f76b585c95a51b9402b8e66e0ce99685c01a&o=',numOfStars:4,
     package:[
       "Basic - LKR 500/day",
       "Standard - LKR 1500/day",
@@ -47,7 +47,7 @@ hikkaduwaHotelList:HotelsListInterface[]=[
       "Monthly Special - LKR 15000/month"
     ]},
     {
-      hotelId:"hotel3",hotelName:"amana reef hotel",address:"hikkaduwa",avaliableRooms:5,img:'',numOfStars:4,
+      hotelId:"hotel3",hotelName:"amana reef hotel",address:"hikkaduwa",avaliableRooms:5,img:'https://billeder.apollorejser.dk/hikka-tranz-by-cinnamon-1686470764-593102-ImageGalleryX2.jpg',numOfStars:4,
       package:[
         "Basic - LKR 500/day",
         "Standard - LKR 1500/day",

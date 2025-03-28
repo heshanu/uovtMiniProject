@@ -44,6 +44,8 @@ import { HoteltemplateComponent } from './shared/hoteltemplate/hoteltemplate.com
 import { AccordintemplateComponent } from './shared/accordintemplate/accordintemplate.component';
 import { ProvinceComponent } from './compoent/hotelsList/province/province.component';
 import { SouthenrnprovinceComponent } from './compoent/hotelsList/southenrnprovince/southenrnprovince.component';
+import { DialogCompoentComponent } from './shared/dialog-compoent/dialog-compoent.component';
+import { CardtemplateComponent } from './shared/cardtemplate/cardtemplate.component';
 
 @NgModule({
   declarations: [
@@ -75,6 +77,8 @@ import { SouthenrnprovinceComponent } from './compoent/hotelsList/southenrnprovi
     AccordintemplateComponent,
     ProvinceComponent,
     SouthenrnprovinceComponent,
+    DialogCompoentComponent,
+    CardtemplateComponent,
 
  
   ],
