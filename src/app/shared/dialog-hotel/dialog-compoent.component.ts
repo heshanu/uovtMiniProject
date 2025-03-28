@@ -11,7 +11,6 @@ export class DialogCompoentComponent {
 
   readonly dialog = inject(MatDialog);
 
-
 selectedPackage: string | null = null;
 
   constructor(

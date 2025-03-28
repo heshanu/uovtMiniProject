@@ -1,25 +1,32 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, Input, OnInit } from '@angular/core';
 import { HotelsListInterface } from '../../model/hotel_interface';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogCompoentComponent } from '../dialog-hotel/dialog-compoent.component';
+import { DialogHotelconfirmComponent } from '../dialog-hotelconfirm/dialog-hotelconfirm.component';
 
 @Component({
   selector: 'app-cardtemplate',
   templateUrl: './cardtemplate.component.html',
-  styleUrl: './cardtemplate.component.css'
+  styleUrl: './cardtemplate.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CardtemplateComponent implements OnInit{
 
+  readonly dialog = inject(MatDialog)
+
   list:HotelsListInterface[]=[];
 
-  selectItem(_t2: any) {
-  throw new Error('Method not implemented.');
+  selectItem(item:HotelsListInterface,enterAnimationDuration: string, exitAnimationDuration: string) {
+    console.log("booked ",item);
+    this.dialog.open(DialogHotelconfirmComponent, {
+      width: '250px',
+      enterAnimationDuration,
+      exitAnimationDuration,
+    }); 
   }
   
   @Input() recivedList:HotelsListInterface[]=[]; 
   
-
-  constructor(private dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.list=this.recivedList;
@@ -29,9 +36,13 @@ refresh() {
 throw new Error('Method not implemented.');
 }
 
-bookNow(item: HotelsListInterface) {
+bookNow(item: HotelsListInterface,enterAnimationDuration: string, exitAnimationDuration: string) {
   console.log("booked ",item);
-  
+  this.dialog.open(DialogHotelconfirmComponent, {
+    width: '250px',
+    enterAnimationDuration,
+    exitAnimationDuration,
+  }); 
 }
 
 

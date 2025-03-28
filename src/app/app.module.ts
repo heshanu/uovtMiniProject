@@ -47,6 +47,7 @@ import { SouthenrnprovinceComponent } from './compoent/hotelsList/southenrnprovi
 import { DialogCompoentComponent } from './shared/dialog-hotel/dialog-compoent.component';
 import { CardtemplateComponent } from './shared/cardtemplate/cardtemplate.component';
 import { DialogHotelconfirmComponent } from './shared/dialog-hotelconfirm/dialog-hotelconfirm.component';
+import { WesternproinceComponent } from './compoent/hotelsList/westernproince/westernproince.component';
 
 @NgModule({
   declarations: [
@@ -81,6 +82,7 @@ import { DialogHotelconfirmComponent } from './shared/dialog-hotelconfirm/dialog
     DialogCompoentComponent,
     CardtemplateComponent,
     DialogHotelconfirmComponent,
+    WesternproinceComponent,
 
  
   ],
