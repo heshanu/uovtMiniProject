@@ -8,6 +8,7 @@ import { CustomerDashBoardComponent } from './compoent/customer-dash-board/custo
 import { NotfoundComponent } from './compoent/notfound/notfound.component';
 import { TravelModeComponent } from './module/hotel/travel-mode/travel-mode.component';
 import { MotorbikeComponent } from './compoent/travelMode/motorbike/motorbike.component';
+import { GallerentbikesComponent } from './compoent/travelMode/motorbike/gallerentbikes/gallerentbikes.component';
 
 //lazy loading to home module
 const routes: Routes = [
@@ -34,6 +35,10 @@ const routes: Routes = [
       {
         path:'travelMode/motorbike',
         component:MotorbikeComponent
+      },
+      {
+        path:'travelMode/motorbike/gallebike',
+        component:GallerentbikesComponent
       }
     ]
   },

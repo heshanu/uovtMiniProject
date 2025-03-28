@@ -33,6 +33,7 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { reducers } from './store';
 import { MotorbikeComponent } from './compoent/travelMode/motorbike/motorbike.component';
+import { GallerentbikesComponent } from './compoent/travelMode/motorbike/gallerentbikes/gallerentbikes.component';
 
 
 @NgModule({
@@ -54,7 +55,8 @@ import { MotorbikeComponent } from './compoent/travelMode/motorbike/motorbike.co
     CustomersDashBoardComponent,
     NotfoundComponent,
     RecommendationComponent,
-    MotorbikeComponent
+    MotorbikeComponent,
+    GallerentbikesComponent
   
   ],
   imports: [
