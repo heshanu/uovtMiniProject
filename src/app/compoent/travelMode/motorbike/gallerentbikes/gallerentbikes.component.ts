@@ -14,19 +14,10 @@ export class GallerentbikesComponent implements OnInit{
   constructor(private bikeService:BikeService ){}
 
   ngOnInit(): void {
-    this.getBikeList()
+    this.bikeList=this.bikeService.getHikkaBikeList()
   }
   
-  bikeList:BikeInterface[]=[];
 
-  getBikeList(){
-    this.bikeList=this.bikeService.getGalleBikeList()
-  }
-
-
-selectBike(bike:BikeInterface) {
-  console.log(bike);
-  
-}
+    bikeList:BikeInterface[]=[];
 
 }
