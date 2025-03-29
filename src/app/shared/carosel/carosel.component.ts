@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-carosel',
@@ -6,42 +6,40 @@ import { Component, OnInit } from '@angular/core';
   styleUrl: './carosel.component.css'
 })
 export class CaroselComponent implements OnInit{
-  currentIndex = 0;
-  items = [
-    {
-      text: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor."',
-      author: '~ Jeo Stanlee',
-      bgColor: 'bg-blue-50',
-      iconColor: 'text-blue-500'
-    },
-    {
-      text: '"Another testimonial here. Ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor."',
-      author: '~ Jane Doe',
-      bgColor: 'bg-green-50',
-      iconColor: 'text-green-500'
-    },
-    {
-      text: '"Yet another testimonial. Ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor."',
-      author: '~ John Smith',
-      bgColor: 'bg-yellow-50',
-      iconColor: 'text-yellow-500'
-    }
-  ];
 
-  ngOnInit(): void {
-    // Auto-play the carousel
-    setInterval(() => this.nextItem(), 5000); // Change slide every 5 seconds
+@Input() images!:any[];
+imgs!:any[];
+
+  currentIndex = 0;
+  intervalId:any;
+
+  prevSlide() {
+    this.currentIndex = this.currentIndex === 0 ? this.images.length - 1 : this.currentIndex - 1;
   }
 
-  showItem(index: number): void {
+  nextSlide() {
+    this.currentIndex = (this.currentIndex + 1) % this.images.length;
+  }
+
+  goToSlide(index: number) {
     this.currentIndex = index;
   }
 
-  nextItem(): void {
-    this.currentIndex = (this.currentIndex + 1) % this.items.length;
+  startAutoPlay() {
+    this.intervalId = setInterval(() => {
+      this.nextSlide(); // Go to the next slide every 3 seconds (3000ms)
+    }, 3000);
   }
 
-  prevItem(): void {
-    this.currentIndex = (this.currentIndex - 1 + this.items.length) % this.items.length;
+  stopAutoPlay():void{
+    if(this.intervalId){
+      clearInterval(this.intervalId);
+    }
   }
+
+  ngOnInit(): void {
+    this.imgs=this.images;
+    this.startAutoPlay();
+  }
+
 }

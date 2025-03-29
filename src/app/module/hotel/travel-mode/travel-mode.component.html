@@ -1,0 +1,34 @@
+<cdk-accordion class="example-accordion" class="m-16 p-4">
+  @for (item of items; track item; let index = $index) {
+  <cdk-accordion-item #accordionItem="cdkAccordionItem" class="example-accordion-item">
+    <button
+      class="example-accordion-item-header font-weight: 900;"
+      (click)="accordionItem.toggle()"
+      tabindex="0"
+      [attr.id]="'accordion-header-' + index"
+      [attr.aria-expanded]="accordionItem.expanded"
+      [attr.aria-controls]="'accordion-body-' + index">
+      {{ item.itemName }}
+      <span class="example-accordion-item-description">
+        Click to {{ accordionItem.expanded ? 'close' : 'open' }}
+      </span>
+    </button>
+    @if(accordionItem.expanded) {
+    <div
+      class="example-accordion-item-body p-4 m-4"
+      role="region"
+      [style.display]="accordionItem.expanded ? '' : 'none'"
+      [attr.id]="'accordion-body-' + index"
+      [attr.aria-labelledby]="'accordion-header-' + index"
+    >
+      {{item.description}}
+      <button (click)="navigateTo(item.link)" class="m-4 bg-blue-500 hover:bg-blue-700 text-white 
+      font-bold py-2 px-4 border border-blue-700 rounded">
+        Arrage Now
+      </button>
+    </div>
+    }
+  </cdk-accordion-item>
+  }
+
+</cdk-accordion>

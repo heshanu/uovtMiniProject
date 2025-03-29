@@ -1,0 +1,11 @@
+<!-- orderdetails.component.html -->
+<div class="order-details-container">
+  <h2>Order Details</h2>
+
+  {{orderList|json}}
+
+  <!-- Template reference for no orders message -->
+  <ng-template #noOrders>
+    <p>No orders available.</p>
+  </ng-template>
+</div>

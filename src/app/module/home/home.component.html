@@ -1,5 +1,9 @@
-<div class="text-3xl font-weight:400 text-center">
-    <h2 class="text-4xl m-4 text-blue-900">Welcome to the Hotel Reservation Portal!</h2>
-    <button class="bg-blue-300 p-4 text-blue-600 hover:text-red-500 m-8 rounded-md" [routerLink]="['/new']">Create a new reservation</button>
-    <button class="bg-blue-300 text-blue-600 p-4  hover:text-red-500  m-8 rounded-md" [routerLink]="['/list']">View all reservations</button>
+<app-carosel class="m-4" [images]="homePageImages">
+<div>
+        <button
+            type="submit"
+            class="w-full px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        >
+            Plan trip Now
+        </button>
 </div>

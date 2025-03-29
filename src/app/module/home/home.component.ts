@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
+  
+  homePageImages:any[]=[
+    "../assets/rect1.png",,
+    "../assets/rect2.png",
+    "../assets/rect3.png"
+  ];
 
 }
