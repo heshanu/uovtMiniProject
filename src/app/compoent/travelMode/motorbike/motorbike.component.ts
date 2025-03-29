@@ -4,8 +4,7 @@ import { Store } from '@ngrx/store';
 import { Observable, Subscription, take } from 'rxjs';
 import { AppState } from '../../../app.reducer';
 import { selectCustomerId, selectCustomerState } from '../../../store/customers/customer.selectors';
-import { OrderState } from '../../../store/orders/orders.status';
-import { getOrdersList } from '../../../store/orders/orders.selectors';
+import { selectOrderDetails } from '../../../store/orders/orders.selectors';
 
 @Component({
   selector: 'app-motorbike',
@@ -14,8 +13,11 @@ import { getOrdersList } from '../../../store/orders/orders.selectors';
 })
 export class MotorbikeComponent implements OnInit,OnDestroy{
 
-  customerId$: Observable<string|undefined>;
-  customerId: string | undefined;
+  customerId$: Observable<any>;
+  customerId: string| undefined;
+
+  orderList$: Observable<any>;
+  orderList1!:any;
 
   private subscriptionCustomerId!: Subscription;
   id!:string|undefined;
@@ -23,6 +25,7 @@ export class MotorbikeComponent implements OnInit,OnDestroy{
     constructor(private router:Router,private activatedRoute: ActivatedRoute,
       private store: Store<AppState>){
       this.customerId$ = this.store.select(selectCustomerId);
+      this.orderList$ =this.store.select(selectOrderDetails) 
 
     }
 
@@ -35,7 +38,6 @@ export class MotorbikeComponent implements OnInit,OnDestroy{
        this.id=data; 
     })
   }
-
     items= [
       {"itemName":"Galle Rent bikes","description":"This may be motor bike","link":"gallebike"},
       {"itemName":"Hikkaduwa Rent bikes","description":"This may be motor bike","link":"hikkabike"},

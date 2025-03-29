@@ -12,3 +12,8 @@ export const setOrder = createAction(
   '[Order] Set Order',
   props<OrderState>()
 );
+
+export const loadOrdersSuccess = createAction(
+  '[Order] Load Orders Success',
+  props<{ orders: OrderState }>()
+);

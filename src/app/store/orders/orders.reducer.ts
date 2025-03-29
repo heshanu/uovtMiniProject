@@ -1,8 +1,22 @@
 import { createReducer, on } from '@ngrx/store';
-import { initialOrderState } from './orders.status';
-import { setOrder } from './orders.actions';
+import { initialOrderState, OrderState } from './orders.status';
+import { loadOrdersSuccess, setOrder } from './orders.actions';
+
+export const initialState: OrderState[] = [];
 
 export const ordersReducer = createReducer(
   initialOrderState,
-  on(setOrder, (state, customer) => ({ ...state, ...customer }))
+  on(setOrder , (state, { orderList }) => ({
+    ...state,
+    orderList: orderList
+  }))
+);
+
+
+export const orderReducer = createReducer(
+  initialOrderState,
+  on(loadOrdersSuccess, (state, { orders }) => ({
+    ...state,
+    ...orders,
+  }))
 );

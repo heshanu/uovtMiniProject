@@ -55,6 +55,7 @@ import { EasternprovinceComponent } from './compoent/hotelsList/easternprovince/
 import { UvaprovinceComponent } from './compoent/hotelsList/uvaprovince/uvaprovince.component';
 import { NorthCentralprovinceComponent } from './compoent/hotelsList/north-centralprovince/north-centralprovince.component';
 import { appReducers } from './app.reducer';
+import { OrderdetailsComponent } from './orderdetails/orderdetails.component';
 
 @NgModule({
   declarations: [
@@ -97,6 +98,7 @@ import { appReducers } from './app.reducer';
     EasternprovinceComponent,
     UvaprovinceComponent,
     NorthCentralprovinceComponent,
+    OrderdetailsComponent,
 
  
   ],
