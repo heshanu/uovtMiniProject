@@ -1,7 +1,10 @@
-import { ChangeDetectionStrategy, Component, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { Observable, take } from 'rxjs';
-import { Store } from '@ngrx/store';
+import { Observable, Subscription, take } from 'rxjs';
+import { select, Store } from '@ngrx/store';
+import { CustomerdetailsInterface } from '../../../model/customerDetailsInterface';
+import { AppState } from '../../../app.reducer';
+import { selectCustomerId } from '../../../store/customer.selectors';
 
 interface ItemAccodianInterface{
   itemName:string,
@@ -18,18 +21,28 @@ interface ItemAccodianInterface{
 })
 
 
-export class HotellistComponent{
-
-  customerId$!: Observable<string>;
-
-  id:any;
+export class HotellistComponent implements OnInit,OnDestroy{
+  
+  customerId$: Observable<string|undefined>;
+  customerId!:string|undefined;
+  private subscription!: Subscription;
 
   constructor(private router:Router,private activatedRoute: ActivatedRoute,
-    private store: Store<{ customerId: string }>
+    private store: Store<AppState>
   ){
-    this.customerId$ = this.store.select('customerId');
+    this.customerId$ = this.store.pipe(select(selectCustomerId));
   }
 
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
+
+  ngOnInit(): void {
+    this.subscription=this.customerId$.subscribe((data) => {
+      this.customerId = data; // Update the component's state with the new value
+      console.log('Customer ID:', this.customerId); // Optional: Log the value
+    });
+  }
 
   items:ItemAccodianInterface[]= [
     {"itemName":"Mode of travel","description":"This may be train,bike or footbike,safari jeep","link":"travelMode"},
@@ -72,10 +85,10 @@ export class HotellistComponent{
         console.error('No customer ID available');
         return;
       }
-      this.id=customerId
+      this.customerId=customerId
 
   
-      this.router.navigate(["customerDashboard/", this.id,link])
+      this.router.navigate(["customerDashboard/", this.customerId,link])
         .then((nav: boolean) => {
           console.log('Navigation successful:', nav);
         })

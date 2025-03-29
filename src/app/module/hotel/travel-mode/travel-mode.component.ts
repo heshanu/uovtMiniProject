@@ -1,7 +1,9 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { Observable, take } from 'rxjs';
+import { Observable, Subscription, take } from 'rxjs';
+import { AppState } from '../../../app.reducer';
+import { selectCustomerId } from '../../../store/customer.selectors';
 
 @Component({
   selector: 'app-travel-mode',
@@ -9,19 +11,28 @@ import { Observable, take } from 'rxjs';
   changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrl: './travel-mode.component.css'
 })
-export class TravelModeComponent implements OnInit{
+export class TravelModeComponent implements OnInit,OnDestroy{
 
-customerId$!: Observable<string>;
+  customerId$: Observable<string|undefined>;
+  customerId: number | undefined;
+  private subscription!: Subscription;
 
   id:any;
 
   constructor(private router:Router,private activatedRoute: ActivatedRoute,
-    private store: Store<{ customerId: string }>){
-    this.customerId$ = this.store.select('customerId');
+    private store: Store<AppState>){
+    this.customerId$ = this.store.select(selectCustomerId);
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
   
-ngOnInit(): void {
 
+ngOnInit(): void {
+   this.subscription= this.customerId$.subscribe((ID)=>{
+      this.id=ID
+   }) 
 }
 
   items= [
