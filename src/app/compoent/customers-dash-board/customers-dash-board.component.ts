@@ -53,7 +53,7 @@ export class CustomersDashBoardComponent implements OnInit,OnDestroy{
     console.log();
 
     if (_id != null) {
-      this.route.navigate(['customerDashboard/',_id,'hotellist']);
+      this.route.navigate(['customerDashboard/',_id]);
     //  this.store.dispatch(setCustomerId({_id}));
      console.log("customer is is set",_id);
      this.store.dispatch(
