@@ -20,7 +20,6 @@ interface ItemAccodianInterface{
   styleUrl: './hotellist.component.css',
 })
 
-
 export class HotellistComponent implements OnInit,OnDestroy{
   
   customerId$: Observable<string|undefined>;
@@ -44,6 +43,7 @@ export class HotellistComponent implements OnInit,OnDestroy{
     });
   }
 
+  //lists
   items:ItemAccodianInterface[]= [
     {"itemName":"Mode of travel","description":"This may be train,bike or footbike,safari jeep","link":"travelMode"},
     {"itemName":"Hotel accomadtion","description":"This may be train,bike or footbike,safari jeep","link":"hotelslist"},
@@ -76,17 +76,9 @@ export class HotellistComponent implements OnInit,OnDestroy{
 */
 
   navigateTo(link: string) {
-    console.log(link);
+    console.log('this is inside hotelslist',link);
     // Subscribe to the customerId$ observable
-    this.customerId$.pipe(
-      take(1) // Take only the current value and auto-unsubscribe
-    ).subscribe(customerId => {
-      if (!customerId) {
-        console.error('No customer ID available');
-        return;
-      }
-      this.customerId=customerId
-
+    
   
       this.router.navigate(["customerDashboard/", this.customerId,link])
         .then((nav: boolean) => {
@@ -94,8 +86,7 @@ export class HotellistComponent implements OnInit,OnDestroy{
         })
         .catch((err: Error) => {
           console.error('Navigation error:', err);
-        });
-    });
+        })
   }
  
 }

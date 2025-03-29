@@ -21,6 +21,7 @@ import { NorthprovinceComponent } from './compoent/hotelsList/northprovince/nort
 import { UvaprovinceComponent } from './compoent/hotelsList/uvaprovince/uvaprovince.component';
 import { NorthCentralprovinceComponent } from './compoent/hotelsList/north-centralprovince/north-centralprovince.component';
 import { OrderdetailsComponent } from './orderdetails/orderdetails.component';
+import { HotellistComponent } from './module/hotel/hotellist/hotellist.component';
 
 //lazy loading to home module
 const routes: Routes = [
@@ -37,7 +38,7 @@ const routes: Routes = [
     component: CustomerDashBoardComponent,
     children: [
       {
-        path: 'hotellist',
+        path: '',
         loadChildren: () => import('./module/hotel/hotel.module').then(m => m.HotelModule)
       },
       {
@@ -65,8 +66,9 @@ const routes: Routes = [
         component:NuwararentbikesComponent
       },
       {
+        //hotelslist/northwest
         path: 'hotelslist',
-        loadChildren: () => import('./module/hotelsbooking/hotelsbooking.module').then(m => m.HotelsbookingModule)
+        loadChildren:()=>import('./module/hotelsbooking/hotelsbooking.module').then(m=>m.HotelsbookingModule)
       },
       {
         path: 'hotelslist/southern',

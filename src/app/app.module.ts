@@ -41,7 +41,7 @@ import { HotelsbookingModule } from './module/hotelsbooking/hotelsbooking.module
 import { HotelistComponent } from './module/hotelsbooking/hotelist/hotelist.component';
 import { HoteltemplateComponent } from './shared/hoteltemplate/hoteltemplate.component';
 import { AccordintemplateComponent } from './shared/accordintemplate/accordintemplate.component';
-import { ProvinceComponent } from './compoent/hotelsList/province/province.component';
+
 import { SouthenrnprovinceComponent } from './compoent/hotelsList/southenrnprovince/southenrnprovince.component';
 import { DialogCompoentComponent } from './shared/dialog-hotel/dialog-compoent.component';
 import { CardtemplateComponent } from './shared/cardtemplate/cardtemplate.component';
@@ -85,7 +85,6 @@ import { OrderdetailsComponent } from './orderdetails/orderdetails.component';
     HotelistComponent,
     HoteltemplateComponent,
     AccordintemplateComponent,
-    ProvinceComponent,
     SouthenrnprovinceComponent,
     DialogCompoentComponent,
     CardtemplateComponent,
