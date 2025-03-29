@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Observable, Subscription, take } from 'rxjs';
 import { AppState } from '../../../app.reducer';
-import { selectCustomerId } from '../../../store/customer.selectors';
+import { selectCustomerId } from '../../../store/customers/customer.selectors';
 
 @Component({
   selector: 'app-travel-mode',

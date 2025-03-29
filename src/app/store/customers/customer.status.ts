@@ -1,5 +1,5 @@
 
-import { CustomerdetailsInterface } from "../model/customerDetailsInterface";
+import { CustomerdetailsInterface } from "../../model/customerDetailsInterface";
 
 export const initialCustomerState: CustomerdetailsInterface = {
     _id:'0',
