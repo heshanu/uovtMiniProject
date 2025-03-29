@@ -31,7 +31,6 @@ import { HotelModule } from './module/hotel/hotel.module';
 import { RecommendationComponent } from './shared/recommendation/recommendation.component';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { reducers } from './store';
 import { MotorbikeComponent } from './compoent/travelMode/motorbike/motorbike.component';
 import { GallerentbikesComponent } from './compoent/travelMode/motorbike/gallerentbikes/gallerentbikes.component';
 import { HikkarentbikesComponent } from './compoent/travelMode/motorbike/hikkarentbikes/hikkarentbikes.component';
@@ -55,6 +54,7 @@ import { NorthprovinceComponent } from './compoent/hotelsList/northprovince/nort
 import { EasternprovinceComponent } from './compoent/hotelsList/easternprovince/easternprovince.component';
 import { UvaprovinceComponent } from './compoent/hotelsList/uvaprovince/uvaprovince.component';
 import { NorthCentralprovinceComponent } from './compoent/hotelsList/north-centralprovince/north-centralprovince.component';
+import { appReducers } from './app.reducer';
 
 @NgModule({
   declarations: [
@@ -115,7 +115,7 @@ import { NorthCentralprovinceComponent } from './compoent/hotelsList/north-centr
     HttpClientModule,
     HotelModule,
     CommonModule,
-    StoreModule.forRoot(reducers),
+    StoreModule.forRoot(appReducers),
     StoreDevtoolsModule.instrument({
       maxAge: 25
     }),
