@@ -1,18 +1,12 @@
-import { createSelector } from "@ngrx/store";
+import { createFeatureSelector, createSelector } from "@ngrx/store";
 import { AppState } from "../../app.reducer";
 import { CustomerdetailsInterface } from "../../model/customerDetailsInterface";
 import { OrderState } from "./orders.status";
-import { create } from "domain";
 
-export const selectOrderState = (state: AppState) => state.orders;
+const selectOrderState = createFeatureSelector<OrderState>('orders');
 
-// Selector to get the order ID
-export const selectOrderId = createSelector(
+// Selector to get the order details
+export const selectOrderDetails = createSelector(
   selectOrderState,
-  (state: OrderState) => state.orderId
+  (orderState: OrderState) => orderState
 );
-
-export const getOrdersList=createSelector(
-  selectOrderState,
-  (state: OrderState) => state
-)

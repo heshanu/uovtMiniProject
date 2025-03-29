@@ -1,8 +1,4 @@
 
-import { BikeInterface } from "../../model/bike_interface";
-import { CustomerdetailsInterface } from "../../model/customerDetailsInterface";
-
-
 export interface OrderState{
   orderId:string;
   customerId:string|undefined;
