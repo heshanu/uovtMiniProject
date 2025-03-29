@@ -2,14 +2,14 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { CustomerdetailsInterface } from '../model/customerDetailsInterface';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CustomerdetailsService {
 
-
-  private apiUrl = 'https://uovtminiprj-backend.vercel.app'; // URL of your Node.js server
+  private apiUrl = environment.backendUrl; 
   
   private headers = new HttpHeaders({ 'Content-Type': 'application/json' });
 
