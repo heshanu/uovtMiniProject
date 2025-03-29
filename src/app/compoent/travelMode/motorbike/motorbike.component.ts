@@ -1,23 +1,36 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { Observable, take } from 'rxjs';
+import { Observable, Subscription, take } from 'rxjs';
+import { AppState } from '../../../app.reducer';
+import { selectCustomerId, selectCustomerState } from '../../../store/customer.selectors';
 
 @Component({
   selector: 'app-motorbike',
   templateUrl: './motorbike.component.html',
   styleUrl: './motorbike.component.css'
 })
-export class MotorbikeComponent {
+export class MotorbikeComponent implements OnInit,OnDestroy{
 
-  customerId$!: Observable<string>;
-  
-    id:any;
+  customerId$: Observable<string|undefined>;
+  customerId: string | undefined;
+  private subscription!: Subscription;
+  id!:string|undefined;
   
     constructor(private router:Router,private activatedRoute: ActivatedRoute,
-      private store: Store<{ customerId: string }>){
-      this.customerId$ = this.store.select('customerId');
+      private store: Store<AppState>){
+      this.customerId$ = this.store.select(selectCustomerId);
     }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
+
+  ngOnInit(): void {
+    this.subscription=this.customerId$.subscribe((data)=>{
+       this.id=data; 
+    })
+  }
 
     items= [
       {"itemName":"Galle Rent bikes","description":"This may be motor bike","link":"gallebike"},
@@ -31,14 +44,14 @@ export class MotorbikeComponent {
     navigateTo(link: string) {
         console.log("insdie the motorbike com",link);
         // Subscribe to the customerId$ observable
-        this.customerId$.pipe(
-          take(1) // Take only the current value and auto-unsubscribe
-        ).subscribe(customerId => {
-          if (!customerId) {
-            console.error('No customer ID available');
-            return;
-          }
-          this.id=customerId
+        // this.customerId$.pipe(
+        //   take(1) // Take only the current value and auto-unsubscribe
+        // ).subscribe(customerId => {
+        //   if (!customerId) {
+        //     console.error('No customer ID available');
+        //     return;
+        //   }
+        //   this.id=customerId
     
       
           this.router.navigate(['customerDashboard',this.id,'travelMode','motorbike', link])
@@ -48,6 +61,6 @@ export class MotorbikeComponent {
             .catch((err: Error) => {
               console.error('Navigation error:', err);
             });
-        });
+      
       }
 }
