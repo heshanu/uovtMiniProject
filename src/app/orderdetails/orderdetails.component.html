@@ -2,19 +2,7 @@
 <div class="order-details-container">
   <h2>Order Details</h2>
 
-  <!-- Check if orderList is defined and has items -->
-  <div *ngIf="orderList && orderList.length > 0; else noOrders">
-    <ul>
-      <!-- Iterate over each order in the orderList -->
-      <li *ngFor="let order of orderList" class="order-item">
-        <div class="order-id">Order ID: {{ order.orderId }}</div>
-        <div class="order-status">Status: {{ order.orderStatus }}</div>
-        <div class="order-date">Date: {{ order.orderDate| date: 'short' }}</div>
-        <div class="order-total">Total: {{ order.customerId| currency: 'USD' }}</div>
-        <!-- Add more fields as necessary -->
-      </li>
-    </ul>
-  </div>
+  {{orderList|json}}
 
   <!-- Template reference for no orders message -->
   <ng-template #noOrders>
