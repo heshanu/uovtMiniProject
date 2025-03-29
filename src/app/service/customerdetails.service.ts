@@ -9,7 +9,7 @@ import { CustomerdetailsInterface } from '../model/customerDetailsInterface';
 export class CustomerdetailsService {
 
 
-  private apiUrl = 'http://localhost:3000'; // URL of your Node.js server
+  private apiUrl = 'https://uovtminiprj-backend.vercel.app'; // URL of your Node.js server
   
   private headers = new HttpHeaders({ 'Content-Type': 'application/json' });
 
