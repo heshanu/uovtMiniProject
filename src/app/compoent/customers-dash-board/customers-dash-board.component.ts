@@ -2,9 +2,9 @@ import { Component, inject, OnDestroy, OnInit } from '@angular/core';
 import { CustomerdetailsInterface } from '../../model/customerDetailsInterface';
 import { ActivatedRoute, Router } from '@angular/router';
 import { select, Store } from '@ngrx/store';
-import { setCustomer} from '../../store/customer-id.actions';
+import { setCustomer} from '../../store/customers/customer-id.actions';
 import { Observable, Subscription } from 'rxjs';
-import { selectCustomerId } from '../../store/customer.selectors';
+import { selectCustomerId } from '../../store/customers/customer.selectors';
 import { AppState } from '../../app.reducer';
 import { CustomerdetailsService } from '../../service/customerdetails.service';
 

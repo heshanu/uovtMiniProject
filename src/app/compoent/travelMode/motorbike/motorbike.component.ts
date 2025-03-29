@@ -3,7 +3,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Observable, Subscription, take } from 'rxjs';
 import { AppState } from '../../../app.reducer';
-import { selectCustomerId, selectCustomerState } from '../../../store/customer.selectors';
+import { selectCustomerId, selectCustomerState } from '../../../store/customers/customer.selectors';
+import { OrderState } from '../../../store/orders/orders.status';
+import { getOrdersList } from '../../../store/orders/orders.selectors';
 
 @Component({
   selector: 'app-motorbike',
@@ -14,20 +16,22 @@ export class MotorbikeComponent implements OnInit,OnDestroy{
 
   customerId$: Observable<string|undefined>;
   customerId: string | undefined;
-  private subscription!: Subscription;
+
+  private subscriptionCustomerId!: Subscription;
   id!:string|undefined;
   
     constructor(private router:Router,private activatedRoute: ActivatedRoute,
       private store: Store<AppState>){
       this.customerId$ = this.store.select(selectCustomerId);
+
     }
 
   ngOnDestroy(): void {
-    this.subscription.unsubscribe();
+    this.subscriptionCustomerId.unsubscribe();
   }
 
   ngOnInit(): void {
-    this.subscription=this.customerId$.subscribe((data)=>{
+    this.subscriptionCustomerId=this.customerId$.subscribe((data)=>{
        this.id=data; 
     })
   }

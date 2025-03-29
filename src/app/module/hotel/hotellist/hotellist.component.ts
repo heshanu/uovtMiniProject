@@ -4,7 +4,7 @@ import { Observable, Subscription, take } from 'rxjs';
 import { select, Store } from '@ngrx/store';
 import { CustomerdetailsInterface } from '../../../model/customerDetailsInterface';
 import { AppState } from '../../../app.reducer';
-import { selectCustomerId } from '../../../store/customer.selectors';
+import { selectCustomerId } from '../../../store/customers/customer.selectors';
 
 interface ItemAccodianInterface{
   itemName:string,

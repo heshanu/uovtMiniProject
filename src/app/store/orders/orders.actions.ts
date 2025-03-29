@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { CustomerdetailsInterface } from '../model/customerDetailsInterface';
+import { OrderState } from './orders.status';
 /*
 export const setCustomer=createAction(
   "[Customer] Set Customer",
@@ -8,7 +8,7 @@ export const setCustomer=createAction(
     beverageList:string,beverageListOption:string,startDate:string,endDate:string}>()
 )*/
 
-export const setCustomer = createAction(
-  '[Customer] Set Customer',
-  props<CustomerdetailsInterface>()
+export const setOrder = createAction(
+  '[Order] Set Order',
+  props<OrderState>()
 );
