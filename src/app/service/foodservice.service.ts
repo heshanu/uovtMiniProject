@@ -37,4 +37,9 @@ export class FoodserviceService{
   getSouthernFoods():Observable<any[]>{
     return this.http.get<any[]>(this.recipeLink+"&search?q=Indian")
   }
+
+  //''
+  getNorthernFoods():Observable<any[]>{
+    return this.http.get<any[]>("https://dummyjson.com/recipes/tag/Pakistani?limit=10&select=name,image,ingredients")
+  }
 }
