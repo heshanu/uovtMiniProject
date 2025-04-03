@@ -23,16 +23,18 @@ export class FoodserviceService{
   }
 
   foodTypes:FoodTypeIterface[]=[
-    {id:"1",foodName:"Southern"},
-    {id:"2",foodName:"Northern"},
-    {id:"3",foodName:"Chineese"},
-    {id:"4",foodName:"Japanees"},
-
+    {id:"1",foodName:"southern"},
+    {id:"2",foodName:"northern"},
+    {id:"3",foodName:"chineese"},
+    {id:"4",foodName:"japanees"},
+    {id:"5",foodName:"traditional"}
   ]
 
   getFoodTypes():FoodTypeIterface[]{
     return this.foodTypes;
   }
 
-
+  getSouthernFoods():Observable<any[]>{
+    return this.http.get<any[]>(this.recipeLink+"&search?q=Indian")
+  }
 }

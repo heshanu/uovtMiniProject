@@ -18,14 +18,7 @@ export class FoodlistComponent implements OnInit{
  
 
   ngOnInit(): void {
-    // this.foodserviceService.getFoodTypes.subscribe((response:any)=>{
-    //   this.recipeList=response.recipes;
-    // })
-
     this.recipeTypeList=this.foodserviceService.getFoodTypes();
-
-    console.log(this.recipeTypeList);
-    
   }
 }
 

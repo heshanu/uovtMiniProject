@@ -31,22 +31,27 @@ export class FoodtemplateComponent implements OnInit{
   expandedIndex = 0;
   
   ngOnInit(): void {
+    this.customerIdSubscription=this.customerId$.subscribe((data)=>{
+      this.id=data;
+    })
     this.foodList = this.list;
-    console.log(this.list);
-    
   }
 
   // Implement the navigateTo method if needed
   navigateTo(foodName:string) {
     console.log("Food-template",foodName);
-      this.router.navigate(["customerDashboard/",this.id,"foodslist",foodName])
-        .then((nav: boolean) => {
-          console.log('Navigation successful:', nav);
-        })
-        .catch((err: Error) => {
-          console.error('Navigation error:', err);
-        });
+    if (this.id && foodName) {
+      this.router.navigate(['customerDashboard', this.id, 'foodslist', foodName])
+      .then((nav: boolean) => {
+        console.log('Navigation successful:', nav);
+      })
+      .catch((err: Error) => {
+        console.error('Navigation error:', err);
+      });
+    } else {
+      console.error('Navigation failed: this.id or foodName is undefined');
+    }
+  
   }
-
 
 }
