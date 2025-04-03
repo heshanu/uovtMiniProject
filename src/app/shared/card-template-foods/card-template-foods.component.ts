@@ -3,6 +3,7 @@ import { FoodsInterface } from '../../model/foodrecipe.model';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogHotelconfirmComponent } from '../dialog-hotelconfirm/dialog-hotelconfirm.component';
 import { DialogCompoentComponent } from '../dialog-hotel/dialog-compoent.component';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-card-template-foods',
@@ -10,6 +11,11 @@ import { DialogCompoentComponent } from '../dialog-hotel/dialog-compoent.compone
   styleUrl: './card-template-foods.component.css'
 })
 export class CardTemplateFoodsComponent {
+
+
+  ngOnInit(): void {
+    this.list=this.recivedList;
+  }
 
   @Input() recivedList:any[]=[];
 
@@ -26,13 +32,8 @@ export class CardTemplateFoodsComponent {
     }); 
   }
   
-
-  ngOnInit(): void {
-    this.list=this.recivedList;
-  }
-
 refresh() {
-throw new Error('Method not implemented.');
+  this.ngOnInit();
 }
 
 bookNow(item: any,enterAnimationDuration: string, exitAnimationDuration: string) {
