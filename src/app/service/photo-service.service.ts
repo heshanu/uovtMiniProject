@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable, OnDestroy } from '@angular/core';
 import { Observable } from 'rxjs';
-import { environment } from '../../environments/environment';
+//import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +9,7 @@ import { environment } from '../../environments/environment';
 export class PhotoServiceService{
 
   private apiUrl = 'https://api.pexels.com/v1/search';
-  private apiKey = environment.apiKey;
+  private apiKey = 'environment.apiKe';
 
   constructor(private http: HttpClient) { }
   
