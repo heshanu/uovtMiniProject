@@ -1,7 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FoodserviceService } from '../../../../service/foodservice.service';
-import { Subscription } from 'rxjs';
+import { BehaviorSubject, Subscription } from 'rxjs';
 import { FoodsInterface } from '../../../../model/foodrecipe.model';
+import { SpinnerService } from '../../../../service/spinner.service';
 
 @Component({
   selector: 'app-southern',
@@ -14,15 +15,17 @@ export class SouthernComponent implements OnInit ,OnDestroy{
     this.getSouthernFoods();
   }
   
-  constructor(private foodService:FoodserviceService){}
-
-  
+  constructor(private foodService:FoodserviceService,public spinner:SpinnerService){}
 
   getSouthernFoods(){
+    this.spinner.showLoading();
     this.southernFoodListSubscription=this.foodService.getSouthernFoods().subscribe((food:any)=>{
       this.southernFoodList=food.recipes;
-      console.log(this.southernFoodList);   
+      this.spinner.hideLoading();
+      //console.log(this.southernFoodList);   
     })
+    this.spinner.hideLoading();
+   
   }
 
   southernFoodListSubscription!:Subscription;
