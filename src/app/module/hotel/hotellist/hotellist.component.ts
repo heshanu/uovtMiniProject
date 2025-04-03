@@ -47,7 +47,7 @@ export class HotellistComponent implements OnInit,OnDestroy{
   items:ItemAccodianInterface[]= [
     {"itemName":"Mode of travel","description":"This may be train,bike or footbike,safari jeep","link":"travelMode"},
     {"itemName":"Hotel accomadtion","description":"This may be train,bike or footbike,safari jeep","link":"hotelslist"},
-    {"itemName":"Food cusine","description":"This may be train,bike or footbike,safari jeep","link":"foods"},
+    {"itemName":"Food cusine","description":"This may be train,bike or footbike,safari jeep","link":"foodslist"},
     {"itemName":"Beverage","description":"This may be train,bike or footbike,safari jeep","link":"/modeoftravel"},
     {"itemName":"Find a host areas in SriLanka","description":"This may be train,bike or footbike,safari jeep","link":"/modeoftravel"},
     

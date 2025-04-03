@@ -21,8 +21,6 @@ import { NorthprovinceComponent } from './compoent/hotelsList/northprovince/nort
 import { UvaprovinceComponent } from './compoent/hotelsList/uvaprovince/uvaprovince.component';
 import { NorthCentralprovinceComponent } from './compoent/hotelsList/north-centralprovince/north-centralprovince.component';
 import { OrderdetailsComponent } from './orderdetails/orderdetails.component';
-import { HotellistComponent } from './module/hotel/hotellist/hotellist.component';
-import { FoodslistComponent } from './compoent/foods/foodslist/foodslist.component';
 
 //lazy loading to home module
 const routes: Routes = [
@@ -108,8 +106,8 @@ const routes: Routes = [
         component:NorthCentralprovinceComponent
       },
       {
-        path:'foods',
-        component:FoodslistComponent
+        path:'foodslist',
+        loadChildren:()=>import('./module/food/food.module').then(m=>m.FoodModule)
       }
     ]
   }

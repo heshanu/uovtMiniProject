@@ -56,7 +56,7 @@ import { UvaprovinceComponent } from './compoent/hotelsList/uvaprovince/uvaprovi
 import { NorthCentralprovinceComponent } from './compoent/hotelsList/north-centralprovince/north-centralprovince.component';
 import { appReducers } from './app.reducer';
 import { OrderdetailsComponent } from './orderdetails/orderdetails.component';
-import { FoodslistComponent } from './compoent/foods/foodslist/foodslist.component';
+import { FoodModule } from './module/food/food.module';
 
 @NgModule({
   declarations: [
@@ -98,10 +98,7 @@ import { FoodslistComponent } from './compoent/foods/foodslist/foodslist.compone
     EasternprovinceComponent,
     UvaprovinceComponent,
     NorthCentralprovinceComponent,
-    OrderdetailsComponent,
-    FoodslistComponent,
-
- 
+    OrderdetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -122,7 +119,8 @@ import { FoodslistComponent } from './compoent/foods/foodslist/foodslist.compone
     StoreDevtoolsModule.instrument({
       maxAge: 25
     }),
-    HotelsbookingModule
+    HotelsbookingModule,
+    FoodModule
 
 
   ],
