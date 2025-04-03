@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FoodserviceService } from '../../../service/foodservice.service';
+import { FoodserviceService, FoodTypeIterface } from '../../../service/foodservice.service';
 import { FoodsInterface } from '../../../model/foodrecipe.model';
 import { catchError, Observable, of, Subscription, tap } from 'rxjs';
 
@@ -10,18 +10,22 @@ import { catchError, Observable, of, Subscription, tap } from 'rxjs';
 })
 export class FoodlistComponent implements OnInit{
 
-  recipes$!: Observable<any[]>;
-  recipeList:FoodsInterface[]=[];
+  //recipes$!: Observable<any[]>;
+  recipeTypeList:FoodTypeIterface[]=[];
   errorMessage!: string;
 
   constructor(private foodserviceService: FoodserviceService) {}
  
 
   ngOnInit(): void {
-    this.foodserviceService.getRecipes().subscribe((response:any)=>{
-      this.recipeList=response.recipes;
-    })
+    // this.foodserviceService.getFoodTypes.subscribe((response:any)=>{
+    //   this.recipeList=response.recipes;
+    // })
 
+    this.recipeTypeList=this.foodserviceService.getFoodTypes();
+
+    console.log(this.recipeTypeList);
+    
   }
 }
 
