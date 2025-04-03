@@ -108,7 +108,8 @@ const routes: Routes = [
       {
         path:'foodslist',
         loadChildren:()=>import('./module/food/food.module').then(m=>m.FoodModule)
-      }
+      },
+      
     ]
   }
   ,
