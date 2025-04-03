@@ -9,12 +9,12 @@ import { FoodsInterface } from '../model/foodrecipe.model';
 })
 export class FoodserviceService{
 
-  private recipeLink='https://dummyjson.com/recipes?limit=10&skip=10&select=name,image,description';
+  private recipeLink='https://dummyjson.com/recipes?limit=10&select=name,image,ingredients';
  
   constructor(private http:HttpClient) {}
 
-  getRecipes():Observable<FoodsInterface[]>{
-    return this.http.get<FoodsInterface[]>(this.recipeLink);
+  getRecipes():Observable<any[]>{
+    return this.http.get<any[]>(this.recipeLink);
   }
 
 
