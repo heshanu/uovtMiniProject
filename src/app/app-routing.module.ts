@@ -21,6 +21,7 @@ import { NorthprovinceComponent } from './compoent/hotelsList/northprovince/nort
 import { UvaprovinceComponent } from './compoent/hotelsList/uvaprovince/uvaprovince.component';
 import { NorthCentralprovinceComponent } from './compoent/hotelsList/north-centralprovince/north-centralprovince.component';
 import { OrderdetailsComponent } from './orderdetails/orderdetails.component';
+import { NorthernComponent } from './module/food/foodStyle/northern/northern.component';
 
 //lazy loading to home module
 const routes: Routes = [
@@ -112,6 +113,10 @@ const routes: Routes = [
       {
         path:'foodslist/southern',
         component:SouthenrnprovinceComponent
+      },
+      {
+        path:"foodslist/northern",
+        component:NorthernComponent
       }
       
     ]

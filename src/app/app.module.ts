@@ -98,7 +98,7 @@ import { FoodModule } from './module/food/food.module';
     EasternprovinceComponent,
     UvaprovinceComponent,
     NorthCentralprovinceComponent,
-    OrderdetailsComponent
+    OrderdetailsComponent,
   ],
   imports: [
     BrowserModule,
