@@ -8,7 +8,7 @@
         [attr.id]="'accordion-header-' + index"
         [attr.aria-expanded]="accordionItem.expanded"
         [attr.aria-controls]="'accordion-body-' + index">
-        {{ item.foodName }}
+        {{ item.foodName|uppercase }}
         <span class="example-accordion-item-description">
           Click to {{ accordionItem.expanded ? 'close' : 'open' }}
         </span>
