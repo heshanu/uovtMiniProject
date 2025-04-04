@@ -112,11 +112,15 @@ const routes: Routes = [
       },
       {
         path:'foodslist/southern',
-        component:SouthenrnprovinceComponent
+        loadChildren:()=>import('./module/food/food.module').then(m=>m.FoodModule)
       },
       {
         path:"foodslist/northern",
-        component:NorthernComponent
+        loadChildren:()=>import('./module/food/food.module').then(m=>m.FoodModule)
+      },
+      {
+           path:"foodslist/chineese",
+           loadChildren:()=>import('./module/food/food.module').then(m=>m.FoodModule)
       }
       
     ]

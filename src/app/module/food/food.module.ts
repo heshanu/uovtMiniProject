@@ -9,6 +9,7 @@ import { FoodCategoryComponent } from './food-category/food-category.component';
 import { SouthernComponent } from './foodStyle/southern/southern.component';
 import { CardTemplateFoodsComponent } from '../../shared/card-template-foods/card-template-foods.component';
 import { NorthernComponent } from './foodStyle/northern/northern.component';
+import { ChineeseComponent } from './foodStyle/chineese/chineese.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { NorthernComponent } from './foodStyle/northern/northern.component';
     FoodCategoryComponent,
     SouthernComponent,
     CardTemplateFoodsComponent,
-    NorthernComponent
+    NorthernComponent,
+    ChineeseComponent
   ],
   imports: [
     CommonModule,
