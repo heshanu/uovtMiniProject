@@ -57,6 +57,8 @@ import { NorthCentralprovinceComponent } from './compoent/hotelsList/north-centr
 import { appReducers } from './app.reducer';
 import { OrderdetailsComponent } from './orderdetails/orderdetails.component';
 import { FoodModule } from './module/food/food.module';
+import { BicycleComponent } from './compoent/travelMode/bicycle/bicycle.component';
+import { GallebicycleComponent } from './compoent/travelMode/bicycle/gallebicycle/gallebicycle.component';
 
 @NgModule({
   declarations: [
@@ -99,6 +101,9 @@ import { FoodModule } from './module/food/food.module';
     UvaprovinceComponent,
     NorthCentralprovinceComponent,
     OrderdetailsComponent,
+    BicycleComponent,
+    GallebicycleComponent,
+
   ],
   imports: [
     BrowserModule,
