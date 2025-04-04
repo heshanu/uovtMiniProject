@@ -38,7 +38,7 @@ ngOnInit(): void {
   items= [
     {"itemName":"Motor bike","description":"This may be motor bike","link":"motorbike"},
     {"itemName":"Bicycle","description":"This may be bicycle","link":"bicycle"},
-    {"itemName":"Car","description":"This may be car","link":"/car"},
+    {"itemName":"Car","description":"This may be car","link":"car"},
     {"itemName":"Van","description":"This may be van","link":"/van"},
     {"itemName":"tuktuk","description":"This may be tuktuk","link":"/tuktuk"},
     {"itemName":"train","description":"This may be train","link":"/train"},
