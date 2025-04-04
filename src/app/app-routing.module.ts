@@ -42,6 +42,7 @@ import { GalletuktukComponent } from './compoent/travelMode/tuktuk/galletuktuk/g
 import { HikkatuktukComponent } from './compoent/travelMode/tuktuk/hikkatuktuk/hikkatuktuk.component';
 import { NunwaratuktukComponent } from './compoent/travelMode/tuktuk/nunwaratuktuk/nunwaratuktuk.component';
 import { MataratuktukComponent } from './compoent/travelMode/tuktuk/mataratuktuk/mataratuktuk.component';
+import { TrainComponent } from './compoent/travelMode/train/train.component';
 
 //lazy loading to home module
 const routes: Routes = [
@@ -164,6 +165,10 @@ const routes: Routes = [
       {
         path:'travelMode/tuktuk/nuwaraTuktuk',
         component:NunwaratuktukComponent
+      },
+      {
+        path:'travelMode/train',
+        component:TrainComponent
       },
       {
         //hotelslist/northwest
