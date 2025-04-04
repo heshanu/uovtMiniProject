@@ -22,6 +22,8 @@ import { UvaprovinceComponent } from './compoent/hotelsList/uvaprovince/uvaprovi
 import { NorthCentralprovinceComponent } from './compoent/hotelsList/north-centralprovince/north-centralprovince.component';
 import { OrderdetailsComponent } from './orderdetails/orderdetails.component';
 import { NorthernComponent } from './module/food/foodStyle/northern/northern.component';
+import { BicycleComponent } from './compoent/travelMode/bicycle/bicycle.component';
+import { GallebicycleComponent } from './compoent/travelMode/bicycle/gallebicycle/gallebicycle.component';
 
 //lazy loading to home module
 const routes: Routes = [
@@ -64,6 +66,14 @@ const routes: Routes = [
       {
         path:'travelMode/motorbike/nuwarabike',
         component:NuwararentbikesComponent
+      },
+      {
+        path:'travelMode/bicycle',
+        component:BicycleComponent
+      },
+      {
+        path:'travelMode/bicycle/gallebicycle',
+        component:GallebicycleComponent
       },
       {
         //hotelslist/northwest
