@@ -77,6 +77,7 @@ import { GalletuktukComponent } from './compoent/travelMode/tuktuk/galletuktuk/g
 import { HikkatuktukComponent } from './compoent/travelMode/tuktuk/hikkatuktuk/hikkatuktuk.component';
 import { MataratuktukComponent } from './compoent/travelMode/tuktuk/mataratuktuk/mataratuktuk.component';
 import { NunwaratuktukComponent } from './compoent/travelMode/tuktuk/nunwaratuktuk/nunwaratuktuk.component';
+import { TrainComponent } from './compoent/travelMode/train/train.component';
 
 @NgModule({
   declarations: [
@@ -139,6 +140,7 @@ import { NunwaratuktukComponent } from './compoent/travelMode/tuktuk/nunwaratukt
     HikkatuktukComponent,
     MataratuktukComponent,
     NunwaratuktukComponent,
+    TrainComponent,
 
   ],
   imports: [
