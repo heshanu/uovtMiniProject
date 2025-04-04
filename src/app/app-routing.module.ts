@@ -32,6 +32,16 @@ import { GallecarComponent } from './compoent/travelMode/car/gallecar/gallecar.c
 import { HikkacarComponent } from './compoent/travelMode/car/hikkacar/hikkacar.component';
 import { MataracarComponent } from './compoent/travelMode/car/mataracar/mataracar.component';
 import { NuwaracarComponent } from './compoent/travelMode/car/nuwaracar/nuwaracar.component';
+import { VanComponent } from './compoent/travelMode/van/van.component';
+import { GallevanComponent } from './compoent/travelMode/van/gallevan/gallevan.component';
+import { HikkavanComponent } from './compoent/travelMode/van/hikkavan/hikkavan.component';
+import { MataravanComponent } from './compoent/travelMode/van/mataravan/mataravan.component';
+import { NuwaravanComponent } from './compoent/travelMode/van/nuwaravan/nuwaravan.component';
+import { TuktukComponent } from './compoent/travelMode/tuktuk/tuktuk.component';
+import { GalletuktukComponent } from './compoent/travelMode/tuktuk/galletuktuk/galletuktuk.component';
+import { HikkatuktukComponent } from './compoent/travelMode/tuktuk/hikkatuktuk/hikkatuktuk.component';
+import { NunwaratuktukComponent } from './compoent/travelMode/tuktuk/nunwaratuktuk/nunwaratuktuk.component';
+import { MataratuktukComponent } from './compoent/travelMode/tuktuk/mataratuktuk/mataratuktuk.component';
 
 //lazy loading to home module
 const routes: Routes = [
@@ -114,6 +124,46 @@ const routes: Routes = [
       {
         path:'travelMode/car/nuwaracar',
         component:NuwaracarComponent
+      },
+      {
+        path:'travelMode/van',
+        component:VanComponent
+      },
+      {
+        path:'travelMode/van/gallevan',
+        component:GallevanComponent
+      },
+      {
+        path:'travelMode/van/hikkavan',
+        component:HikkavanComponent
+      },
+      {
+        path:'travelMode/van/matataravan',
+        component:MataravanComponent
+      },
+      {
+        path:'travelMode/van/nuwaravan',
+        component:NuwaravanComponent
+      },
+      {
+        path:'travelMode/tuktuk',
+        component:TuktukComponent
+      },
+      {
+        path:'travelMode/tuktuk/galleTuktuk',
+        component:GalletuktukComponent
+      },
+      {
+        path:'travelMode/tuktuk/hikkaTuktuk',
+        component:HikkatuktukComponent
+      },
+      {
+        path:'travelMode/tuktuk/mataraTuktuk',
+        component:MataratuktukComponent
+      },
+      {
+        path:'travelMode/tuktuk/nuwaraTuktuk',
+        component:NunwaratuktukComponent
       },
       {
         //hotelslist/northwest
