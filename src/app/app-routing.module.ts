@@ -27,6 +27,11 @@ import { GallebicycleComponent } from './compoent/travelMode/bicycle/gallebicycl
 import { HikabicycleComponent } from './compoent/travelMode/bicycle/hikabicycle/hikabicycle.component';
 import { MatarabicycleComponent } from './compoent/travelMode/bicycle/matarabicycle/matarabicycle.component';
 import { NuwarabicycleComponent } from './compoent/travelMode/bicycle/nuwarabicycle/nuwarabicycle.component';
+import { CarComponent } from './compoent/travelMode/car/car.component';
+import { GallecarComponent } from './compoent/travelMode/car/gallecar/gallecar.component';
+import { HikkacarComponent } from './compoent/travelMode/car/hikkacar/hikkacar.component';
+import { MataracarComponent } from './compoent/travelMode/car/mataracar/mataracar.component';
+import { NuwaracarComponent } from './compoent/travelMode/car/nuwaracar/nuwaracar.component';
 
 //lazy loading to home module
 const routes: Routes = [
@@ -89,6 +94,26 @@ const routes: Routes = [
       {
         path:'travelMode/bicycle/nuwarabicycle',
         component:NuwarabicycleComponent
+      },
+      {
+        path:'travelMode/car',
+        component:CarComponent
+      },
+      {
+        path:'travelMode/car/gallecar',
+        component:GallecarComponent
+      },
+      {
+        path:'travelMode/car/hikkacar',
+        component:HikkacarComponent
+      },
+      {
+        path:'travelMode/car/mataracar',
+        component:MataracarComponent
+      },
+      {
+        path:'travelMode/car/nuwaracar',
+        component:NuwaracarComponent
       },
       {
         //hotelslist/northwest
