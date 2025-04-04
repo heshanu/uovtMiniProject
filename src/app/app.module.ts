@@ -67,6 +67,16 @@ import { GallecarComponent } from './compoent/travelMode/car/gallecar/gallecar.c
 import { HikkacarComponent } from './compoent/travelMode/car/hikkacar/hikkacar.component';
 import { MataracarComponent } from './compoent/travelMode/car/mataracar/mataracar.component';
 import { NuwaracarComponent } from './compoent/travelMode/car/nuwaracar/nuwaracar.component';
+import { VanComponent } from './compoent/travelMode/van/van.component';
+import { GallevanComponent } from './compoent/travelMode/van/gallevan/gallevan.component';
+import { HikkavanComponent } from './compoent/travelMode/van/hikkavan/hikkavan.component';
+import { MataravanComponent } from './compoent/travelMode/van/mataravan/mataravan.component';
+import { NuwaravanComponent } from './compoent/travelMode/van/nuwaravan/nuwaravan.component';
+import { TuktukComponent } from './compoent/travelMode/tuktuk/tuktuk.component';
+import { GalletuktukComponent } from './compoent/travelMode/tuktuk/galletuktuk/galletuktuk.component';
+import { HikkatuktukComponent } from './compoent/travelMode/tuktuk/hikkatuktuk/hikkatuktuk.component';
+import { MataratuktukComponent } from './compoent/travelMode/tuktuk/mataratuktuk/mataratuktuk.component';
+import { NunwaratuktukComponent } from './compoent/travelMode/tuktuk/nunwaratuktuk/nunwaratuktuk.component';
 
 @NgModule({
   declarations: [
@@ -119,6 +129,16 @@ import { NuwaracarComponent } from './compoent/travelMode/car/nuwaracar/nuwaraca
     HikkacarComponent,
     MataracarComponent,
     NuwaracarComponent,
+    VanComponent,
+    GallevanComponent,
+    HikkavanComponent,
+    MataravanComponent,
+    NuwaravanComponent,
+    TuktukComponent,
+    GalletuktukComponent,
+    HikkatuktukComponent,
+    MataratuktukComponent,
+    NunwaratuktukComponent,
 
   ],
   imports: [
