@@ -121,7 +121,15 @@ const routes: Routes = [
       {
            path:"foodslist/chineese",
            loadChildren:()=>import('./module/food/food.module').then(m=>m.FoodModule)
-      }
+      },
+      {
+        path:"foodslist/japanees",
+        loadChildren:()=>import('./module/food/food.module').then(m=>m.FoodModule)
+   },
+   {
+    path:"foodslist/traditional",
+    loadChildren:()=>import('./module/food/food.module').then(m=>m.FoodModule)
+   }
       
     ]
   }

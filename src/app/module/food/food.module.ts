@@ -10,6 +10,8 @@ import { SouthernComponent } from './foodStyle/southern/southern.component';
 import { CardTemplateFoodsComponent } from '../../shared/card-template-foods/card-template-foods.component';
 import { NorthernComponent } from './foodStyle/northern/northern.component';
 import { ChineeseComponent } from './foodStyle/chineese/chineese.component';
+import { JapaneeseComponent } from './foodStyle/japaneese/japaneese.component';
+import { TraditionalComponent } from './foodStyle/traditional/traditional.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { ChineeseComponent } from './foodStyle/chineese/chineese.component';
     SouthernComponent,
     CardTemplateFoodsComponent,
     NorthernComponent,
-    ChineeseComponent
+    ChineeseComponent,
+    JapaneeseComponent,
+    TraditionalComponent
   ],
   imports: [
     CommonModule,

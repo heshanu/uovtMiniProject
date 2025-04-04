@@ -46,4 +46,14 @@ export class FoodserviceService{
   getChineeseFoods():Observable<any[]>{
     return this.http.get<any[]>("https://dummyjson.com/recipes/tag/Pakistani?limit=10&select=name,image,ingredients")
   }
+
+  getJapaneeseFoods():Observable<any[]>{
+    return this.http.get<any[]>("https://dummyjson.com/recipes/tag/Pakistani?limit=10&select=name,image,ingredients")
+  }
+
+  getTraditionalFoods():Observable<any[]>{
+    return this.http.get<any[]>("https://dummyjson.com/recipes/tag/Pakistani?limit=10&select=name,image,ingredients")
+  }
+
+
 }
