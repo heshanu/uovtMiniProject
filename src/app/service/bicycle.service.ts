@@ -43,23 +43,23 @@ export class BicycleService {
  
    constructor() { }
  
-   getGalleBikeList():BikeInterface[]{
+   getGalleBicycleList():BikeInterface[]{
      return this.galleBicycleList;
    }
  
-   getJaffanaBikeList():BikeInterface[]{
+   getJaffanaBicycleList():BikeInterface[]{
      return this.jaffanaBicycleList;
    }
  
-   getMataraBikeList():BikeInterface[]{
+   getMataraBicycleList():BikeInterface[]{
      return this.mataraBicycleList;
    }
  
-   getHikkaBikeList():BikeInterface[]{
+   getHikkaBicycleList():BikeInterface[]{
      return this.hikkaBicycleList;
    }
  
-   getNuwaraBikeList():BikeInterface[]{
+   getNuwaraBicycleList():BikeInterface[]{
      return this.nuwaraBicycleList;
    }
 }

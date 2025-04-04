@@ -59,6 +59,9 @@ import { OrderdetailsComponent } from './orderdetails/orderdetails.component';
 import { FoodModule } from './module/food/food.module';
 import { BicycleComponent } from './compoent/travelMode/bicycle/bicycle.component';
 import { GallebicycleComponent } from './compoent/travelMode/bicycle/gallebicycle/gallebicycle.component';
+import { HikabicycleComponent } from './compoent/travelMode/bicycle/hikabicycle/hikabicycle.component';
+import { MatarabicycleComponent } from './compoent/travelMode/bicycle/matarabicycle/matarabicycle.component';
+import { NuwarabicycleComponent } from './compoent/travelMode/bicycle/nuwarabicycle/nuwarabicycle.component';
 
 @NgModule({
   declarations: [
@@ -103,6 +106,9 @@ import { GallebicycleComponent } from './compoent/travelMode/bicycle/gallebicycl
     OrderdetailsComponent,
     BicycleComponent,
     GallebicycleComponent,
+    HikabicycleComponent,
+    MatarabicycleComponent,
+    NuwarabicycleComponent,
 
   ],
   imports: [

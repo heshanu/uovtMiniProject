@@ -12,7 +12,7 @@ export class GallebicycleComponent implements OnInit{
   constructor(private bicycleService:BicycleService ){}
   
     ngOnInit(): void {
-      this.bicycleList=this.bicycleService.getGalleBikeList();
+      this.bicycleList=this.bicycleService.getGalleBicycleList();
     }
     
   
