@@ -24,6 +24,9 @@ import { OrderdetailsComponent } from './orderdetails/orderdetails.component';
 import { NorthernComponent } from './module/food/foodStyle/northern/northern.component';
 import { BicycleComponent } from './compoent/travelMode/bicycle/bicycle.component';
 import { GallebicycleComponent } from './compoent/travelMode/bicycle/gallebicycle/gallebicycle.component';
+import { HikabicycleComponent } from './compoent/travelMode/bicycle/hikabicycle/hikabicycle.component';
+import { MatarabicycleComponent } from './compoent/travelMode/bicycle/matarabicycle/matarabicycle.component';
+import { NuwarabicycleComponent } from './compoent/travelMode/bicycle/nuwarabicycle/nuwarabicycle.component';
 
 //lazy loading to home module
 const routes: Routes = [
@@ -74,6 +77,18 @@ const routes: Routes = [
       {
         path:'travelMode/bicycle/gallebicycle',
         component:GallebicycleComponent
+      },
+      {
+        path:'travelMode/bicycle/hikkabicycle',
+        component:HikabicycleComponent
+      },
+      {
+        path:'travelMode/bicycle/matarabicycle',
+        component:MatarabicycleComponent
+      },
+      {
+        path:'travelMode/bicycle/nuwarabicycle',
+        component:NuwarabicycleComponent
       },
       {
         //hotelslist/northwest
