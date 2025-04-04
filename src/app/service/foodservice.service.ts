@@ -42,4 +42,8 @@ export class FoodserviceService{
   getNorthernFoods():Observable<any[]>{
     return this.http.get<any[]>("https://dummyjson.com/recipes/tag/Pakistani?limit=10&select=name,image,ingredients")
   }
+
+  getChineeseFoods():Observable<any[]>{
+    return this.http.get<any[]>("https://dummyjson.com/recipes/tag/Pakistani?limit=10&select=name,image,ingredients")
+  }
 }

@@ -3,11 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { FoodlistComponent } from './foodlist/foodlist.component';
 import { SouthernComponent } from './foodStyle/southern/southern.component';
 import { NorthernComponent } from './foodStyle/northern/northern.component';
+import { ChineeseComponent } from './foodStyle/chineese/chineese.component';
 
 const routes: Routes = [
   {path:'',component:FoodlistComponent},
   {path:'southern',component:SouthernComponent},
-  {path:'northern',component:NorthernComponent}
+  {path:'northern',component:NorthernComponent},
+  {path:'chineese',component:ChineeseComponent},
 ];
 
 @NgModule({
