@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { HotelsListInterface } from '../../../model/hotel_interface';
 import { HotelserviceService } from '../../../service/hotelservice.service';
 
 @Component({
@@ -12,13 +11,13 @@ export class HotelistComponent implements OnInit{
   constructor(private hotelListService:HotelserviceService){}
 
   ngOnInit(): void {
-    this.items=this.hotelListService.getAllHotels()
+    this.items=this.hotelListService.getAllHotels();
   }
+
 
   expandedIndex = 0;
 
   items:any[]=[];
   
-
 
 }

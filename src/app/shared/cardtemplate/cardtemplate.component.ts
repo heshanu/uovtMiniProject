@@ -25,7 +25,7 @@ export class CardtemplateComponent implements OnInit{
     }); 
   }
   
-  @Input() recivedList:HotelsListInterface[]=[]; 
+  @Input() recivedList:any[]=[]; 
   
 
   ngOnInit(): void {

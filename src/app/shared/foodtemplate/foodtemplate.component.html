@@ -1,0 +1,39 @@
+<cdk-accordion class="example-accordion" class="m-16 p-4">
+    @for (item of foodList ; track item; let index = $index) {
+    <cdk-accordion-item #accordionItem="cdkAccordionItem" class="example-accordion-item">
+      <button
+        class="example-accordion-item-header font-weight: 900;"
+        (click)="accordionItem.toggle()"
+        tabindex="0"
+        [attr.id]="'accordion-header-' + index"
+        [attr.aria-expanded]="accordionItem.expanded"
+        [attr.aria-controls]="'accordion-body-' + index">
+        {{ item.foodName|uppercase }}
+        <span class="example-accordion-item-description">
+          Click to {{ accordionItem.expanded ? 'close' : 'open' }}
+        </span>
+      </button>
+      @if(accordionItem.expanded) {
+      <div
+        class="example-accordion-item-body p-4 m-4"
+        role="region"
+        [style.display]="accordionItem.expanded ? '' : 'none'"
+        [attr.id]="'accordion-body-' + index"
+        [attr.aria-labelledby]="'accordion-header-' + index"
+      >
+        <!-- <img class="max-w-screen-sm" src="{{item.image}}"/> -->
+        <button (click)="navigateTo(item.foodName)" class="m-4 bg-blue-500 hover:bg-blue-700 text-white 
+        font-bold py-2 px-4 border border-blue-700 rounded">
+          Arrage Now
+        </button>
+        <!-- <h1>Ingredients </h1>
+        <ul>
+          <li *ngFor="let ingredient of item.ingredients" class="m-4 bg-green-500 hover:bg-blue-700 text-white 
+          font-bold py-2 px-4 border border-green-700 rounded">{{ingredient }}</li>
+        </ul> -->
+      </div>
+      }
+    </cdk-accordion-item>
+    }
+  </cdk-accordion>
+  

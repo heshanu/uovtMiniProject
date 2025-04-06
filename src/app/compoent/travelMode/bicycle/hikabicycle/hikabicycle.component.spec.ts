@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ProvinceComponent } from './province.component';
+import { HikabicycleComponent } from './hikabicycle.component';
 
-describe('ProvinceComponent', () => {
-  let component: ProvinceComponent;
-  let fixture: ComponentFixture<ProvinceComponent>;
+describe('HikabicycleComponent', () => {
+  let component: HikabicycleComponent;
+  let fixture: ComponentFixture<HikabicycleComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ProvinceComponent]
+      declarations: [HikabicycleComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(ProvinceComponent);
+    fixture = TestBed.createComponent(HikabicycleComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

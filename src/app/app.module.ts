@@ -41,7 +41,7 @@ import { HotelsbookingModule } from './module/hotelsbooking/hotelsbooking.module
 import { HotelistComponent } from './module/hotelsbooking/hotelist/hotelist.component';
 import { HoteltemplateComponent } from './shared/hoteltemplate/hoteltemplate.component';
 import { AccordintemplateComponent } from './shared/accordintemplate/accordintemplate.component';
-import { ProvinceComponent } from './compoent/hotelsList/province/province.component';
+
 import { SouthenrnprovinceComponent } from './compoent/hotelsList/southenrnprovince/southenrnprovince.component';
 import { DialogCompoentComponent } from './shared/dialog-hotel/dialog-compoent.component';
 import { CardtemplateComponent } from './shared/cardtemplate/cardtemplate.component';
@@ -56,6 +56,28 @@ import { UvaprovinceComponent } from './compoent/hotelsList/uvaprovince/uvaprovi
 import { NorthCentralprovinceComponent } from './compoent/hotelsList/north-centralprovince/north-centralprovince.component';
 import { appReducers } from './app.reducer';
 import { OrderdetailsComponent } from './orderdetails/orderdetails.component';
+import { FoodModule } from './module/food/food.module';
+import { BicycleComponent } from './compoent/travelMode/bicycle/bicycle.component';
+import { GallebicycleComponent } from './compoent/travelMode/bicycle/gallebicycle/gallebicycle.component';
+import { HikabicycleComponent } from './compoent/travelMode/bicycle/hikabicycle/hikabicycle.component';
+import { MatarabicycleComponent } from './compoent/travelMode/bicycle/matarabicycle/matarabicycle.component';
+import { NuwarabicycleComponent } from './compoent/travelMode/bicycle/nuwarabicycle/nuwarabicycle.component';
+import { CarComponent } from './compoent/travelMode/car/car.component';
+import { GallecarComponent } from './compoent/travelMode/car/gallecar/gallecar.component';
+import { HikkacarComponent } from './compoent/travelMode/car/hikkacar/hikkacar.component';
+import { MataracarComponent } from './compoent/travelMode/car/mataracar/mataracar.component';
+import { NuwaracarComponent } from './compoent/travelMode/car/nuwaracar/nuwaracar.component';
+import { VanComponent } from './compoent/travelMode/van/van.component';
+import { GallevanComponent } from './compoent/travelMode/van/gallevan/gallevan.component';
+import { HikkavanComponent } from './compoent/travelMode/van/hikkavan/hikkavan.component';
+import { MataravanComponent } from './compoent/travelMode/van/mataravan/mataravan.component';
+import { NuwaravanComponent } from './compoent/travelMode/van/nuwaravan/nuwaravan.component';
+import { TuktukComponent } from './compoent/travelMode/tuktuk/tuktuk.component';
+import { GalletuktukComponent } from './compoent/travelMode/tuktuk/galletuktuk/galletuktuk.component';
+import { HikkatuktukComponent } from './compoent/travelMode/tuktuk/hikkatuktuk/hikkatuktuk.component';
+import { MataratuktukComponent } from './compoent/travelMode/tuktuk/mataratuktuk/mataratuktuk.component';
+import { NunwaratuktukComponent } from './compoent/travelMode/tuktuk/nunwaratuktuk/nunwaratuktuk.component';
+import { TrainComponent } from './compoent/travelMode/train/train.component';
 
 @NgModule({
   declarations: [
@@ -85,7 +107,6 @@ import { OrderdetailsComponent } from './orderdetails/orderdetails.component';
     HotelistComponent,
     HoteltemplateComponent,
     AccordintemplateComponent,
-    ProvinceComponent,
     SouthenrnprovinceComponent,
     DialogCompoentComponent,
     CardtemplateComponent,
@@ -99,8 +120,28 @@ import { OrderdetailsComponent } from './orderdetails/orderdetails.component';
     UvaprovinceComponent,
     NorthCentralprovinceComponent,
     OrderdetailsComponent,
+    BicycleComponent,
+    GallebicycleComponent,
+    HikabicycleComponent,
+    MatarabicycleComponent,
+    NuwarabicycleComponent,
+    CarComponent,
+    GallecarComponent,
+    HikkacarComponent,
+    MataracarComponent,
+    NuwaracarComponent,
+    VanComponent,
+    GallevanComponent,
+    HikkavanComponent,
+    MataravanComponent,
+    NuwaravanComponent,
+    TuktukComponent,
+    GalletuktukComponent,
+    HikkatuktukComponent,
+    MataratuktukComponent,
+    NunwaratuktukComponent,
+    TrainComponent,
 
- 
   ],
   imports: [
     BrowserModule,
@@ -121,7 +162,8 @@ import { OrderdetailsComponent } from './orderdetails/orderdetails.component';
     StoreDevtoolsModule.instrument({
       maxAge: 25
     }),
-    HotelsbookingModule
+    HotelsbookingModule,
+    FoodModule
 
 
   ],

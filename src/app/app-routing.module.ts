@@ -21,6 +21,28 @@ import { NorthprovinceComponent } from './compoent/hotelsList/northprovince/nort
 import { UvaprovinceComponent } from './compoent/hotelsList/uvaprovince/uvaprovince.component';
 import { NorthCentralprovinceComponent } from './compoent/hotelsList/north-centralprovince/north-centralprovince.component';
 import { OrderdetailsComponent } from './orderdetails/orderdetails.component';
+import { NorthernComponent } from './module/food/foodStyle/northern/northern.component';
+import { BicycleComponent } from './compoent/travelMode/bicycle/bicycle.component';
+import { GallebicycleComponent } from './compoent/travelMode/bicycle/gallebicycle/gallebicycle.component';
+import { HikabicycleComponent } from './compoent/travelMode/bicycle/hikabicycle/hikabicycle.component';
+import { MatarabicycleComponent } from './compoent/travelMode/bicycle/matarabicycle/matarabicycle.component';
+import { NuwarabicycleComponent } from './compoent/travelMode/bicycle/nuwarabicycle/nuwarabicycle.component';
+import { CarComponent } from './compoent/travelMode/car/car.component';
+import { GallecarComponent } from './compoent/travelMode/car/gallecar/gallecar.component';
+import { HikkacarComponent } from './compoent/travelMode/car/hikkacar/hikkacar.component';
+import { MataracarComponent } from './compoent/travelMode/car/mataracar/mataracar.component';
+import { NuwaracarComponent } from './compoent/travelMode/car/nuwaracar/nuwaracar.component';
+import { VanComponent } from './compoent/travelMode/van/van.component';
+import { GallevanComponent } from './compoent/travelMode/van/gallevan/gallevan.component';
+import { HikkavanComponent } from './compoent/travelMode/van/hikkavan/hikkavan.component';
+import { MataravanComponent } from './compoent/travelMode/van/mataravan/mataravan.component';
+import { NuwaravanComponent } from './compoent/travelMode/van/nuwaravan/nuwaravan.component';
+import { TuktukComponent } from './compoent/travelMode/tuktuk/tuktuk.component';
+import { GalletuktukComponent } from './compoent/travelMode/tuktuk/galletuktuk/galletuktuk.component';
+import { HikkatuktukComponent } from './compoent/travelMode/tuktuk/hikkatuktuk/hikkatuktuk.component';
+import { NunwaratuktukComponent } from './compoent/travelMode/tuktuk/nunwaratuktuk/nunwaratuktuk.component';
+import { MataratuktukComponent } from './compoent/travelMode/tuktuk/mataratuktuk/mataratuktuk.component';
+import { TrainComponent } from './compoent/travelMode/train/train.component';
 
 //lazy loading to home module
 const routes: Routes = [
@@ -37,7 +59,7 @@ const routes: Routes = [
     component: CustomerDashBoardComponent,
     children: [
       {
-        path: 'hotellist',
+        path: '',
         loadChildren: () => import('./module/hotel/hotel.module').then(m => m.HotelModule)
       },
       {
@@ -65,8 +87,93 @@ const routes: Routes = [
         component:NuwararentbikesComponent
       },
       {
+        path:'travelMode/bicycle',
+        component:BicycleComponent
+      },
+      {
+        path:'travelMode/bicycle/gallebicycle',
+        component:GallebicycleComponent
+      },
+      {
+        path:'travelMode/bicycle/hikkabicycle',
+        component:HikabicycleComponent
+      },
+      {
+        path:'travelMode/bicycle/matarabicycle',
+        component:MatarabicycleComponent
+      },
+      {
+        path:'travelMode/bicycle/nuwarabicycle',
+        component:NuwarabicycleComponent
+      },
+      {
+        path:'travelMode/car',
+        component:CarComponent
+      },
+      {
+        path:'travelMode/car/gallecar',
+        component:GallecarComponent
+      },
+      {
+        path:'travelMode/car/hikkacar',
+        component:HikkacarComponent
+      },
+      {
+        path:'travelMode/car/mataracar',
+        component:MataracarComponent
+      },
+      {
+        path:'travelMode/car/nuwaracar',
+        component:NuwaracarComponent
+      },
+      {
+        path:'travelMode/van',
+        component:VanComponent
+      },
+      {
+        path:'travelMode/van/gallevan',
+        component:GallevanComponent
+      },
+      {
+        path:'travelMode/van/hikkavan',
+        component:HikkavanComponent
+      },
+      {
+        path:'travelMode/van/matataravan',
+        component:MataravanComponent
+      },
+      {
+        path:'travelMode/van/nuwaravan',
+        component:NuwaravanComponent
+      },
+      {
+        path:'travelMode/tuktuk',
+        component:TuktukComponent
+      },
+      {
+        path:'travelMode/tuktuk/galleTuktuk',
+        component:GalletuktukComponent
+      },
+      {
+        path:'travelMode/tuktuk/hikkaTuktuk',
+        component:HikkatuktukComponent
+      },
+      {
+        path:'travelMode/tuktuk/mataraTuktuk',
+        component:MataratuktukComponent
+      },
+      {
+        path:'travelMode/tuktuk/nuwaraTuktuk',
+        component:NunwaratuktukComponent
+      },
+      {
+        path:'travelMode/train',
+        component:TrainComponent
+      },
+      {
+        //hotelslist/northwest
         path: 'hotelslist',
-        loadChildren: () => import('./module/hotelsbooking/hotelsbooking.module').then(m => m.HotelsbookingModule)
+        loadChildren:()=>import('./module/hotelsbooking/hotelsbooking.module').then(m=>m.HotelsbookingModule)
       },
       {
         path: 'hotelslist/southern',
@@ -104,6 +211,31 @@ const routes: Routes = [
         path: 'hotelslist/northcentral',
         component:NorthCentralprovinceComponent
       },
+      {
+        path:'foodslist',
+        loadChildren:()=>import('./module/food/food.module').then(m=>m.FoodModule)
+      },
+      {
+        path:'foodslist/southern',
+        loadChildren:()=>import('./module/food/food.module').then(m=>m.FoodModule)
+      },
+      {
+        path:"foodslist/northern",
+        loadChildren:()=>import('./module/food/food.module').then(m=>m.FoodModule)
+      },
+      {
+           path:"foodslist/chineese",
+           loadChildren:()=>import('./module/food/food.module').then(m=>m.FoodModule)
+      },
+      {
+        path:"foodslist/japanees",
+        loadChildren:()=>import('./module/food/food.module').then(m=>m.FoodModule)
+   },
+   {
+    path:"foodslist/traditional",
+    loadChildren:()=>import('./module/food/food.module').then(m=>m.FoodModule)
+   }
+      
     ]
   }
   ,

@@ -19,8 +19,10 @@ hotelsList:HotelsListInterface[]=[];
 
 customerId$!: Observable<string|undefined>;
 customerId:string|undefined;
-  id:any;
+id:any;
 customerIdSubscription!:Subscription;
+
+@Input() items:any[] = [];
 
   constructor(private router:Router,private activatedRoute: ActivatedRoute,
     private store: Store<AppState>
@@ -34,14 +36,15 @@ customerIdSubscription!:Subscription;
  
   itemRecived:any[]=[];
 
-      ngOnInit(): void {
+  ngOnInit(): void {
       this.customerIdSubscription=this.customerId$.subscribe((data)=>{
         this.id=data;
       })
+
+      this.itemRecived=this.items;
       }
       
-    @Input() items:any[] = [];
-    
+
 
   navigateTo(link: string) {
     console.log("accordintemplate",this.id);

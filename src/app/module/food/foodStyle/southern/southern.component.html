@@ -1,0 +1,4 @@
+<div *ngIf="spinner.loading$ | async">
+    <mat-spinner diameter="40"></mat-spinner>
+  </div>
+<app-card-template-foods [recivedList]="southernFoodList"/>
