@@ -1,11 +1,11 @@
 import { ActionReducerMap } from "@ngrx/store";
 import { customerReducer } from "./store/customers/customer-id.reducer";
-import { CustomerdetailsInterface } from "./model/customerDetailsInterface";
 import { OrderState } from "./store/orders/orders.status";
 import { ordersReducer } from "./store/orders/orders.reducer";
+import { CustomerState } from "./store/customers/customer.status";
 
 export interface AppState {
-    customer: CustomerdetailsInterface;
+    customer: CustomerState;
     orders:OrderState
   //  order: OrderState;
 

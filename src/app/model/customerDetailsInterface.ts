@@ -1,5 +1,5 @@
 export interface CustomerdetailsInterface{
-    _id?:string,
+    _id:string,
     name: string,
     age: number,
     address:string,

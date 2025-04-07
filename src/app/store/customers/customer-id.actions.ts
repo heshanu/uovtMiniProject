@@ -1,5 +1,7 @@
 import { createAction, props } from '@ngrx/store';
 import { CustomerdetailsInterface } from '../../model/customerDetailsInterface';
+import { AppState } from '../../app.reducer';
+import { CustomerState } from './customer.status';
 /*
 export const setCustomer=createAction(
   "[Customer] Set Customer",
@@ -10,6 +12,9 @@ export const setCustomer=createAction(
 
 export const setCustomer = createAction(
   '[Customer] Set Customer',
-  props<CustomerdetailsInterface>()
+  props<CustomerState>()  // Directly use the CustomerState type for the payload
 );
 
+export const loadCustomer = createAction('[Customer] Load Customer');
+export const loadCustomerSuccess = createAction('[Customer] Load Customer Success', props<{ customer: CustomerdetailsInterface }>());
+export const loadCustomerFailure = createAction('[Customer] Load Customer Failure', props<{ error: any }>());
