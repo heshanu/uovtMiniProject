@@ -10,7 +10,7 @@ export const setCustomer=createAction(
 
 export const setOrder = createAction(
   '[Order] Set Order',
-  props<OrderState>()
+  props<{ order: OrderState }>() 
 );
 
 export const loadOrdersSuccess = createAction(
