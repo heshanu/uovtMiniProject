@@ -4,14 +4,13 @@ import { Observable, Subscription, take } from 'rxjs';
 import { select, Store } from '@ngrx/store';
 import { CustomerdetailsInterface } from '../../../model/customerDetailsInterface';
 import { AppState } from '../../../app.reducer';
-import { selectCustomerId } from '../../../store/customers/customer.selectors';
+import { getCustomerDetail } from '../../../store/customers/customer.selectors';
 
 interface ItemAccodianInterface{
   itemName:string,
   description:string,
   link:string
 }
-
 
 @Component({
   selector: 'app-hotellist',
@@ -21,15 +20,15 @@ interface ItemAccodianInterface{
 })
 
 export class HotellistComponent implements OnInit,OnDestroy{
-  
-  customerId$: Observable<string|undefined>;
-  customerId!:string|undefined;
+  customerObj$!: Observable<CustomerdetailsInterface|any>;
   private subscription!: Subscription;
+
+  customerId!:string;
 
   constructor(private router:Router,private activatedRoute: ActivatedRoute,
     private store: Store<AppState>
   ){
-    this.customerId$ = this.store.pipe(select(selectCustomerId));
+    this.customerObj$ = this.store.pipe(select( getCustomerDetail ));
   }
 
   ngOnDestroy(): void {
@@ -37,9 +36,9 @@ export class HotellistComponent implements OnInit,OnDestroy{
   }
 
   ngOnInit(): void {
-    this.subscription=this.customerId$.subscribe((data) => {
-      this.customerId = data; // Update the component's state with the new value
-      console.log('Customer ID:', this.customerId); // Optional: Log the value
+    this.subscription=this.customerObj$.subscribe((data) => {
+      this.customerId = data._id; 
+     // console.log('Customer ID:', this.customerRecivedObj);
     });
   }
 
@@ -88,5 +87,6 @@ export class HotellistComponent implements OnInit,OnDestroy{
           console.error('Navigation error:', err);
         })
   }
- 
+   
+
 }

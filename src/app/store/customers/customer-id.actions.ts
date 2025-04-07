@@ -1,6 +1,5 @@
 import { createAction, props } from '@ngrx/store';
 import { CustomerdetailsInterface } from '../../model/customerDetailsInterface';
-import { AppState } from '../../app.reducer';
 import { CustomerState } from './customer.status';
 /*
 export const setCustomer=createAction(

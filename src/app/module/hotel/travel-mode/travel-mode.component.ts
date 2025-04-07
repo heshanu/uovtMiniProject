@@ -1,9 +1,10 @@
 import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Store } from '@ngrx/store';
+import { Router } from '@angular/router';
+import { select, Store } from '@ngrx/store';
 import { Observable, Subscription, take } from 'rxjs';
 import { AppState } from '../../../app.reducer';
-import { selectCustomerId } from '../../../store/customers/customer.selectors';
+import { getCustomerDetail, selectCustomerId } from '../../../store/customers/customer.selectors';
+import { CustomerdetailsInterface } from '../../../model/customerDetailsInterface';
 
 @Component({
   selector: 'app-travel-mode',
@@ -13,15 +14,13 @@ import { selectCustomerId } from '../../../store/customers/customer.selectors';
 })
 export class TravelModeComponent implements OnInit,OnDestroy{
 
-  customerId$: Observable<string|undefined>;
-  customerId: number | undefined;
-  private subscription!: Subscription;
+    customerObj$!: Observable<CustomerdetailsInterface|any>;
+      private subscription!: Subscription;
+      customerId!:string;
 
-  id:any;
-
-  constructor(private router:Router,private activatedRoute: ActivatedRoute,
+  constructor(private router:Router,
     private store: Store<AppState>){
-    this.customerId$ = this.store.select(selectCustomerId);
+     this.customerObj$ = this.store.pipe(select( getCustomerDetail ));
   }
 
   ngOnDestroy(): void {
@@ -30,9 +29,10 @@ export class TravelModeComponent implements OnInit,OnDestroy{
   
 
 ngOnInit(): void {
-   this.subscription= this.customerId$.subscribe((ID)=>{
-      this.id=ID
-   }) 
+  this.subscription=this.customerObj$.subscribe((data) => {
+    this.customerId = data._id; 
+   // console.log('Customer ID:', this.customerRecivedObj);
+  });
 }
 
   items= [
@@ -46,20 +46,10 @@ ngOnInit(): void {
   ]
 
     navigateTo(link: string) {
-      console.log("ggg",link);
-      // Subscribe to the customerId$ observable
-      this.customerId$.pipe(
-        take(1) // Take only the current value and auto-unsubscribe
-      ).subscribe(customerId => {
-        if (!customerId) {
-          console.error('No customer ID available');
-          return;
-        }
-        this.id=customerId
-    
+      
         console.log(link);
         
-        this.router.navigate(['customerDashboard', this.id, 'travelMode', link])
+        this.router.navigate(['customerDashboard', this.customerId, 'travelMode', link])
           .then((nav: boolean) => {
             console.log('Navigation successful:', nav);
           })
@@ -67,9 +57,9 @@ ngOnInit(): void {
             console.error('Navigation error:', err);
           });
           console.log("ggg123");
-      });
-    }
+        }
+      }
+    
 
      // Check if a mode is currently active
   
-}

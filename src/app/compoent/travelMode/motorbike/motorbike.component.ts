@@ -1,10 +1,11 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Store } from '@ngrx/store';
+import { select, Store } from '@ngrx/store';
 import { Observable, Subscription, take } from 'rxjs';
 import { AppState } from '../../../app.reducer';
-import { selectCustomerId, selectCustomerState } from '../../../store/customers/customer.selectors';
+import { getCustomerDetail, selectCustomerId, selectCustomerState } from '../../../store/customers/customer.selectors';
 import { selectOrderDetails } from '../../../store/orders/orders.selectors';
+import { CustomerdetailsInterface } from '../../../model/customerDetailsInterface';
 
 @Component({
   selector: 'app-motorbike',
@@ -13,8 +14,9 @@ import { selectOrderDetails } from '../../../store/orders/orders.selectors';
 })
 export class MotorbikeComponent implements OnInit,OnDestroy{
 
-  customerId$: Observable<any>;
-  customerId: string| undefined;
+   customerObj$!: Observable<CustomerdetailsInterface|any>;
+   private subscription!: Subscription;
+   customerId!:string;
 
   orderList$: Observable<any>;
   orderList1!:any;
@@ -24,19 +26,18 @@ export class MotorbikeComponent implements OnInit,OnDestroy{
   
     constructor(private router:Router,private activatedRoute: ActivatedRoute,
       private store: Store<AppState>){
-      this.customerId$ = this.store.select(selectCustomerId);
+       this.customerObj$ = this.store.pipe(select( getCustomerDetail ));
       this.orderList$ =this.store.select(selectOrderDetails) 
 
     }
 
-  ngOnDestroy(): void {
-    this.subscriptionCustomerId.unsubscribe();
-  }
 
   ngOnInit(): void {
-    this.subscriptionCustomerId=this.customerId$.subscribe((data)=>{
-       this.id=data; 
-    })
+    this.subscription=this.customerObj$.subscribe((data) => {
+      this.customerId = data._id; 
+     // console.log('Customer ID:', this.customerRecivedObj);
+    });
+    
   }
     items= [
       {"itemName":"Galle Rent bikes","description":"This may be motor bike","link":"gallebike"},
@@ -69,4 +70,11 @@ export class MotorbikeComponent implements OnInit,OnDestroy{
             });
       
       }
+
+      ngOnDestroy(): void {
+        if(this.subscription){
+          this.subscription.unsubscribe();
+      }
+
+}
 }
