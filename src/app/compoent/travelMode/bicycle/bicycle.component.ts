@@ -1,10 +1,11 @@
 import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Store } from '@ngrx/store';
+import { select, Store } from '@ngrx/store';
 import { Observable, Subscription } from 'rxjs';
 import { AppState } from '../../../app.reducer';
-import { selectCustomerId } from '../../../store/customers/customer.selectors';
+import { getCustomerDetail, selectCustomerId } from '../../../store/customers/customer.selectors';
 import { selectOrderDetails } from '../../../store/orders/orders.selectors';
+import { CustomerdetailsInterface } from '../../../model/customerDetailsInterface';
 
 @Component({
   selector: 'app-bicycle',
@@ -14,30 +15,34 @@ import { selectOrderDetails } from '../../../store/orders/orders.selectors';
 })
 export class BicycleComponent implements OnInit,OnDestroy{
   expandedIndex = 0;
-customerId$: Observable<any>;
-  customerId: string| undefined;
-
-  orderList$: Observable<any>;
-  orderList1!:any;
-
-  private subscriptionCustomerId!: Subscription;
-  id!:string|undefined;
+  customerObj$!: Observable<CustomerdetailsInterface|any>;
+    private subscription!: Subscription;
+  
+    customerId!:string;
   
     constructor(private router:Router,
-      private store: Store<AppState>){
-      this.customerId$ = this.store.select(selectCustomerId);
-      this.orderList$ =this.store.select(selectOrderDetails) 
-
+      private store: Store<AppState>
+    ){
+      this.customerObj$ = this.store.pipe(select( getCustomerDetail ));
     }
+  
+  
+    // constructor(private router:Router,
+    //   private store: Store<AppState>){
+    //   this.customerId$ = this.store.select(selectCustomerId);
+    //   this.orderList$ =this.store.select(selectOrderDetails) 
+
+    // }
 
   ngOnDestroy(): void {
-    this.subscriptionCustomerId.unsubscribe();
+    this.subscription.unsubscribe();
   }
 
   ngOnInit(): void {
-    this.subscriptionCustomerId=this.customerId$.subscribe((data)=>{
-       this.id=data; 
-    })
+    this.subscription=this.customerObj$.subscribe((data) => {
+      this.customerId = data._id; 
+     // console.log('Customer ID:', this.customerRecivedObj);
+    });
   }
     items= [
       {"itemName":"Galle Rent bicycle","description":"This may be motor bike","link":"gallebicycle"},
@@ -50,7 +55,7 @@ customerId$: Observable<any>;
     navigateTo(link: string) {
         console.log("insdie the motorbike com",link);
       
-          this.router.navigate(['customerDashboard',this.id,'travelMode','bicycle', link])
+          this.router.navigate(['customerDashboard',this.customerId,'travelMode','bicycle', link])
             .then((nav: boolean) => {
               console.log('Navigation successful:', nav);
             })

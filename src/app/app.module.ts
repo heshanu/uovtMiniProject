@@ -159,6 +159,7 @@ import { TrainComponent } from './compoent/travelMode/train/train.component';
     HotelModule,
     CommonModule,
     StoreModule.forRoot(appReducers),
+    //toreModule.forRoot({ customer: customerReducer }),
     StoreDevtoolsModule.instrument({
       maxAge: 25
     }),

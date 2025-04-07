@@ -56,23 +56,29 @@ export class CustomersDashBoardComponent implements OnInit,OnDestroy{
       this.route.navigate(['customerDashboard/',_id]);
     //  this.store.dispatch(setCustomerId({_id}));
      console.log("customer is is set",_id);
+     console.log(customer);
+     
      this.store.dispatch(
       setCustomer({
-        _id:customer._id,
-        name:customer.name,
-        age:customer.age,
-        address: customer.address,
-        accomadation: customer.accomadation,
-        travelMode:customer.travelMode,
-        foodList: customer.foodList,
-       foodListOption: customer.foodListOption,
-        beverageList:customer.beverageList,
-        beverageListOption:customer.beverageListOption,
-        startDate:customer.startDate,
-        endDate: customer.endDate
+        customer: {
+          _id: customer._id,
+          name: customer.name,
+          age: customer.age,
+          address: customer.address,
+          accomadation: customer.accomadation,
+          travelMode: customer.travelMode,
+          foodList: customer.foodList,
+          foodListOption: customer.foodListOption,
+          beverageList: customer.beverageList,
+          beverageListOption: customer.beverageListOption,
+          startDate: customer.startDate,
+          endDate: customer.endDate
+        },
+        loading: true,
+        error: null
       })
     );
   }
-}
+  }
 }
 
