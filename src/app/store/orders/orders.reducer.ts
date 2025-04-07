@@ -6,9 +6,9 @@ export const initialState: OrderState[] = [];
 
 export const ordersReducer = createReducer(
   initialOrderState,
-  on(setOrder , (state, { orderList }) => ({
+  on(setOrder, (state, { order }) => ({
     ...state,
-    orderList: orderList
+    ...order,  // Spread the entire order object to update all properties, including orderList
   }))
 );
 

@@ -56,17 +56,27 @@ export class VehicletemplateComponent implements OnInit, OnDestroy {
     this.bikeList = this.bikeService.getHikkaBikeList();
   }
 
-  selectBike(bike: BikeInterface) {
+  selectBike(bike:any) {
     console.log(bike, "bike is clicked");
+
+    /*
+      orderId:'',
+    customerId:'',
+    orderList:[],
+    orderDate: '',
+    totalPrice: 0,
+    orderStatus: ''*/ 
+
+    const order:OrderState={
+      orderId:bike.bikeId,
+      customerId:this.customerId,
+      orderList:bike,
+      orderDate:Date.now().toString(),
+      totalPrice:bike.ratePerDay+100,
+      orderStatus:"ordered"
+    }
     this.store.dispatch(
-      setOrder({
-        orderId: bike.bikeId,
-        customerId: this.customerId,
-        orderList: ["asasasaasa"],
-        orderDate: "2021-12-12",
-        totalPrice: bike.ratePerDay,
-        orderStatus: "order pending"
-      })
+      setOrder({order:order})
     );
   }
 
