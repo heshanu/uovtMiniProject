@@ -1,7 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { BikeService } from '../../../../service/bike.service';
 import { BikeInterface } from '../../../../model/bike_interface';
-import { log } from 'node:console';
 
 @Component({
   selector: 'app-gallerentbikes',

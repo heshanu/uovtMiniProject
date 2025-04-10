@@ -33,7 +33,7 @@ export class VehicletemplateComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.subscription=this.customerObj$.subscribe((data) => {
+    this.subscription=this.customerObj$.subscribe((data:any) => {
       this.customerId = data._id; 
      // console.log('Customer ID:', this.customerRecivedObj);
     });
