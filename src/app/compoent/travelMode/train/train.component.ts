@@ -1,6 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { TrainService } from '../../../service/train.service';
 import { TrainRoutesInterface } from '../../../model/trainRoutes';
+import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogTrainComponent } from '../../../shared/dialog-train/dialog-train.component';
+import { DialogTrainconfirmComponent } from '../../../shared/dialog-trainconfirm/dialog-trainconfirm.component';
 
 @Component({
   selector: 'app-train',
@@ -8,9 +12,10 @@ import { TrainRoutesInterface } from '../../../model/trainRoutes';
   styleUrl: './train.component.css'
 })
 export class TrainComponent implements OnInit{
-navigateTo(arg0: any) {
-throw new Error('Method not implemented.');
-}
+
+
+  readonly dialog = inject(MatDialog)
+
   date!: any;
   trainNumber!:any;
   ScheduleDeparture!:any;
@@ -18,7 +23,16 @@ throw new Error('Method not implemented.');
   DelayInDeparture:any;
   trainRoutes!:TrainRoutesInterface[];
 
-  constructor(private dataService: TrainService) { }
+  selectItem(item:any,enterAnimationDuration: string, exitAnimationDuration: string) {
+     //console.log("booked ",item);
+      this.dialog.open(DialogTrainconfirmComponent, {
+        width: '250px',
+        enterAnimationDuration,
+        exitAnimationDuration,
+      }); 
+    }
+
+  constructor(private dataService: TrainService,private router:Router) { }
 
   ngOnInit(): void {
     this.getDate();
@@ -96,4 +110,25 @@ throw new Error('Method not implemented.');
       }
     );
   }
+
+  openPackageDialog(item: any,$event: MouseEvent) {
+    $event.stopPropagation(); // Prevent card click event
+      
+      const dialogRef = this.dialog.open(DialogTrainconfirmComponent, {
+        width: '500px',
+        maxWidth: '90vw',
+        data: {
+          hotelName: item.name,
+          packages: item.ingredients
+        }
+      });
+  
+      dialogRef.afterClosed().subscribe(selectedPackage => {
+        if (selectedPackage) {
+          console.log('Selected package:', selectedPackage);
+          // Handle the selected package
+        }
+      });
+    }
+
 }

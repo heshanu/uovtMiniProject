@@ -1,0 +1,37 @@
+<h2 mat-dialog-title class="font-bold text-xl flex items-center">
+    <mat-icon class="text-blue-500 mr-2">local_offer</mat-icon>
+    {{ data.hotelName }} Packages
+  </h2>
+  
+  <mat-dialog-content class="mat-typography">
+    <div class="space-y-4">
+      <div *ngFor="let pkg of data.packages" 
+           class="border rounded-lg p-4 hover:bg-blue-50 transition-colors cursor-pointer"
+           (click)="selectedPackage = pkg"
+           [class.border-blue-300]="selectedPackage === pkg"
+           (click)="bookPackage(pkg,'0ms', '0ms')">
+        <div class="flex justify-between items-center">
+          <div>
+            <h3 class="font-semibold">{{ getPackageName(pkg) }}</h3>
+            <p class="text-sm text-gray-500 mt-1 flex items-center">
+              <mat-icon class="text-sm mr-1">schedule</mat-icon>
+              {{ getPackageDuration(pkg) }} rental
+            </p>
+          </div>
+          <div class="text-right">
+            <span class="font-bold text-blue-600 text-lg">{{ getPackagePrice(pkg) }}</span>
+            <span class="text-gray-500 text-sm ml-1">/{{ getPackageDuration(pkg) }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-dialog-content>
+  
+  <mat-dialog-actions align="end" class="border-t pt-4">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-raised-button color="primary" 
+            [mat-dialog-close]="selectedPackage"
+            [disabled]="!selectedPackage">
+      Select Package
+    </button>
+  </mat-dialog-actions>
