@@ -3,7 +3,6 @@ import { FoodsInterface } from '../../model/foodrecipe.model';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogHotelconfirmComponent } from '../dialog-hotelconfirm/dialog-hotelconfirm.component';
 import { DialogCompoentComponent } from '../dialog-hotel/dialog-compoent.component';
-import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-card-template-foods',
