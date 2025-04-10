@@ -25,21 +25,13 @@ export class BicycleComponent implements OnInit,OnDestroy{
     ){
       this.customerObj$ = this.store.pipe(select( getCustomerDetail ));
     }
-  
-  
-    // constructor(private router:Router,
-    //   private store: Store<AppState>){
-    //   this.customerId$ = this.store.select(selectCustomerId);
-    //   this.orderList$ =this.store.select(selectOrderDetails) 
-
-    // }
 
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
 
   ngOnInit(): void {
-    this.subscription=this.customerObj$.subscribe((data) => {
+    this.subscription=this.customerObj$.subscribe((data:any) => {
       this.customerId = data._id; 
      // console.log('Customer ID:', this.customerRecivedObj);
     });

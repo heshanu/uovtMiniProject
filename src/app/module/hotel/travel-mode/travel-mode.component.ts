@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { select, Store } from '@ngrx/store';
 import { Observable, Subscription, take } from 'rxjs';
 import { AppState } from '../../../app.reducer';
-import { getCustomerDetail, selectCustomerId } from '../../../store/customers/customer.selectors';
+import { getCustomerDetail} from '../../../store/customers/customer.selectors';
 import { CustomerdetailsInterface } from '../../../model/customerDetailsInterface';
 
 @Component({
@@ -29,9 +29,8 @@ export class TravelModeComponent implements OnInit,OnDestroy{
   
 
 ngOnInit(): void {
-  this.subscription=this.customerObj$.subscribe((data) => {
+  this.subscription=this.customerObj$.subscribe((data:any) => {
     this.customerId = data._id; 
-   // console.log('Customer ID:', this.customerRecivedObj);
   });
 }
 
