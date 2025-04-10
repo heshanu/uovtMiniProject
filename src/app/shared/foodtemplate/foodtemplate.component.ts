@@ -4,8 +4,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { AppState } from '../../app.reducer';
 import { Observable, Subscription } from 'rxjs';
-import { selectCustomerId } from '../../store/customers/customer.selectors';
+import { getCustomerDetail, selectCustomerId } from '../../store/customers/customer.selectors';
 import { FoodTypeIterface } from '../../service/foodservice.service';
+import { CustomerState } from '../../store/customers/customer.status';
 
 @Component({
   selector: 'app-foodtemplate',
@@ -15,14 +16,13 @@ import { FoodTypeIterface } from '../../service/foodservice.service';
 })
 export class FoodtemplateComponent implements OnInit{
 
-  customerId$!: Observable<string|undefined>;
-  customerId:string|undefined;
-  id:any;
+  customerId$!: Observable<CustomerState|undefined>;
+  customerId:any;
   customerIdSubscription!:Subscription;
 
   constructor(private router:Router,private activatedRoute: ActivatedRoute, 
     private store: Store<AppState>){
-       this.customerId$ = this.store.select(selectCustomerId);
+       this.customerId$ = this.store.select(getCustomerDetail);
     }
 
   @Input() list:any[] = [];
@@ -31,8 +31,8 @@ export class FoodtemplateComponent implements OnInit{
   expandedIndex = 0;
   
   ngOnInit(): void {
-    this.customerIdSubscription=this.customerId$.subscribe((data)=>{
-      this.id=data;
+    this.customerIdSubscription=this.customerId$.subscribe((data:any)=>{
+      this.customerId=data._id;
     })
     this.foodList = this.list;
   }
@@ -40,8 +40,8 @@ export class FoodtemplateComponent implements OnInit{
   // Implement the navigateTo method if needed
   navigateTo(foodName:string) {
     console.log("Food-template",foodName);
-    if (this.id && foodName) {
-      this.router.navigate(['customerDashboard', this.id, 'foodslist', foodName])
+    if (this.customerId && foodName) {
+      this.router.navigate(['customerDashboard', this.customerId, 'foodslist', foodName])
       .then((nav: boolean) => {
         console.log('Navigation successful:', nav);
       })

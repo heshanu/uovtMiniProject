@@ -20,7 +20,6 @@ hotelsList:HotelsListInterface[]=[];
 
 customerId$!: Observable<CustomerState|undefined>;
 customerId:string|undefined;
-id:any;
 customerIdSubscription!:Subscription;
 
 @Input() items:any[] = [];
@@ -39,17 +38,19 @@ customerIdSubscription!:Subscription;
 
   ngOnInit(): void {
       this.customerIdSubscription=this.customerId$.subscribe((data:any)=>{
-        this.id=data._id;
+        this.customerId=data._id;
       })
 
       this.itemRecived=this.items;
+      console.log(this.itemRecived);
+      
       }
       
 
 
   navigateTo(link: string) {
-    console.log("accordintemplate",this.id);
-      this.router.navigate(["customerDashboard/",this.id,"hotelslist",link])
+    console.log("accordintemplate",this.customerId);
+      this.router.navigate(["customerDashboard/",this.customerId,"hotelslist",link])
         .then((nav: boolean) => {
           console.log('Navigation successful:', nav);
         })
