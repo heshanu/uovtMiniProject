@@ -30,7 +30,9 @@ export class TuktukComponent implements OnInit,OnDestroy{
     }
 
   ngOnDestroy(): void {
+    if(this.subscriptionCustomerId){
     this.subscriptionCustomerId.unsubscribe();
+    }
   }
 
   ngOnInit(): void {
