@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { select, Store } from '@ngrx/store';
 import { Observable, Subscription } from 'rxjs';
 import { AppState } from '../../../app.reducer';
-import { selectCustomerId } from '../../../store/customers/customer.selectors';
+import { getCustomerDetail, selectCustomerId } from '../../../store/customers/customer.selectors';
 import { selectOrderDetails } from '../../../store/orders/orders.selectors';
 
 @Component({
@@ -24,18 +24,20 @@ export class TuktukComponent implements OnInit,OnDestroy{
   
     constructor(private router:Router,private activatedRoute: ActivatedRoute,
       private store: Store<AppState>){
-      this.customerId$ = this.store.select(selectCustomerId);
+      this.customerId$ = this.store.select(getCustomerDetail);
       this.orderList$ =this.store.select(selectOrderDetails) 
 
     }
 
   ngOnDestroy(): void {
+    if(this.subscriptionCustomerId){
     this.subscriptionCustomerId.unsubscribe();
+    }
   }
 
   ngOnInit(): void {
-    this.subscriptionCustomerId=this.customerId$.subscribe((data)=>{
-       this.id=data; 
+    this.subscriptionCustomerId=this.customerId$.subscribe((data:any)=>{
+       this.id=data._id; 
     })
   }
     items= [
