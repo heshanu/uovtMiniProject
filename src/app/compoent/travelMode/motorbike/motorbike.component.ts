@@ -28,53 +28,43 @@ export class MotorbikeComponent implements OnInit,OnDestroy{
       private store: Store<AppState>){
        this.customerObj$ = this.store.pipe(select( getCustomerDetail ));
       this.orderList$ =this.store.select(selectOrderDetails) 
-
     }
 
 
   ngOnInit(): void {
-    this.subscription=this.customerObj$.subscribe((data) => {
+    this.subscription=this.customerObj$.subscribe((data:any) => {
       this.customerId = data._id; 
-     // console.log('Customer ID:', this.customerRecivedObj);
+     console.log('Customer details:', data);
     });
     
   }
-    items= [
+
+  items= [
       {"itemName":"Galle Rent bikes","description":"This may be motor bike","link":"gallebike"},
       {"itemName":"Hikkaduwa Rent bikes","description":"This may be motor bike","link":"hikkabike"},
       {"itemName":"Matara Rent bikes","description":"This may be motor bike","link":"matarabike"},
       {"itemName":"Nuwara Rent bikes","description":"This may be motor bike","link":"nuwarabike"},
   
      
-    ]
+  ]
   
-    navigateTo(link: string) {
-        console.log("insdie the motorbike com",link);
-        // Subscribe to the customerId$ observable
-        // this.customerId$.pipe(
-        //   take(1) // Take only the current value and auto-unsubscribe
-        // ).subscribe(customerId => {
-        //   if (!customerId) {
-        //     console.error('No customer ID available');
-        //     return;
-        //   }
-        //   this.id=customerId
+  navigateTo(link: string) {
+        console.log("insdie the motorbike:",link);    
     
-      
-          this.router.navigate(['customerDashboard',this.id,'travelMode','motorbike', link])
+          this.router.navigate(['customerDashboard',this.customerId,'travelMode','motorbike', link])
             .then((nav: boolean) => {
               console.log('Navigation successful:', nav);
             })
             .catch((err: Error) => {
               console.error('Navigation error:', err);
             });
-      
-      }
+  }
 
-      ngOnDestroy(): void {
+    
+  ngOnDestroy(): void {
         if(this.subscription){
           this.subscription.unsubscribe();
-      }
+        }
+  }
 
-}
 }
