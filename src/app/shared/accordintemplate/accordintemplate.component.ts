@@ -5,7 +5,8 @@ import { Observable, Subscription, take } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { AppState } from '../../app.reducer';
-import { selectCustomerId } from '../../store/customers/customer.selectors';
+import { getCustomerDetail, selectCustomerId } from '../../store/customers/customer.selectors';
+import { CustomerState } from '../../store/customers/customer.status';
 
 @Component({
   selector: 'app-accordintemplate',
@@ -17,7 +18,7 @@ export class AccordintemplateComponent implements OnInit,OnDestroy{
 
 hotelsList:HotelsListInterface[]=[];
 
-customerId$!: Observable<string|undefined>;
+customerId$!: Observable<CustomerState|undefined>;
 customerId:string|undefined;
 id:any;
 customerIdSubscription!:Subscription;
@@ -27,7 +28,7 @@ customerIdSubscription!:Subscription;
   constructor(private router:Router,private activatedRoute: ActivatedRoute,
     private store: Store<AppState>
   ){
-    this.customerId$ = this.store.select(selectCustomerId);
+    this.customerId$ = this.store.select(getCustomerDetail);
   }
 
   ngOnDestroy(): void {
@@ -37,8 +38,8 @@ customerIdSubscription!:Subscription;
   itemRecived:any[]=[];
 
   ngOnInit(): void {
-      this.customerIdSubscription=this.customerId$.subscribe((data)=>{
-        this.id=data;
+      this.customerIdSubscription=this.customerId$.subscribe((data:any)=>{
+        this.id=data._id;
       })
 
       this.itemRecived=this.items;
