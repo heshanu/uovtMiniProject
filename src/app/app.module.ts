@@ -84,6 +84,8 @@ import { BeveragelistComponent } from './module/beverage/beveragelist/beverageli
 import { BeverageModule } from './module/beverage/beverage.module';
 import { BeveragetemplateComponent } from './shared/beveragetemplate/beveragetemplate.component';
 import { SpinnerComponent } from './shared/spinner/spinner.component';
+import { BeverageconfirmComponent } from './shared/beverageconfirm/beverageconfirm.component';
+import { ConfirmationModalComponent } from './shared/confirmation-modal/confirmation-modal.component';
 
 @NgModule({
   declarations: [
@@ -152,6 +154,8 @@ import { SpinnerComponent } from './shared/spinner/spinner.component';
     BeveragelistComponent,
     BeveragetemplateComponent,
     SpinnerComponent,
+    BeverageconfirmComponent,
+    ConfirmationModalComponent,
 
   ],
   imports: [
