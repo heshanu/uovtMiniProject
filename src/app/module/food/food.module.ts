@@ -32,7 +32,8 @@ import { TraditionalComponent } from './foodStyle/traditional/traditional.compon
   ],
   exports:[
     SouthernComponent,
-    CardTemplateFoodsComponent 
+    CardTemplateFoodsComponent,
+    FoodtemplateComponent,
   ]
 })
 export class FoodModule { }

@@ -80,6 +80,8 @@ import { NunwaratuktukComponent } from './compoent/travelMode/tuktuk/nunwaratukt
 import { TrainComponent } from './compoent/travelMode/train/train.component';
 import { DialogTrainComponent } from './shared/dialog-train/dialog-train.component';
 import { DialogTrainconfirmComponent } from './shared/dialog-trainconfirm/dialog-trainconfirm.component';
+import { BeveragelistComponent } from './module/beverage/beveragelist/beveragelist.component';
+import { BeverageModule } from './module/beverage/beverage.module';
 
 @NgModule({
   declarations: [
@@ -145,6 +147,7 @@ import { DialogTrainconfirmComponent } from './shared/dialog-trainconfirm/dialog
     TrainComponent,
     DialogTrainComponent,
     DialogTrainconfirmComponent,
+    BeveragelistComponent,
 
   ],
   imports: [
@@ -168,9 +171,8 @@ import { DialogTrainconfirmComponent } from './shared/dialog-trainconfirm/dialog
       maxAge: 25
     }),
     HotelsbookingModule,
-    FoodModule
-
-
+    FoodModule,
+    BeverageModule
   ],
   exports:[
     
