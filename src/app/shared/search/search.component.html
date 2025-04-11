@@ -1,0 +1,15 @@
+<mat-form-field class="example-form-field m-8">
+  <mat-label>Clearable input</mat-label>
+  <input matInput type="text" [(ngModel)]="value">
+  <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" 
+  (mouseover)="findBeverage()"
+  (click)="value=''"
+  >
+    <mat-icon>close</mat-icon>
+  </button>
+</mat-form-field>
+
+
+@if(value){
+<app-searchresult [result]="result"/>
+}
