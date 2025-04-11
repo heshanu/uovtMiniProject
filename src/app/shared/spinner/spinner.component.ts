@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { SpinnerService } from '../../service/spinner.service';
+import { Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-spinner',
@@ -8,9 +7,6 @@ import { SpinnerService } from '../../service/spinner.service';
 })
 export class SpinnerComponent {
 
-  constructor(private spinnerService:SpinnerService){}
-
-  isLoading = this.spinnerService.loading$;
- 
+  @Input() isLoading:any;
   
 }
