@@ -171,6 +171,10 @@ const routes: Routes = [
         component:TrainComponent
       },
       {
+        path:"beverage",
+        loadChildren:()=>import('./module/beverage/beverage.module').then(m=>m.BeverageModule)
+      },
+      {
         //hotelslist/northwest
         path: 'hotelslist',
         loadChildren:()=>import('./module/hotelsbooking/hotelsbooking.module').then(m=>m.HotelsbookingModule)
@@ -234,11 +238,7 @@ const routes: Routes = [
    {
     path:"foodslist/traditional",
     loadChildren:()=>import('./module/food/food.module').then(m=>m.FoodModule)
-   },
-    {
-      path:"beverage",
-      loadChildren:()=>import('./module/beverage/beverage.module').then(m=>m.BeverageModule)
-    }  
+   } 
     ]
   }
   ,

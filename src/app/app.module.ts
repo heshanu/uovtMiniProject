@@ -82,6 +82,8 @@ import { DialogTrainComponent } from './shared/dialog-train/dialog-train.compone
 import { DialogTrainconfirmComponent } from './shared/dialog-trainconfirm/dialog-trainconfirm.component';
 import { BeveragelistComponent } from './module/beverage/beveragelist/beveragelist.component';
 import { BeverageModule } from './module/beverage/beverage.module';
+import { BeveragetemplateComponent } from './shared/beveragetemplate/beveragetemplate.component';
+import { SpinnerComponent } from './shared/spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -148,6 +150,8 @@ import { BeverageModule } from './module/beverage/beverage.module';
     DialogTrainComponent,
     DialogTrainconfirmComponent,
     BeveragelistComponent,
+    BeveragetemplateComponent,
+    SpinnerComponent,
 
   ],
   imports: [
