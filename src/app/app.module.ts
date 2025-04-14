@@ -86,6 +86,8 @@ import { BeveragetemplateComponent } from './shared/beveragetemplate/beveragetem
 import { SpinnerComponent } from './shared/spinner/spinner.component';
 import { BeverageconfirmComponent } from './shared/beverageconfirm/beverageconfirm.component';
 import { ConfirmationModalComponent } from './shared/confirmation-modal/confirmation-modal.component';
+import { SearchComponent } from './shared/search/search.component';
+import { SearchresultComponent } from './shared/searchresult/searchresult.component';
 
 @NgModule({
   declarations: [
@@ -156,6 +158,8 @@ import { ConfirmationModalComponent } from './shared/confirmation-modal/confirma
     SpinnerComponent,
     BeverageconfirmComponent,
     ConfirmationModalComponent,
+    SearchComponent,
+    SearchresultComponent,
 
   ],
   imports: [
