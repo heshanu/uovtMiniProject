@@ -1,11 +1,20 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-searchresult',
   templateUrl: './searchresult.component.html',
   styleUrl: './searchresult.component.css'
 })
-export class SearchresultComponent {
+export class SearchresultComponent implements OnInit{
 
-  @Input() result:any;
+  @Input() result:any[]=[];
+
+  resultList:any[]=[];
+
+  constructor(){
+  }
+
+  ngOnInit(): void {
+    this.resultList=this.result;
+  }
 }

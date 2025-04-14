@@ -30,11 +30,14 @@ export class BeveragetemplateComponent implements OnInit{
   constructor(private router:Router, 
     private store: Store<AppState>,private spinnerService:SpinnerService){
        this.customerId$ = this.store.select(getCustomerDetail);
+       this.filteredBeverageList = this.list;
     }
 
   @Input() list:any[] = [];
   
   beverageList:any[] = [];
+
+  filteredBeverageList:any[]=[];
 
   expandedIndex = 0;
   
@@ -97,4 +100,19 @@ export class BeveragetemplateComponent implements OnInit{
       });
     }
   
+  filterResults(text: string) {
+    console.log(text);
+    
+      if (!text) {
+        this.filteredBeverageList = this.beverageList;
+        return;
+      }
+      this.filteredBeverageList = this.beverageList.filter((beverage:any) =>
+        beverage.strDrink.toLowerCase().includes(text.toLowerCase()),
+      );
+
+      console.log(this.filteredBeverageList);
+      
+    }  
+
 } 

@@ -1,6 +1,18 @@
 <div class="center-align m-4">
-  <app-search [beverageList]="beverageList" class="large-search m-4 xl"/>
+   <section>
+      <form>
+        <input type="text" placeholder="Filter by city" #filter />
+        <button class="primary" type="button" 
+        (click)="filterResults(filter.value)" 
+        placeholder="Filter by Beverage Name">Search</button>
+      </form>
+    </section>
+    <section class="results">
+       <app-search [beverageList]="filteredBeverageList" class="large-search m-4 xl"/>
+    </section>
+
 </div>
+
 
 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4">
     @for (item of beverageList; track item.id) {
