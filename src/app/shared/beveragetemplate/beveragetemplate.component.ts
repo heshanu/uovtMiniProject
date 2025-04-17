@@ -11,6 +11,7 @@ import { DialogHotelconfirmComponent } from '../dialog-hotelconfirm/dialog-hotel
 import { DialogCompoentComponent } from '../dialog-hotel/dialog-compoent.component';
 import { ConfirmationModalComponent } from '../confirmation-modal/confirmation-modal.component';
 import { BeverageconfirmComponent } from '../beverageconfirm/beverageconfirm.component';
+import { VisiblelistService } from '../../service/visiblelist.service';
 
 @Component({
   selector: 'app-beveragetemplate',
@@ -28,7 +29,9 @@ export class BeveragetemplateComponent implements OnInit{
   readonly dialog = inject(MatDialog)
 
   constructor(private router:Router, 
-    private store: Store<AppState>,private spinnerService:SpinnerService){
+    private store: Store<AppState>,private spinnerService:SpinnerService,
+    private visiblelistService:VisiblelistService
+  ){
        this.customerId$ = this.store.select(getCustomerDetail);
        this.filteredBeverageList = this.list;
     }
@@ -102,6 +105,7 @@ export class BeveragetemplateComponent implements OnInit{
   
   filterResults(text: string) {
     console.log(text);
+    this.visiblelistService.updateData(text);
     
       if (!text) {
         this.filteredBeverageList = this.beverageList;
@@ -111,8 +115,9 @@ export class BeveragetemplateComponent implements OnInit{
         beverage.strDrink.toLowerCase().includes(text.toLowerCase()),
       );
 
-      console.log(this.filteredBeverageList);
-      
+      console.log(this.filteredBeverageList);    
     }  
+
+  
 
 } 
