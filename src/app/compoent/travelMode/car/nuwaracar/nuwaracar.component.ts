@@ -3,9 +3,10 @@ import { CarService } from '../../../../service/car.service';
 import { BikeInterface } from '../../../../model/bike_interface';
 
 @Component({
-  selector: 'app-nuwaracar',
-  templateUrl: './nuwaracar.component.html',
-  styleUrl: './nuwaracar.component.css'
+    selector: 'app-nuwaracar',
+    templateUrl: './nuwaracar.component.html',
+    styleUrl: './nuwaracar.component.css',
+    standalone: false
 })
 export class NuwaracarComponent  implements OnInit{
 

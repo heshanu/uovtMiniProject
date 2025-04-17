@@ -3,9 +3,10 @@ import { BikeInterface } from '../../../../model/bike_interface';
 import { VanService } from '../../../../service/van.service';
 
 @Component({
-  selector: 'app-gallecar',
-  templateUrl: './gallecar.component.html',
-  styleUrl: './gallecar.component.css'
+    selector: 'app-gallecar',
+    templateUrl: './gallecar.component.html',
+    styleUrl: './gallecar.component.css',
+    standalone: false
 })
 export class GallecarComponent implements OnInit{
 

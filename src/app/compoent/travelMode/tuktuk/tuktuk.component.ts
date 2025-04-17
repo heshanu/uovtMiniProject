@@ -7,9 +7,10 @@ import { getCustomerDetail, selectCustomerId } from '../../../store/customers/cu
 import { selectOrderDetails } from '../../../store/orders/orders.selectors';
 
 @Component({
-  selector: 'app-tuktuk',
-  templateUrl: './tuktuk.component.html',
-  styleUrl: './tuktuk.component.css'
+    selector: 'app-tuktuk',
+    templateUrl: './tuktuk.component.html',
+    styleUrl: './tuktuk.component.css',
+    standalone: false
 })
 export class TuktukComponent implements OnInit,OnDestroy{
   expandedIndex = 0;

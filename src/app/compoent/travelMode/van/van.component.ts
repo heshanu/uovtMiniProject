@@ -7,9 +7,10 @@ import { getCustomerDetail } from '../../../store/customers/customer.selectors';
 import { selectOrderDetails } from '../../../store/orders/orders.selectors';
 
 @Component({
-  selector: 'app-van',
-  templateUrl: './van.component.html',
-  styleUrl: './van.component.css'
+    selector: 'app-van',
+    templateUrl: './van.component.html',
+    styleUrl: './van.component.css',
+    standalone: false
 })
 export class VanComponent  implements OnInit,OnDestroy{
   expandedIndex = 0;

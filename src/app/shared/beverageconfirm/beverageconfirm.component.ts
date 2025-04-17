@@ -3,9 +3,10 @@ import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dial
 import { ConfirmationModalComponent } from '../confirmation-modal/confirmation-modal.component';
 
 @Component({
-  selector: 'app-beverageconfirm',
-  templateUrl: './beverageconfirm.component.html',
-  styleUrl: './beverageconfirm.component.css'
+    selector: 'app-beverageconfirm',
+    templateUrl: './beverageconfirm.component.html',
+    styleUrl: './beverageconfirm.component.css',
+    standalone: false
 })
 export class BeverageconfirmComponent {
 

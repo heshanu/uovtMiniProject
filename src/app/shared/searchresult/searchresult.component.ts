@@ -5,9 +5,10 @@ import { ConfirmationModalComponent } from '../confirmation-modal/confirmation-m
 import { BeverageconfirmComponent } from '../beverageconfirm/beverageconfirm.component';
 
 @Component({
-  selector: 'app-searchresult',
-  templateUrl: './searchresult.component.html',
-  styleUrl: './searchresult.component.css'
+    selector: 'app-searchresult',
+    templateUrl: './searchresult.component.html',
+    styleUrl: './searchresult.component.css',
+    standalone: false
 })
 export class SearchresultComponent implements OnInit{
 

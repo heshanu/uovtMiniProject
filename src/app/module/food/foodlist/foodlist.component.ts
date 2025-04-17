@@ -4,9 +4,10 @@ import { FoodsInterface } from '../../../model/foodrecipe.model';
 import { catchError, Observable, of, Subscription, tap } from 'rxjs';
 
 @Component({
-  selector: 'app-foodlist',
-  templateUrl: './foodlist.component.html',
-  styleUrl: './foodlist.component.css'
+    selector: 'app-foodlist',
+    templateUrl: './foodlist.component.html',
+    styleUrl: './foodlist.component.css',
+    standalone: false
 })
 export class FoodlistComponent implements OnInit{
 

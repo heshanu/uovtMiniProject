@@ -6,9 +6,10 @@ import { AppState } from '../app.reducer';
 import { selectOrderDetails } from '../store/orders/orders.selectors';
 
 @Component({
-  selector: 'app-orderdetails',
-  templateUrl: './orderdetails.component.html',
-  styleUrls: ['./orderdetails.component.css']
+    selector: 'app-orderdetails',
+    templateUrl: './orderdetails.component.html',
+    styleUrls: ['./orderdetails.component.css'],
+    standalone: false
 })
 export class OrderdetailsComponent implements OnInit, OnDestroy {
   orderList$!: Observable<OrderState | undefined>;

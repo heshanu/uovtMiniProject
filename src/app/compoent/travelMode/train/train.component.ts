@@ -7,9 +7,10 @@ import { DialogTrainComponent } from '../../../shared/dialog-train/dialog-train.
 import { DialogTrainconfirmComponent } from '../../../shared/dialog-trainconfirm/dialog-trainconfirm.component';
 
 @Component({
-  selector: 'app-train',
-  templateUrl: './train.component.html',
-  styleUrl: './train.component.css'
+    selector: 'app-train',
+    templateUrl: './train.component.html',
+    styleUrl: './train.component.css',
+    standalone: false
 })
 export class TrainComponent implements OnInit{
 

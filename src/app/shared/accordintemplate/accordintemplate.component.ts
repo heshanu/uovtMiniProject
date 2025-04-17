@@ -9,10 +9,11 @@ import { getCustomerDetail, selectCustomerId } from '../../store/customers/custo
 import { CustomerState } from '../../store/customers/customer.status';
 
 @Component({
-  selector: 'app-accordintemplate',
-  templateUrl: './accordintemplate.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  styleUrl: './accordintemplate.component.css'
+    selector: 'app-accordintemplate',
+    templateUrl: './accordintemplate.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    styleUrl: './accordintemplate.component.css',
+    standalone: false
 })
 export class AccordintemplateComponent implements OnInit,OnDestroy{
 

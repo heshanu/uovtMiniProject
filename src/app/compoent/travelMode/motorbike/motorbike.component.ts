@@ -8,9 +8,10 @@ import { selectOrderDetails } from '../../../store/orders/orders.selectors';
 import { CustomerdetailsInterface } from '../../../model/customerDetailsInterface';
 
 @Component({
-  selector: 'app-motorbike',
-  templateUrl: './motorbike.component.html',
-  styleUrl: './motorbike.component.css'
+    selector: 'app-motorbike',
+    templateUrl: './motorbike.component.html',
+    styleUrl: './motorbike.component.css',
+    standalone: false
 })
 export class MotorbikeComponent implements OnInit,OnDestroy{
 

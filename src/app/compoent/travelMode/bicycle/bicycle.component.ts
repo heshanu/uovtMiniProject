@@ -8,10 +8,11 @@ import { selectOrderDetails } from '../../../store/orders/orders.selectors';
 import { CustomerdetailsInterface } from '../../../model/customerDetailsInterface';
 
 @Component({
-  selector: 'app-bicycle',
-  templateUrl: './bicycle.component.html',
+    selector: 'app-bicycle',
+    templateUrl: './bicycle.component.html',
     changeDetection: ChangeDetectionStrategy.OnPush,
-  styleUrl: './bicycle.component.css'
+    styleUrl: './bicycle.component.css',
+    standalone: false
 })
 export class BicycleComponent implements OnInit,OnDestroy{
   expandedIndex = 0;

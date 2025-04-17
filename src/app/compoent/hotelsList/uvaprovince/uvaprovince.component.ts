@@ -3,9 +3,10 @@ import { HotelserviceService } from '../../../service/hotelservice.service';
 import { HotelsListInterface } from '../../../model/hotel_interface';
 
 @Component({
-  selector: 'app-uvaprovince',
-  templateUrl: './uvaprovince.component.html',
-  styleUrl: './uvaprovince.component.css'
+    selector: 'app-uvaprovince',
+    templateUrl: './uvaprovince.component.html',
+    styleUrl: './uvaprovince.component.css',
+    standalone: false
 })
 export class UvaprovinceComponent {
   constructor(private hotelService:HotelserviceService){}

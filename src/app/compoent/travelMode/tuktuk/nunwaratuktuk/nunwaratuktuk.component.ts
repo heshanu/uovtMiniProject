@@ -3,9 +3,10 @@ import { TuktukService } from '../../../../service/tuktuk.service';
 import { BikeInterface } from '../../../../model/bike_interface';
 
 @Component({
-  selector: 'app-nunwaratuktuk',
-  templateUrl: './nunwaratuktuk.component.html',
-  styleUrl: './nunwaratuktuk.component.css'
+    selector: 'app-nunwaratuktuk',
+    templateUrl: './nunwaratuktuk.component.html',
+    styleUrl: './nunwaratuktuk.component.css',
+    standalone: false
 })
 export class NunwaratuktukComponent  implements OnInit{
 

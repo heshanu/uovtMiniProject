@@ -3,9 +3,10 @@ import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dial
 import { DialogHotelconfirmComponent } from '../dialog-hotelconfirm/dialog-hotelconfirm.component';
 
 @Component({
-  selector: 'app-dialog-compoent',
-  templateUrl: './dialog-compoent.component.html',
-  styleUrl: './dialog-compoent.component.css'
+    selector: 'app-dialog-compoent',
+    templateUrl: './dialog-compoent.component.html',
+    styleUrl: './dialog-compoent.component.css',
+    standalone: false
 })
 export class DialogCompoentComponent {
 

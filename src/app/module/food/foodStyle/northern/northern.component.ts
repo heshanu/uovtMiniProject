@@ -4,9 +4,10 @@ import { Subscription } from 'rxjs';
 import { FoodsInterface } from '../../../../model/foodrecipe.model';
 
 @Component({
-  selector: 'app-northern',
-  templateUrl: './northern.component.html',
-  styleUrl: './northern.component.css'
+    selector: 'app-northern',
+    templateUrl: './northern.component.html',
+    styleUrl: './northern.component.css',
+    standalone: false
 })
 export class NorthernComponent implements OnInit ,OnDestroy{
 

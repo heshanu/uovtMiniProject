@@ -3,9 +3,10 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { CalenderService } from '../../service/calender.service';
 
 @Component({
-  selector: 'app-calender',
-  templateUrl: './calender.component.html',
-  styleUrl: './calender.component.css'
+    selector: 'app-calender',
+    templateUrl: './calender.component.html',
+    styleUrl: './calender.component.css',
+    standalone: false
 })
 export class CalenderComponent implements OnInit{
 

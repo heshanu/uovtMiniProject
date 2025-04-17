@@ -5,9 +5,10 @@ import { FoodserviceService } from '../../../../service/foodservice.service';
 import { SpinnerService } from '../../../../service/spinner.service';
 
 @Component({
-  selector: 'app-traditional',
-  templateUrl: './traditional.component.html',
-  styleUrl: './traditional.component.css'
+    selector: 'app-traditional',
+    templateUrl: './traditional.component.html',
+    styleUrl: './traditional.component.css',
+    standalone: false
 })
 export class TraditionalComponent implements OnInit ,OnDestroy{
 

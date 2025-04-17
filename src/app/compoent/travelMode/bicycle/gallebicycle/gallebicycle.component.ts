@@ -3,9 +3,10 @@ import { BicycleService } from '../../../../service/bicycle.service';
 import { BikeInterface } from '../../../../model/bike_interface';
 
 @Component({
-  selector: 'app-gallebicycle',
-  templateUrl: './gallebicycle.component.html',
-  styleUrl: './gallebicycle.component.css'
+    selector: 'app-gallebicycle',
+    templateUrl: './gallebicycle.component.html',
+    styleUrl: './gallebicycle.component.css',
+    standalone: false
 })
 export class GallebicycleComponent implements OnInit{
 

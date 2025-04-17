@@ -3,9 +3,10 @@ import { DialogTrainconfirmComponent } from '../dialog-trainconfirm/dialog-train
 import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
-  selector: 'app-dialog-train',
-  templateUrl: './dialog-train.component.html',
-  styleUrl: './dialog-train.component.css'
+    selector: 'app-dialog-train',
+    templateUrl: './dialog-train.component.html',
+    styleUrl: './dialog-train.component.css',
+    standalone: false
 })
 export class DialogTrainComponent {
 

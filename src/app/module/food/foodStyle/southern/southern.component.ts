@@ -5,9 +5,10 @@ import { FoodsInterface } from '../../../../model/foodrecipe.model';
 import { SpinnerService } from '../../../../service/spinner.service';
 
 @Component({
-  selector: 'app-southern',
-  templateUrl: './southern.component.html',
-  styleUrl: './southern.component.css'
+    selector: 'app-southern',
+    templateUrl: './southern.component.html',
+    styleUrl: './southern.component.css',
+    standalone: false
 })
 export class SouthernComponent implements OnInit ,OnDestroy{
 

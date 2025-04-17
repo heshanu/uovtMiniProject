@@ -3,9 +3,10 @@ import { BikeService } from '../../../../service/bike.service';
 import { BikeInterface } from '../../../../model/bike_interface';
 
 @Component({
-  selector: 'app-matararentbikes',
-  templateUrl: './matararentbikes.component.html',
-  styleUrl: './matararentbikes.component.css'
+    selector: 'app-matararentbikes',
+    templateUrl: './matararentbikes.component.html',
+    styleUrl: './matararentbikes.component.css',
+    standalone: false
 })
 export class MatararentbikesComponent {
    

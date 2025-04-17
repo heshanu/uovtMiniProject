@@ -7,9 +7,10 @@ import { Subject, Subscription, takeUntil } from 'rxjs';
 import { NotificationService } from '../../notification.service';
 
 @Component({
-  selector: 'app-customerdetail',
-  templateUrl: './customerdetail.component.html',
-  styleUrl: './customerdetail.component.css'
+    selector: 'app-customerdetail',
+    templateUrl: './customerdetail.component.html',
+    styleUrl: './customerdetail.component.css',
+    standalone: false
 })
 export class CustomerdetailComponent implements OnInit{
   

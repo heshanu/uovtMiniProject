@@ -7,10 +7,11 @@ import { getCustomerDetail, selectCustomerId } from '../../../store/customers/cu
 import { selectOrderDetails } from '../../../store/orders/orders.selectors';
 
 @Component({
-  selector: 'app-car',
-  templateUrl: './car.component.html',
-      changeDetection: ChangeDetectionStrategy.OnPush,
-  styleUrl: './car.component.css'
+    selector: 'app-car',
+    templateUrl: './car.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    styleUrl: './car.component.css',
+    standalone: false
 })
 export class CarComponent implements OnInit,OnDestroy{
   expandedIndex = 0;

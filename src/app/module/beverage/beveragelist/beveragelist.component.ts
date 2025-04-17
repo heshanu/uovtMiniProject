@@ -5,9 +5,10 @@ import { finalize, Subscription } from 'rxjs';
 import { SpinnerService } from '../../../service/spinner.service';
 
 @Component({
-  selector: 'app-beveragelist',
-  templateUrl: './beveragelist.component.html',
-  styleUrls: ['./beveragelist.component.css']
+    selector: 'app-beveragelist',
+    templateUrl: './beveragelist.component.html',
+    styleUrls: ['./beveragelist.component.css'],
+    standalone: false
 })
 export class BeveragelistComponent implements OnInit, OnDestroy {
   recipeTypeList:any[] = [];

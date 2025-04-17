@@ -5,9 +5,10 @@ import { DialogHotelconfirmComponent } from '../dialog-hotelconfirm/dialog-hotel
 import { DialogCompoentComponent } from '../dialog-hotel/dialog-compoent.component';
 
 @Component({
-  selector: 'app-card-template-foods',
-  templateUrl: './card-template-foods.component.html',
-  styleUrl: './card-template-foods.component.css'
+    selector: 'app-card-template-foods',
+    templateUrl: './card-template-foods.component.html',
+    styleUrl: './card-template-foods.component.css',
+    standalone: false
 })
 export class CardTemplateFoodsComponent {
 

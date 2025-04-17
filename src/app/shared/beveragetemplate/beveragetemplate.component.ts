@@ -14,9 +14,10 @@ import { BeverageconfirmComponent } from '../beverageconfirm/beverageconfirm.com
 import { VisiblelistService } from '../../service/visiblelist.service';
 
 @Component({
-  selector: 'app-beveragetemplate',
-  templateUrl: './beveragetemplate.component.html',
-  styleUrl: './beveragetemplate.component.css'
+    selector: 'app-beveragetemplate',
+    templateUrl: './beveragetemplate.component.html',
+    styleUrl: './beveragetemplate.component.css',
+    standalone: false
 })
 export class BeveragetemplateComponent implements OnInit{
 

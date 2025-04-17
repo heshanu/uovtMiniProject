@@ -3,9 +3,10 @@ import { BikeInterface } from '../../../../model/bike_interface';
 import { VanService } from '../../../../service/van.service';
 
 @Component({
-  selector: 'app-nuwaravan',
-  templateUrl: './nuwaravan.component.html',
-  styleUrl: './nuwaravan.component.css'
+    selector: 'app-nuwaravan',
+    templateUrl: './nuwaravan.component.html',
+    styleUrl: './nuwaravan.component.css',
+    standalone: false
 })
 export class NuwaravanComponent implements OnInit{
 

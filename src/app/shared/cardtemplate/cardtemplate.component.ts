@@ -5,10 +5,11 @@ import { DialogCompoentComponent } from '../dialog-hotel/dialog-compoent.compone
 import { DialogHotelconfirmComponent } from '../dialog-hotelconfirm/dialog-hotelconfirm.component';
 
 @Component({
-  selector: 'app-cardtemplate',
-  templateUrl: './cardtemplate.component.html',
-  styleUrl: './cardtemplate.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-cardtemplate',
+    templateUrl: './cardtemplate.component.html',
+    styleUrl: './cardtemplate.component.css',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class CardtemplateComponent implements OnInit{
 

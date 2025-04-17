@@ -13,10 +13,11 @@ interface ItemAccodianInterface{
 }
 
 @Component({
-  selector: 'app-hotellist',
-  templateUrl: './hotellist.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  styleUrl: './hotellist.component.css',
+    selector: 'app-hotellist',
+    templateUrl: './hotellist.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    styleUrl: './hotellist.component.css',
+    standalone: false
 })
 
 export class HotellistComponent implements OnInit,OnDestroy{

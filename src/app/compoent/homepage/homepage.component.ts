@@ -3,9 +3,10 @@ import { PhotoServiceService } from '../../service/photo-service.service';
 import { NotificationService } from '../../notification.service';
 
 @Component({
-  selector: 'app-homepage',
-  templateUrl: './homepage.component.html',
-  styleUrl: './homepage.component.css'
+    selector: 'app-homepage',
+    templateUrl: './homepage.component.html',
+    styleUrl: './homepage.component.css',
+    standalone: false
 })
 export class HomepageComponent {
 

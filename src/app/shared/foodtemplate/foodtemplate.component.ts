@@ -9,10 +9,11 @@ import { FoodTypeIterface } from '../../service/foodservice.service';
 import { CustomerState } from '../../store/customers/customer.status';
 
 @Component({
-  selector: 'app-foodtemplate',
-  templateUrl: './foodtemplate.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  styleUrl: './foodtemplate.component.css'
+    selector: 'app-foodtemplate',
+    templateUrl: './foodtemplate.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    styleUrl: './foodtemplate.component.css',
+    standalone: false
 })
 export class FoodtemplateComponent implements OnInit{
 

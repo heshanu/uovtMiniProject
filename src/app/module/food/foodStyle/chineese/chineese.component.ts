@@ -4,9 +4,10 @@ import { FoodsInterface } from '../../../../model/foodrecipe.model';
 import { FoodserviceService } from '../../../../service/foodservice.service';
 
 @Component({
-  selector: 'app-chineese',
-  templateUrl: './chineese.component.html',
-  styleUrl: './chineese.component.css'
+    selector: 'app-chineese',
+    templateUrl: './chineese.component.html',
+    styleUrl: './chineese.component.css',
+    standalone: false
 })
 export class ChineeseComponent implements OnInit ,OnDestroy{
 

@@ -4,9 +4,10 @@ import { HotelsListInterface } from '../../../model/hotel_interface';
 import { log } from 'node:console';
 
 @Component({
-  selector: 'app-north-westernprovince',
-  templateUrl: './north-westernprovince.component.html',
-  styleUrl: './north-westernprovince.component.css'
+    selector: 'app-north-westernprovince',
+    templateUrl: './north-westernprovince.component.html',
+    styleUrl: './north-westernprovince.component.css',
+    standalone: false
 })
 export class NorthWesternprovinceComponent implements OnInit{
 

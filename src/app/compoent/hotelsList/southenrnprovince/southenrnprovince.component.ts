@@ -3,9 +3,10 @@ import { HotelserviceService } from '../../../service/hotelservice.service';
 import { HotelsListInterface } from '../../../model/hotel_interface';
 
 @Component({
-  selector: 'app-southenrnprovince',
-  templateUrl: './southenrnprovince.component.html',
-  styleUrl: './southenrnprovince.component.css'
+    selector: 'app-southenrnprovince',
+    templateUrl: './southenrnprovince.component.html',
+    styleUrl: './southenrnprovince.component.css',
+    standalone: false
 })
 export class SouthenrnprovinceComponent implements OnInit{
 

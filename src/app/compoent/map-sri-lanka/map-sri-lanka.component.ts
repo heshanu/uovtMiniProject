@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-map-sri-lanka',
-  templateUrl: './map-sri-lanka.component.html',
-  styleUrl: './map-sri-lanka.component.css'
+    selector: 'app-map-sri-lanka',
+    templateUrl: './map-sri-lanka.component.html',
+    styleUrl: './map-sri-lanka.component.css',
+    standalone: false
 })
 export class MapSriLankaComponent {
     slMap:string="../../../assets/mapSl.png";

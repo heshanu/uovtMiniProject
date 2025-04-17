@@ -3,9 +3,10 @@ import { BikeInterface } from '../../../../model/bike_interface';
 import { CarService } from '../../../../service/car.service';
 
 @Component({
-  selector: 'app-mataracar',
-  templateUrl: './mataracar.component.html',
-  styleUrl: './mataracar.component.css'
+    selector: 'app-mataracar',
+    templateUrl: './mataracar.component.html',
+    styleUrl: './mataracar.component.css',
+    standalone: false
 })
 export class MataracarComponent implements OnInit{
 

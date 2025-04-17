@@ -3,9 +3,10 @@ import { HotelserviceService } from '../../../service/hotelservice.service';
 import { HotelsListInterface } from '../../../model/hotel_interface';
 
 @Component({
-  selector: 'app-sabaragamuwaprovince',
-  templateUrl: './sabaragamuwaprovince.component.html',
-  styleUrl: './sabaragamuwaprovince.component.css'
+    selector: 'app-sabaragamuwaprovince',
+    templateUrl: './sabaragamuwaprovince.component.html',
+    styleUrl: './sabaragamuwaprovince.component.css',
+    standalone: false
 })
 export class SabaragamuwaprovinceComponent implements OnInit{
 

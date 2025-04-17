@@ -4,9 +4,10 @@ import { FoodsInterface } from '../../../../model/foodrecipe.model';
 import { FoodserviceService } from '../../../../service/foodservice.service';
 
 @Component({
-  selector: 'app-japaneese',
-  templateUrl: './japaneese.component.html',
-  styleUrl: './japaneese.component.css'
+    selector: 'app-japaneese',
+    templateUrl: './japaneese.component.html',
+    styleUrl: './japaneese.component.css',
+    standalone: false
 })
 export class JapaneeseComponent implements OnInit ,OnDestroy{
 

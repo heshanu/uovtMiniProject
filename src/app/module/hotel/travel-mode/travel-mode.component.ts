@@ -7,10 +7,11 @@ import { getCustomerDetail} from '../../../store/customers/customer.selectors';
 import { CustomerdetailsInterface } from '../../../model/customerDetailsInterface';
 
 @Component({
-  selector: 'app-travel-mode',
-  templateUrl: './travel-mode.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  styleUrl: './travel-mode.component.css'
+    selector: 'app-travel-mode',
+    templateUrl: './travel-mode.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    styleUrl: './travel-mode.component.css',
+    standalone: false
 })
 export class TravelModeComponent implements OnInit,OnDestroy{
 

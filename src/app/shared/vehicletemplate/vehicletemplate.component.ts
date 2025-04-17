@@ -11,9 +11,10 @@ import { selectOrderDetails } from '../../store/orders/orders.selectors';
 import { CustomerdetailsInterface } from '../../model/customerDetailsInterface';
 
 @Component({
-  selector: 'app-vehicletemplate',
-  templateUrl: './vehicletemplate.component.html',
-  styleUrls: ['./vehicletemplate.component.css']
+    selector: 'app-vehicletemplate',
+    templateUrl: './vehicletemplate.component.html',
+    styleUrls: ['./vehicletemplate.component.css'],
+    standalone: false
 })
 export class VehicletemplateComponent implements OnInit, OnDestroy {
   orderList$!: Observable<OrderState>;

@@ -7,9 +7,10 @@ import { getCustomerDetail,} from '../../store/customers/customer.selectors';
 import { AppState } from '../../app.reducer';
 
 @Component({
-  selector: 'app-customer-dash-board',
-  templateUrl: './customer-dash-board.component.html',
-  styleUrl: './customer-dash-board.component.css'
+    selector: 'app-customer-dash-board',
+    templateUrl: './customer-dash-board.component.html',
+    styleUrl: './customer-dash-board.component.css',
+    standalone: false
 })
 export class CustomerDashBoardComponent implements OnInit,OnDestroy{
 
