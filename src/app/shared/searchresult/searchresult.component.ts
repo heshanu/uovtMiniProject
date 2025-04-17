@@ -18,7 +18,6 @@ export class SearchresultComponent implements OnInit{
   resultList:any[]=[];
 
   text:any='';
-
   constructor( private visiblelistService:VisiblelistService){
   }
 
