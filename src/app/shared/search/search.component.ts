@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { OnIdentifyEffects } from '@ngrx/effects';
 
 @Component({
     selector: 'app-search',

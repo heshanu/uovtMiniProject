@@ -20,8 +20,6 @@ import { CustomerdetailComponent } from './compoent/customerdetail/customerdetai
 import { CalenderComponent } from './shared/calender/calender.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './shared/materialModule';
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
-import { CommonModule } from '@angular/common';
 import { SearchImagePosterComponent } from './compoent/search-image-poster/search-image-poster.component';
 import { CustomersDashBoardComponent } from './compoent/customers-dash-board/customers-dash-board.component';
 import { CustomerDashBoardComponent } from './compoent/customer-dash-board/customer-dash-board.component';
@@ -88,8 +86,10 @@ import { BeverageconfirmComponent } from './shared/beverageconfirm/beverageconfi
 import { ConfirmationModalComponent } from './shared/confirmation-modal/confirmation-modal.component';
 import { SearchComponent } from './shared/search/search.component';
 import { SearchresultComponent } from './shared/searchresult/searchresult.component';
+import { CommonModule } from '@angular/common';
 
-@NgModule({ declarations: [
+@NgModule({ 
+    declarations: [
         AppComponent,
         PosterComponent,
         HomepageComponent,
@@ -161,7 +161,9 @@ import { SearchresultComponent } from './shared/searchresult/searchresult.compon
         SearchresultComponent,
     ],
     exports: [],
-    bootstrap: [AppComponent], imports: [BrowserModule,
+    bootstrap: [AppComponent],
+    imports: [
+        BrowserModule,
         BrowserAnimationsModule,
         AppRoutingModule,
         HomeModule,
@@ -182,7 +184,6 @@ import { SearchresultComponent } from './shared/searchresult/searchresult.compon
         HotelsbookingModule,
         FoodModule,
         BeverageModule], providers: [
-        provideClientHydration(),
-        provideHttpClient(withInterceptorsFromDi())
+        provideClientHydration()
     ] })
 export class AppModule { }

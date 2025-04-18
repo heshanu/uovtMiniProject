@@ -1,4 +1,5 @@
-import { createReducer, on } from '@ngrx/store';
+//import { } from '@ngrx/store';
+import { StoreModule, createReducer, on } from '@ngrx/store';
 import { initialOrderState, OrderState } from './orders.status';
 import { loadOrdersSuccess, setOrder } from './orders.actions';
 

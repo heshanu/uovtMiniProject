@@ -21,7 +21,7 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:application",
+          "builder": "@angular-devkit/build-angular:b",
           "options": {
             "outputPath": "dist/hotelman",
             "index": "src/index.html",

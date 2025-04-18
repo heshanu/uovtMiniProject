@@ -1,6 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
 import { FoodRoutingModule } from './food-routing.module';
 import { FoodlistComponent } from './foodlist/foodlist.component';
 import { MaterialModule } from '../../shared/materialModule';
@@ -19,20 +17,19 @@ import { TraditionalComponent } from './foodStyle/traditional/traditional.compon
     FoodtemplateComponent,
     FoodCategoryComponent,
     SouthernComponent,
-    CardTemplateFoodsComponent,
+   // CardTemplateFoodsComponent,
     NorthernComponent,
     ChineeseComponent,
     JapaneeseComponent,
     TraditionalComponent
   ],
   imports: [
-    CommonModule,
     FoodRoutingModule,
     MaterialModule,
   ],
   exports:[
     SouthernComponent,
-    CardTemplateFoodsComponent,
+    //CardTemplateFoodsComponent,
     FoodtemplateComponent,
   ]
 })

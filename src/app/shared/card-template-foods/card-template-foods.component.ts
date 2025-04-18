@@ -8,7 +8,7 @@ import { DialogCompoentComponent } from '../dialog-hotel/dialog-compoent.compone
     selector: 'app-card-template-foods',
     templateUrl: './card-template-foods.component.html',
     styleUrl: './card-template-foods.component.css',
-    standalone: false
+    standalone: true
 })
 export class CardTemplateFoodsComponent {
 
